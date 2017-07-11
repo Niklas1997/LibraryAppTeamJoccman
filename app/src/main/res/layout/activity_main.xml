@@ -4,16 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_light"
     tools:context="com.example.ezmilja.libraryapp.MainActivity">
 
     <Button
         android:id="@+id/btn_booklist"
+        style="@android:style/Widget.Button.Transparent"
+        android:layout_width="146dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="107dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="0dp"
+        android:text="Proceed"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="309dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:justificationMode="inter_word"
+        android:singleLine="false"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btn_booklist"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="WELCOME TO ERICSSON LIBRARY"
+        tools:layout_editor_absoluteX="3dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/titleImage"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="383dp"
+        android:layout_height="57dp"
+        app:srcCompat="@drawable/title"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="136dp" />
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>
