@@ -43,6 +43,7 @@ public class ListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
                 TextView tempTextView = (TextView) findViewById(i);
 
                 Intent intent = new Intent(ListActivity.this, BookInfoActivity.class);
