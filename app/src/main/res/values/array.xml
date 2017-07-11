@@ -1,71 +1,15 @@
 <resources>
     <string-array name="bookName">
-        <item >20/20 Foresight</item>
-        <item >A practical approach to large scale Agile Development: how HP Transformed Laserjet FutureSmart Firmware</item>
-        <item >ADO.NET Cookbook</item>
-        <item >Advanced COBRA programming with C++</item>
-        <item >Agile Retrospectives: Making Good Teams Great(Pragmatic Programmers)	Derby, Larson, Schwaber	</item>
-        <item >Agile Testing - A Practical Guide for Testers and Agile Teams</item>
-        <item >ANT in Action</item>
-        <item >Art of readable Code</item>
-        <item >Bounce</item>
-        <item >Business Process Management is a Team sport: Play it to Win!</item>
-        <item >Concurrent Programming in ERLANG</item>
-        <item >Continuous Delivery</item>
-        <item >Disciplined Agile Delivery: A Practitioner's Guide to Agile Software Delivery in the Enterprise (IBM Press)</item>
-        <item >Distributed Databases Principals and Systems </item>
-        <item >Drive</item>
-        <item >Effective Java (2nd Edition)</item>
-        <item >Enterprise Architecture as strategy</item>
-        <item >Essential Scrum</item>
-        <item >Exploratory Software Testing</item>
-        <item >From Technologies to Solutions Business Process Execution language for web services </item>
-        <item >Greasemonkey Hacks: Tips and tools for Remixing the Web with Firefox</item>
-        <item >Growing Object Orientated Software: Guided by tests</item>
-        <item >Harvard Business Review on Business and the Environment</item>
-        <item >Harvard Business Review on Customer Relationship Management </item>
-        <item >Harvard Business Review on managing the Value Chain</item>
-        <item >Harvard Business Review on Marketing</item>
-        <item >Harvard Business Review on Turnarounds</item>
-        <item >Java Testing with SPOCK</item>
-        <item >Large scale C++ Software Design</item>
-        <item >Learning the Korn Shell</item>
-        <item >Lessons Learned in Software Testing</item>
-        <item >lex and yacc</item>
-        <item >Macromedia freehand 9 Using Freehand </item>
-        <item >Macromedia: Freehand 9 Authorized</item>
-        <item >Modern operating systems</item>
-        <item >More Effective C++</item>
-        <item >Patterns of Enterprise Application Architecture</item>
-        <item >PHP 5 Objects, Patterns and Practice</item>
-        <item >Practical Issues in Datasbase Management</item>
-        <item >Pragmatic Programmer: From jopurneyman to master</item>
-        <item >Pragmatic Version Control Using s</item>
-        <item >Programming Firefox</item>
-        <item >Programming Perl (3rd Edition)</item>
-        <item >Programming Web Services with Perl</item>
-        <item >Refactoring – Improving the design of existing code</item>
-        <item >Reinventing Organizations: A Guide to creating Organizations Inspired by the Next Stage in Human Consciousness</item>
-        <item >SCRUM and XP from the trenches</item>
-        <item >Silverlight four in Action</item>
-        <item >Struts in Action</item>
-        <item >Succeeding with Agile: Software Development Using Scrum</item>
-        <item >Systems and software requirements Engineering</item>
-        <item >Test Driven Development: By Example</item>
-        <item >The Capability Maturity Model: Guidelines for improving the software process </item>
-        <item >The Definitive Guide to Plone</item>
-        <item >The Feedback Book: 50 Ways to Motivate and Improve the Performance of Your People</item>
-        <item >The Guards: A Jack Taylor story </item>
-        <item >The Non- Designers Web Book</item>
-        <item >The Object Constraint Language 2nd Edition</item>
-        <item >The Phoenix Project</item>
-        <item >The SPIRE Handbook: Better, Faster, Cheaper Software Development in small organizations </item>
-        <item >The Ugly Duckling</item>
-        <item >The well grounded Java Developer</item>
-        <item >Understanding Telecommunications 1</item>
-        <item >Understanding Telecommunications 2</item>
-        <item >Version Control with Subversion</item>
-        <item >XSLT</item>
-        <item >Zone to Win: Organizing to compete in an age of disruption </item>
-                   </string-array>
+        <item >Pro Constructive</item>
+        <item >Con Constructive</item>
+        <item >1st Speaker Cross</item>
+        <item >Pro Rebbutal</item>
+        <item >Con Rebuttal</item>
+        <item >2nd Speaker Cross</item>
+        <item >Pro Summary</item>
+        <item >Con Summary</item>
+        <item >Grand Cross</item>
+        <item >Pro Final Focus</item>
+        <item >Con Final Focus</item>
+    </string-array>
 </resources>
