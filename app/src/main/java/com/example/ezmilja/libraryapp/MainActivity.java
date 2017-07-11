@@ -1,10 +1,8 @@
 package com.example.ezmilja.libraryapp;
 
-import android.graphics.Typeface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.view.View;
 import android.widget.Button;
 
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btn_booklist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Main3Activity.class);
+                Intent intent = new Intent(MainActivity.this, ContentsActivity.class);
                 startActivity(intent);
             }
         });

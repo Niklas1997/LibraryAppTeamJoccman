@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Main2Activity extends AppCompatActivity {
+public class ListActivity extends AppCompatActivity {
 
     private Button btn_back;
     private ListView listView;
@@ -18,7 +18,7 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_list);
 
         createListView();
         createButton();
@@ -45,7 +45,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 TextView tempTextView = (TextView) findViewById(i);
 
-                Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
+                Intent intent = new Intent(ListActivity.this, BookInfoActivity.class);
                 //intent.putExtra("name", tempTextView.getText());
                 startActivity(intent);
             }

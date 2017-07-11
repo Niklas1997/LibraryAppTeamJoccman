@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Main3Activity extends AppCompatActivity {
+public class ContentsActivity extends AppCompatActivity {
 
     private Button btn_list;
 
@@ -15,7 +15,7 @@ public class Main3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_contents);
 
         createButton();
     }
@@ -25,7 +25,7 @@ public class Main3Activity extends AppCompatActivity {
         btn_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main3Activity.this, Main2Activity.class);
+                Intent intent = new Intent(ContentsActivity.this, ListActivity.class);
                 startActivity(intent);
             }
         });
