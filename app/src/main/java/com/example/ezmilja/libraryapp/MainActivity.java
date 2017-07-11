@@ -15,7 +15,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        createButton();
+    }
 
+    private void createButton(){
         btn_booklist = (Button) findViewById(R.id.btn_booklist);
         btn_booklist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,5 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
 }
