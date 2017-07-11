@@ -23,7 +23,7 @@ public class Main4Activity extends AppCompatActivity {
 
     private void createButton() {
         btn_back = (Button) findViewById(R.id.btn_back);
-        btn_list = (Button) findViewById(R.id.btn_list);
+       // btn_list = (Button) findViewById(R.id.btn_list);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,12 +31,12 @@ public class Main4Activity extends AppCompatActivity {
 
             }
         });
-        btn_list.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Main4Activity.this, Main2Activity.class);
-                startActivity(intent);
-            }
-        });
+       // btn_list.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+           // public void onClick(View view) {
+             //   Intent intent = new Intent(Main4Activity.this, Main2Activity.class);
+               // startActivity(intent);
+          //  }
+        //});
     }
 }
