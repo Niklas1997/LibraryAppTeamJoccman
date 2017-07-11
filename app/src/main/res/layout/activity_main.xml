@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.ezmilja.libraryapp.MainActivity">
 
+    <Button
+        android:id="@+id/btn_booklist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="136dp" />
 </android.support.constraint.ConstraintLayout>
