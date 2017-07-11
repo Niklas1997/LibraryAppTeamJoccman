@@ -1,5 +1,6 @@
 package com.example.ezmilja.libraryapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ public class BookInfoActivity extends AppCompatActivity {
 
 
     private Button btn_back;
-    private Button btn_list;
+
 
 
     @Override
@@ -17,7 +18,14 @@ public class BookInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_info);
 
-        //createButton();
+
+        createButton();
+        //readBookInfo();
+    }
+
+    private void readBookInfo(){
+        Bundle bundle = getIntent().getExtras();
+        String message = bundle.getString("name");
     }
 
     private void createButton() {
@@ -30,12 +38,5 @@ public class BookInfoActivity extends AppCompatActivity {
 
             }
         });
-       // btn_list.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-           // public void onClick(View view) {
-             //   Intent intent = new Intent(BookInfoActivity.this, ListActivity.class);
-               // startActivity(intent);
-          //  }
-        //});
     }
 }
