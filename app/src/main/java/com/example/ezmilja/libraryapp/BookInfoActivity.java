@@ -27,7 +27,8 @@ public class BookInfoActivity extends AppCompatActivity {
 
     private void readBookInfo(){
         Bundle bundle = getIntent().getExtras();
-        String message = bundle.getString("name");
+        String message = bundle.getString("bookName");
+        message = message + " : " + bundle.getString("author");
         textView = (TextView) findViewById(R.id.textView3);
         textView.setText(message);
     }

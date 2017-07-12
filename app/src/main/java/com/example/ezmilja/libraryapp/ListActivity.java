@@ -38,9 +38,13 @@ public class ListActivity extends AppCompatActivity {
 
     private void createListView(){
 
-        final String[] myKeys = getResources().getStringArray(R.array.bookName);
+        final String[] bookNames = getResources().getStringArray(R.array.bookName);
+        final String[] authors = getResources().getStringArray(R.array.Author);
         listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myKeys));
+
+        CustomList listAdapter = new CustomList(ListActivity.this, bookNames, authors);
+
+        listView.setAdapter(listAdapter);
 
 
 
@@ -48,11 +52,13 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                String text = myKeys[i];
+                String bookName = bookNames[i];
+                String author = authors[i];
 
 
                 Intent intent = new Intent(ListActivity.this, BookInfoActivity.class);
-                intent.putExtra("name", text);
+                intent.putExtra("bookName", bookName);
+                intent.putExtra("author", author);
                 startActivity(intent);
             }
         });
