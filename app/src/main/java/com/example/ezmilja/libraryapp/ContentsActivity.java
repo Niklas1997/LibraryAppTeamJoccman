@@ -12,8 +12,9 @@ public class ContentsActivity extends AppCompatActivity {
 
     private Button btn_list;
     private Button btn31list;
-
-
+    private Button btn_rqst;
+    private Button btn_check;
+    private TextView textview2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,19 @@ public class ContentsActivity extends AppCompatActivity {
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
         btn31list = (Button) findViewById(R.id.btn31list);
         btn31list.setTypeface(myTypeFace1);
+
+
+        btn_rqst = (Button) findViewById(R.id.btn_rqst);
+        btn_rqst.setTypeface(myTypeFace1);
+
+
+        btn_check = (Button) findViewById(R.id.btn_check);
+        btn_check.setTypeface(myTypeFace1);
+
+
+        TextView textView2 = (TextView) findViewById(R.id.textView2);
+        textView2.setTypeface(myTypeFace1);
+
     }
 
     private void createButton(){
