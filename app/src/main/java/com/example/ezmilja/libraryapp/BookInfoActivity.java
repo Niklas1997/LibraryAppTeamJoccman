@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class BookInfoActivity extends AppCompatActivity {
 
 
     private Button btn_back;
+    private TextView textView;
 
 
 
@@ -20,22 +22,22 @@ public class BookInfoActivity extends AppCompatActivity {
 
 
         createButton();
-        //readBookInfo();
+        readBookInfo();
     }
 
     private void readBookInfo(){
         Bundle bundle = getIntent().getExtras();
         String message = bundle.getString("name");
+        textView = (TextView) findViewById(R.id.textView3);
+        textView.setText(message);
     }
 
     private void createButton() {
         btn_back = (Button) findViewById(R.id.btn_back);
-       // btn_list = (Button) findViewById(R.id.btn_list);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
-
             }
         });
     }
