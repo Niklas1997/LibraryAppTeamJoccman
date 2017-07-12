@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import static com.example.ezmilja.libraryapp.R.array.Author;
+
 public class ListActivity extends AppCompatActivity {
 
     private Button btn_back;
@@ -39,6 +41,8 @@ public class ListActivity extends AppCompatActivity {
         final String[] myKeys = getResources().getStringArray(R.array.bookName);
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myKeys));
+
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
