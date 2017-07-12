@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import static com.example.ezmilja.libraryapp.R.array.Author;
@@ -16,6 +17,7 @@ public class ListActivity extends AppCompatActivity {
 
     private Button btn_back;
     private ListView listView;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,14 @@ public class ListActivity extends AppCompatActivity {
         final String[] authors = getResources().getStringArray(R.array.Author);
         listView = (ListView) findViewById(R.id.listView);
 
-        CustomList listAdapter = new CustomList(ListActivity.this, bookNames, authors);
+        searchView = (SearchView) findViewById(R.id.searchView);
+
+        String[] temp = new String[bookNames.length];
+        for (int i = 0; i < bookNames.length; i++){
+            temp[i] = bookNames[i] + " /n/split/a/ " + authors[i];
+        }
+
+        final CustomList listAdapter = new CustomList(ListActivity.this, temp, bookNames, authors);
 
         listView.setAdapter(listAdapter);
 
@@ -62,6 +71,19 @@ public class ListActivity extends AppCompatActivity {
                 intent.putExtra("bookName", bookName);
                 intent.putExtra("author", author);
                 startActivity(intent);
+            }
+        });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                listAdapter.getFilter().filter(s);
+                return false;
             }
         });
     }
