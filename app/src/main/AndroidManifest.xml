@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".ListActivity" />
         <activity android:name=".ContentsActivity" />
-        <activity android:name=".BookInfoActivity"></activity>
+        <activity android:name=".BookInfoActivity" />
+        <activity android:name=".RequestActivity"></activity>
     </application>
 
 </manifest>

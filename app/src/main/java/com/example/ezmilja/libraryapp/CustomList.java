@@ -14,10 +14,12 @@ public class CustomList extends ArrayAdapter<String>{
     private final Activity context;
     private final String[] book_name;
     private final String[] author;
+    private final String[] books;
     //private final Integer[] imageId;
-    public CustomList(Activity context,
+    public CustomList(Activity context, String[] books,
                       String[] book_name, String[] author ) {
-        super(context, R.layout.list_single, book_name);
+        super(context, R.layout.list_single, books);
+        this.books = books;
         this.context = context;
         this.book_name = book_name;
         this.author = author;
@@ -31,9 +33,10 @@ public class CustomList extends ArrayAdapter<String>{
         TextView txtBookName = (TextView) rowView.findViewById(R.id.txt_bookname);
         TextView txtAuthor = (TextView) rowView.findViewById(R.id.txt_author);
 
+        String[] temp = super.getItem(position).split(" /n/split/a/ ");
         //ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
-        txtBookName.setText(book_name[position]);
-        txtAuthor.setText(author[position]);
+        txtBookName.setText(temp[0]);
+        txtAuthor.setText(temp[1]);
 
         //imageView.setImageResource(imageId[position]);
 
