@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LibraryAppTeamJoccman.iml" filepath="$PROJECT_DIR$/LibraryAppTeamJoccman.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LibraryAppTeamJoccman-c27e21ad590d9b1b427a015c93258f0e688eb5cc.iml" filepath="$PROJECT_DIR$/LibraryAppTeamJoccman-c27e21ad590d9b1b427a015c93258f0e688eb5cc.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
