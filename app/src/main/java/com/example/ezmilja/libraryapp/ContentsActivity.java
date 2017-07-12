@@ -22,6 +22,9 @@ public class ContentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contents);
 
         createButton();
+    }
+
+    private void createButton(){
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
         btn31list = (Button) findViewById(R.id.btn31list);
@@ -39,14 +42,18 @@ public class ContentsActivity extends AppCompatActivity {
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         textView2.setTypeface(myTypeFace1);
 
-    }
-
-    private void createButton(){
         btn_list = (Button) findViewById(R.id.btn31list);
         btn_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ContentsActivity.this, ListActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_rqst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ContentsActivity.this, RequestActivity.class);
                 startActivity(intent);
             }
         });
