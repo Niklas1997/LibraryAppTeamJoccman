@@ -34,7 +34,9 @@ public class CustomList extends ArrayAdapter<String>{
         TextView txtAuthor = (TextView) rowView.findViewById(R.id.txt_author);
 
         String[] temp = super.getItem(position).split(" /n/split/a/ ");
-        //ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
+        ImageView imageView = (ImageView) rowView.findViewById(R.id.img_book);
+
+        imageView.setImageResource(R.drawable.titleimage);
         txtBookName.setText(temp[0]);
         txtAuthor.setText(temp[1]);
 
