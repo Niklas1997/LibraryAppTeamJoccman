@@ -11,7 +11,7 @@
 
     <Button
         android:id="@+id/btn31list"
-        android:layout_width="209dp"
+        android:layout_width="230dp"
         android:layout_height="80dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -20,7 +20,7 @@
         android:background="@drawable/mybutton"
         android:text="List of Books"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -31,7 +31,7 @@
 
     <Button
         android:id="@+id/btn_check"
-        android:layout_width="209dp"
+        android:layout_width="230dp"
         android:layout_height="80dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -40,19 +40,19 @@
         android:background="@drawable/mybutton"
         android:text="Check in / out book"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.761"
-        tools:text="Check in / out book"
-        app:layout_constraintHorizontal_bias="0.503" />
+        tools:text="Check in / out book" />
 
     <Button
         android:id="@+id/btn_rqst"
-        android:layout_width="209dp"
+        android:layout_width="230dp"
         android:layout_height="80dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -61,15 +61,15 @@
         android:background="@drawable/mybutton"
         android:text="Request Book"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.515"
-        tools:text="Request Book"
-        app:layout_constraintHorizontal_bias="0.503" />
+        tools:text="Request Book" />
 
     <TextView
         android:id="@+id/textView2"
