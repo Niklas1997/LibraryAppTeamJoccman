@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,7 +12,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
-
 import static com.example.ezmilja.libraryapp.R.array.Author;
 
 public class ListActivity extends AppCompatActivity {
@@ -20,28 +20,35 @@ public class ListActivity extends AppCompatActivity {
     private ListView listView;
     private SearchView searchView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         createListView();
-        createButton();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
     }
 
 
 
-    private void createButton(){
-        btn_back = (Button) findViewById(R.id.btn_back);
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
                 finish();
-            }
-        });
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void createListView(){
+
+
 
         final String[] bookNames = getResources().getStringArray(R.array.bookName);
         final String[] authors = getResources().getStringArray(R.array.Author);
@@ -86,6 +93,8 @@ public class ListActivity extends AppCompatActivity {
                 listAdapter.getFilter().filter(s);
                 return false;
             }
+
+
         });
     }
 }
