@@ -1,100 +1,71 @@
 package com.example.ezmilja.libraryapp;
 
-import android.content.Intent;
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.TextView;
-import static com.example.ezmilja.libraryapp.R.array.Author;
 
 public class ListActivity extends AppCompatActivity {
 
-    private Button btn_back;
-    private ListView listView;
-    private SearchView searchView;
 
+
+    int[] IMAGES = {R.drawable.foresight, R.drawable.apracticalapproach, R.drawable.ado, R.drawable.advancecobra};
+
+    String[] BOOKNAME = {"2020 ForeSight", "A Practical Approach", "ADO.NET","Advanced COBRA programming with C++ " };
+
+    String[] DESCRPTION = {"Gary Gruver, Mike Young, Pat Fulgham", "Hugh Courtney","Bill Hamilton","Michi Henning and Steve Vinoski"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        createListView();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+
+        ListView listView = (ListView)findViewById(R.id.listView);
+
+        CustomAdapter customAdapter = new CustomAdapter();
+
+        listView.setAdapter(customAdapter);
+
+
+
     }
 
+    class CustomAdapter extends BaseAdapter{
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    private void createListView(){
-
-
-
-        final String[] bookNames = getResources().getStringArray(R.array.bookName);
-        final String[] authors = getResources().getStringArray(R.array.Author);
-        listView = (ListView) findViewById(R.id.listView);
-
-        searchView = (SearchView) findViewById(R.id.searchView);
-
-        String[] temp = new String[bookNames.length];
-        for (int i = 0; i < bookNames.length; i++){
-            temp[i] = bookNames[i] + " /n/split/a/ " + authors[i];
+        @Override
+        public int getCount() {
+            return IMAGES.length;
         }
 
-        final CustomList listAdapter = new CustomList(ListActivity.this, temp, bookNames, authors);
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
 
-        listView.setAdapter(listAdapter);
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
 
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            view = getLayoutInflater().inflate(R.layout.customlayout, null);
 
+            ImageView imageView = (ImageView)view.findViewById(R.id.imageView2);
+            TextView textView_bookname = (TextView)view.findViewById(R.id.textView_name);
+            TextView textView_description = (TextView)view.findViewById(R.id.textView_description);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            imageView.setImageResource(IMAGES[i]);
+            textView_bookname.setText(BOOKNAME[i]);
+            textView_description.setText(DESCRPTION[i]);
 
-                String bookName = bookNames[i];
-                String author = authors[i];
-
-
-                Intent intent = new Intent(ListActivity.this, BookInfoActivity.class);
-                intent.putExtra("bookName", bookName);
-                intent.putExtra("author", author);
-                startActivity(intent);
-            }
-        });
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                listAdapter.getFilter().filter(s);
-                return false;
-            }
-
-
-        });
+            return view;
+        }
     }
 }
