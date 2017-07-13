@@ -46,7 +46,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773"
+        app:layout_constraintVertical_bias="0.761"
         tools:text="Check in / out book"
         app:layout_constraintHorizontal_bias="0.503" />
 

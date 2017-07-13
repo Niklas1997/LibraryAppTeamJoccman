@@ -19,7 +19,8 @@
         <activity android:name=".ListActivity" />
         <activity android:name=".ContentsActivity" />
         <activity android:name=".BookInfoActivity" />
-        <activity android:name=".RequestActivity"></activity>
+        <activity android:name=".RequestActivity" />
+        <activity android:name=".CheckoutActivity"></activity>
     </application>
 
 </manifest>
