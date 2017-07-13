@@ -9,6 +9,8 @@
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
+
+
     <Button
         android:id="@+id/btn_booklist"
         android:layout_width="146dp"
@@ -23,7 +25,7 @@
         android:elevation="0dp"
         android:text="Proceed"
         android:textColor="@android:color/background_light"
-        android:textSize="26sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
