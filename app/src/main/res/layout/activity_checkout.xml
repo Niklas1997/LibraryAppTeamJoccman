@@ -10,39 +10,32 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="31dp"
+        android:layout_width="253dp"
+        android:layout_height="47dp"
         android:ems="10"
-        android:hint="ISBN-13"
+        android:hint="ISBN e.g (978-0544003415)"
         android:inputType="number"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintVertical_bias="0.488" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="175dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="51dp"
         android:background="@drawable/mybutton"
         android:text="Submit"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_editor_absoluteY="324dp" />
+        tools:layout_editor_absoluteY="378dp"
+        tools:layout_editor_absoluteX="105dp" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -85,4 +78,32 @@
             android:text="Check OUT"
             android:textColor="@color/colorPrimaryDark" />
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="253dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="Book Name, Author"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="113dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/info"
+        tools:layout_editor_absoluteX="319dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/icon"
+        tools:layout_editor_absoluteX="318dp"
+        tools:layout_editor_absoluteY="71dp" />
+
 </android.support.constraint.ConstraintLayout>
