@@ -16,6 +16,9 @@ public class ContentsActivity extends AppCompatActivity {
     private Button btn_check;
     private TextView textview2;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
