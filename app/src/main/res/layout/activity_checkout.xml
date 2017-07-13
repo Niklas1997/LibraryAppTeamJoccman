@@ -29,18 +29,20 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="51dp"
         android:background="@drawable/mybutton"
         android:text="Submit"
         android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="51dp" />
+        tools:layout_constraintRight_creator="1"
+        tools:layout_editor_absoluteY="324dp" />
 
     <ImageView
         android:id="@+id/imageView3"
