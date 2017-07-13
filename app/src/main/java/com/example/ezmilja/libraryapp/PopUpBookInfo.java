@@ -20,9 +20,9 @@ public class PopUpBookInfo {
     }
 
     public void createPopUp(final Context context, final Class nextActivity , final String message){
-        final AlertDialog alertDialog = new AlertDialog.Builder(context).setTitle(book.getName() + '\n' + book.getDescription())
-                .setMessage(message).setIcon(book.getImageId()).setNeutralButton("Close", null)
-                .setPositiveButton("More", new DialogInterface.OnClickListener() {
+        final AlertDialog alertDialog = new AlertDialog.Builder(context).setTitle(book.getName())
+                .setMessage(book.getDescription()).setIcon(book.getImageId()).setNeutralButton("Close", null)
+                .setPositiveButton("Read more", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(context, nextActivity);
@@ -31,10 +31,10 @@ public class PopUpBookInfo {
                         intent.putExtra("message", message);
                         context.startActivity(intent);
                     }
-                }).setNegativeButton("Book", new DialogInterface.OnClickListener() {
+                }).setNegativeButton("Check OUT", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(context, book.getName() + '\n' + "By " + book.getDescription() + " is now booked", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, book.getName() + '\n' + "By " + book.getDescription() + " is now Checked OUT", Toast.LENGTH_LONG).show();
                     }
                 }).show();
     }
