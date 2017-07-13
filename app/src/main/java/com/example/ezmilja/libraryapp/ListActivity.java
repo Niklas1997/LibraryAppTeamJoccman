@@ -9,9 +9,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListActivity extends AppCompatActivity {
-
-
 
     int[] IMAGES = {R.drawable.foresight, R.drawable.apracticalapproach, R.drawable.ado, R.drawable.advancecobra};
 
@@ -19,12 +20,12 @@ public class ListActivity extends AppCompatActivity {
 
     String[] DESCRPTION = {"Gary Gruver, Mike Young, Pat Fulgham", "Hugh Courtney","Bill Hamilton","Michi Henning and Steve Vinoski"};
 
+    private  final List<Book> books = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
-
 
         ListView listView = (ListView)findViewById(R.id.listView);
 
@@ -32,20 +33,46 @@ public class ListActivity extends AppCompatActivity {
 
         listView.setAdapter(customAdapter);
 
+        books.add(new Book("2020 ForeSight", R.drawable.foresight, "Gary Gruver, Mike Young, Pat Fulgham"));
+        books.add(new Book("A Practical Approach", R.drawable.apracticalapproach, "Hugh Courtney"));
+        books.add(new Book("ADO.NET", R.drawable.ado, "Bill Hamilton"));
+        books.add(new Book("Advanced COBRA programming with C++ ", R.drawable.advancecobra, "Michi Henning and Steve Vinoski"));
+        books.add(new Book("Agile Retrospectives", R.drawable.agileretrospectives,"Esther Derby, Diana Larsen"));
+        books.add(new Book("Agile Testing",R.drawable.agiletesting, "Lisa Crispin"));
+        books.add(new Book("Ant In Action",R.drawable.antinaction, "Erik Hatcher, Steve Loughran"));
+        books.add(new Book("The Art of Readable Code", R.drawable.artofreadablecode, "Dustin Boswell, Trevor Foucher"));
+        books.add(new Book("Bounce", R.drawable.bounce, "Matthew Syed"));
+        books.add(new Book("Business Process Management is a Team sport", R.drawable.businessprocess,"Andrew Spanyi"));
 
 
+
+
+
+
+    }
+
+    public List<Book> search(final String search){
+        final List<Book> result = new ArrayList<>();
+        for(final Book book: books){
+
+            if(book.getName().contains(search)){
+                result.add(book);
+            }
+        }
+
+        return result;
     }
 
     class CustomAdapter extends BaseAdapter{
 
         @Override
         public int getCount() {
-            return IMAGES.length;
+            return books.size();
         }
 
         @Override
         public Object getItem(int i) {
-            return null;
+            return books.get(i);
         }
 
         @Override
@@ -61,9 +88,10 @@ public class ListActivity extends AppCompatActivity {
             TextView textView_bookname = (TextView)view.findViewById(R.id.textView_name);
             TextView textView_description = (TextView)view.findViewById(R.id.textView_description);
 
-            imageView.setImageResource(IMAGES[i]);
-            textView_bookname.setText(BOOKNAME[i]);
-            textView_description.setText(DESCRPTION[i]);
+            final Book book = books.get(i);
+            imageView.setImageResource(book.getImageId());
+            textView_bookname.setText(book.getName());
+            textView_description.setText(book.getDescription());
 
             return view;
         }
