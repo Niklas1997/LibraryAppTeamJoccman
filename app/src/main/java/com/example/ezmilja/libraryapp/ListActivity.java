@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -14,11 +15,7 @@ import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
 
-    int[] IMAGES = {R.drawable.foresight, R.drawable.apracticalapproach, R.drawable.ado, R.drawable.advancecobra};
 
-    String[] BOOKNAME = {"2020 ForeSight", "A Practical Approach", "ADO.NET","Advanced COBRA programming with C++ " };
-
-    String[] DESCRPTION = {"Gary Gruver, Mike Young, Pat Fulgham", "Hugh Courtney","Bill Hamilton","Michi Henning and Steve Vinoski"};
 
     private  final List<Book> books = new ArrayList<>();
 
@@ -32,6 +29,15 @@ public class ListActivity extends AppCompatActivity {
         CustomAdapter customAdapter = new CustomAdapter();
 
         listView.setAdapter(customAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                PopUpBookInfo popUp = new PopUpBookInfo(books.get(i));
+                popUp.createPopUp(ListActivity.this, BookInfoActivity.class, "");
+            }
+        });
 
         books.add(new Book("2020 ForeSight", R.drawable.foresight, "Gary Gruver, Mike Young, Pat Fulgham"));
         books.add(new Book("A Practical Approach", R.drawable.apracticalapproach, "Hugh Courtney"));
