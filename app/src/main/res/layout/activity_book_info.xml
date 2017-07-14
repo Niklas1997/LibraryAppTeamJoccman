@@ -108,8 +108,8 @@
 
     <TextView
         android:id="@+id/descriptionTxt"
-        android:layout_width="352dp"
-        android:layout_height="275dp"
+        android:layout_width="356dp"
+        android:layout_height="215dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="8dp"
@@ -123,13 +123,11 @@ to the level of uncertainty faced."
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.574"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="208dp"
+        app:layout_constraintVertical_bias="0.763"
         tools:text="Description:
         Reveals how executives can develop 20/20 foresight - a view of the future that separates what can be known from what can't.
         This book shows strategists how to tailor various aspects of the decision-making process - from formulation to implementation -
@@ -155,5 +153,24 @@ to the level of uncertainty faced."
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.312"
         tools:text="Published: 01/11/01                                              Harvard Business Review Press" />
+
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_width="126dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/mybutton"
+        android:text="Check Out"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922" />
 
 </android.support.constraint.ConstraintLayout>

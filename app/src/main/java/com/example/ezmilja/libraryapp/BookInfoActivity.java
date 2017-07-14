@@ -1,9 +1,11 @@
 package com.example.ezmilja.libraryapp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 public class BookInfoActivity extends AppCompatActivity {
     private Button btn_back;
     private TextView textView;
+    private Button btn_check;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +49,28 @@ public class BookInfoActivity extends AppCompatActivity {
 
         TextView authorTxt = (TextView) findViewById(R.id.authorTxt);
         authorTxt.setText(book.getAuthor());
-    }
 
+        Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
+        btn_check = (Button) findViewById(R.id.btn_check);
+        btn_check.setTypeface(myTypeFace1);
+
+
+        btn_check = (Button) findViewById(R.id.btn_check);
+        btn_check.setTypeface(myTypeFace1);
+
+        btn_check = (Button) findViewById(R.id. btn_check);
+        btn_check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BookInfoActivity.this, CheckoutActivity.class);
+                intent.putExtra("isbn", book.getIsbn());
+                intent.putExtra("book" , book.getBookName() + " : " + book.getAuthor());
+                startActivity(intent);
+
+
+            }});
+
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
