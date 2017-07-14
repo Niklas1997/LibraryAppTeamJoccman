@@ -10,11 +10,10 @@
     android:orientation="vertical"
     tools:context="com.example.ezmilja.libraryapp.ListActivity">
 
-<EditText
-    android:id="@+id/editSearch"
-    android:hint="Search..."
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    <SearchView
+        android:id="@+id/editSearch"
+        android:layout_width="433dp"
+        android:layout_height="50dp" />
 
     <ListView
         android:id="@+id/listView"

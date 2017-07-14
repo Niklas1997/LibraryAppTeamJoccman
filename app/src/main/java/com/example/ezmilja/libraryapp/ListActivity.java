@@ -55,11 +55,6 @@ public class ListActivity extends AppCompatActivity {
         books.add(new Book("Bounce", R.drawable.bounce, "Matthew Syed"));
         books.add(new Book("Business Process Management is a Team sport", R.drawable.businessprocess,"Andrew Spanyi"));
 
-
-
-
-
-
     }
 
 
