@@ -1,10 +1,11 @@
 package com.example.ezmilja.libraryapp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,11 +15,12 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static android.R.attr.button;
-
 public class RequestActivity extends AppCompatActivity {
 
     private Button button;
+    private TextView name;
+    private TextView reason;
+    private TextView email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,21 +30,25 @@ public class RequestActivity extends AppCompatActivity {
         createButton();
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
-        TextView editText = (TextView) findViewById(R.id.editText);
-        editText.setTypeface(myTypeFace1);
 
 
-        TextView editText2 = (TextView) findViewById(R.id.editText2);
-        editText2.setTypeface(myTypeFace1);
+
+        name = (TextView) findViewById(R.id.name);
+        name.setTypeface(myTypeFace1);
 
 
-        TextView editText3 = (TextView) findViewById(R.id.editText3);
-        editText3.setTypeface(myTypeFace1);
+        reason = (TextView) findViewById(R.id.reason);
+        reason.setTypeface(myTypeFace1);
+
+        email = (TextView) findViewById(R.id.email);
+        email.setTypeface(myTypeFace1);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 button.setEnabled(false);
+
+                sendEmail();
 
                 Toast.makeText(RequestActivity.this, "Book requested!",
                         Toast.LENGTH_LONG).show();
@@ -93,7 +99,28 @@ public class RequestActivity extends AppCompatActivity {
         button.setTypeface(myTypeFace1);}
 
 
+    protected void sendEmail() {
+        Log.i("Send email", "");
+        String[] TO = {"aoife.broderick@ericsson.com"};
+        String[] CC = {""};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
+        String message = email.getText().toString() + '\n' + name.getText().toString() + '\n' + reason.getText().toString();
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Book Request");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, message);
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Sending mail"));
+            finish();
+            Log.i("Email sent", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(RequestActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 
 
