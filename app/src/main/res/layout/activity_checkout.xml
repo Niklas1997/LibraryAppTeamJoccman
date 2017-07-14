@@ -26,13 +26,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.857" />
+        app:layout_constraintVertical_bias="0.392" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="175dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="87dp"
+        android:layout_marginBottom="100dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/mybutton"
@@ -72,40 +72,11 @@
         android:hint="Book Name, Author"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="169dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.601"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Check IN"
-            android:textColor="@color/colorPrimaryDark" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Check OUT"
-            android:textColor="@color/colorPrimaryDark" />
-    </RadioGroup>
+        app:layout_constraintVertical_bias="0.092" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -121,7 +92,35 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/info" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="181dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check IN"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Check OUT"
+            android:textColor="@color/colorPrimaryDark" />
+    </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>
