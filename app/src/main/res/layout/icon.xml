@@ -6,7 +6,7 @@
     android:weightSum="1">
 
     <TextView
-        android:id="@+id/Title"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Please use ISBN-13 on the back of your book"
@@ -17,10 +17,10 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="357dp"
-        app:srcCompat="@drawable/picatyre"
-        android:layout_weight="0.78" />
+        android:layout_weight="0.78"
+        app:srcCompat="@drawable/picatyre" />
 
     <Button
         android:id="@+id/close"
