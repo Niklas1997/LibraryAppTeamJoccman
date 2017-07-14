@@ -18,9 +18,13 @@
         </activity>
         <activity android:name=".ListActivity" />
         <activity android:name=".ContentsActivity" />
-        <activity android:name=".BookInfoActivity" />
+        <activity android:name=".BookInfoActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".BookInfoActivity" />
+        </activity>
         <activity android:name=".RequestActivity" />
-        <activity android:name=".CheckoutActivity"></activity>
+        <activity android:name=".CheckoutActivity"/>
     </application>
 
 </manifest>

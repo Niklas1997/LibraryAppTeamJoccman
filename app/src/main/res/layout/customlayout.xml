@@ -30,14 +30,14 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:textSize="20sp"
-        android:id="@+id/textView_description"
+        android:id="@+id/textView_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_alignBottom="@+id/imageView2"
         android:layout_alignLeft="@+id/textView_name"
-        android:layout_alignStart="@+id/textView_name"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignStart="@+id/textView_name"
+        android:text="TextView"
+        android:textSize="20sp" />
 </RelativeLayout>
