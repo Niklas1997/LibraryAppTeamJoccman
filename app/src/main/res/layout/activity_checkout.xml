@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     tools:context="com.example.ezmilja.libraryapp.CheckoutActivity"
+    android:screenOrientation="portrait"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
 

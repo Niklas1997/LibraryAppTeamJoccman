@@ -21,19 +21,22 @@ public class PopUpBookInfo {
 
     public void createPopUp(final Context context, final Class nextActivity , final String message){
         System.out.println(book);
-        final AlertDialog alertDialog = new AlertDialog.Builder(context).setTitle(book.getBookName() + '\n' + book.getAuthor())
-                .setMessage(message).setIcon(book.getImageId()).setNeutralButton("Close", null)
-                .setPositiveButton("More", new DialogInterface.OnClickListener() {
+        final AlertDialog alertDialog = new AlertDialog.Builder(context).setTitle(book.getBookName())
+                .setMessage(book.getAuthor()).setIcon(book.getImageId()).setNeutralButton("Close", null)
+                .setPositiveButton("Read More", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(context, nextActivity);
                         intent.putExtra("id", id+"");
                         context.startActivity(intent);
                     }
-                }).setNegativeButton("Book", new DialogInterface.OnClickListener() {
+                }).setNegativeButton("Check OUT", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(context, book.getBookName() + '\n' + "By " + book.getAuthor() + " is now booked", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(context, CheckoutActivity.class);
+                        intent.putExtra("isbn", book.getIsbn());
+                        intent.putExtra("book" , book.getBookName() + " : " + book.getAuthor());
+                        context.startActivity(intent);
                     }
                 }).show();
     }
