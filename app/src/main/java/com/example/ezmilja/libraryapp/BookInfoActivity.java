@@ -37,11 +37,10 @@ public class BookInfoActivity extends AppCompatActivity {
 
         TextView pageTxt = (TextView) findViewById(R.id.pageTxt);
         pageTxt.setText(book.getPage());
-//
-//
+
         TextView textView = (TextView) findViewById(R.id.bookname);
         textView.setText(book.getBookName());
-//
+
         ImageView imageView = (ImageView) findViewById(R.id.imageView10);
         imageView.setImageResource(book.getImageId());
 

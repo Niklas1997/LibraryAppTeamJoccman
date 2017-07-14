@@ -60,11 +60,11 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.982"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintVertical_bias="0.16"
         tools:text="Author: Gary Gruver, Mike Young and Pat Fulgham" />
 
     <TextView
@@ -79,11 +79,11 @@
         android:textColor="@android:color/holo_blue_dark"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.983"
+        app:layout_constraintVertical_bias="0.997"
         tools:text="Page Count: 224" />
 
     <TextView
@@ -98,11 +98,11 @@
         android:textColor="@android:color/holo_blue_dark"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintHorizontal_bias="0.967"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.983"
+        app:layout_constraintVertical_bias="1.0"
         tools:text=" ISBN: 978-1578512669" />
 
     <TextView
@@ -148,11 +148,11 @@ to the level of uncertainty faced."
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.318"
+        app:layout_constraintVertical_bias="0.312"
         tools:text="Published: 01/11/01                                              Harvard Business Review Press" />
 
 </android.support.constraint.ConstraintLayout>
