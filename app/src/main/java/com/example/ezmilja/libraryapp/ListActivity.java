@@ -44,12 +44,12 @@ public class ListActivity extends AppCompatActivity {
             }
         });
 
-        books.add(new Book("2020 ForeSight", R.drawable.foresight, "Gary Gruver, Mike Young, Pat Fulgham"));
-        books.add(new Book("A Practical Approach", R.drawable.apracticalapproach, "Hugh Courtney"));
+        books.add(new Book("2020 ForeSight", R.drawable.foresight, "Hugh Courtney"));
+        books.add(new Book("A Practical Approach", R.drawable.apracticalapproach, "Gary Gruver; Mike Young; Pat Fulgham"));
         books.add(new Book("ADO.NET", R.drawable.ado, "Bill Hamilton"));
         books.add(new Book("Advanced COBRA programming with C++ ", R.drawable.advancecobra, "Michi Henning and Steve Vinoski"));
-        books.add(new Book("Agile Retrospectives", R.drawable.agileretrospectives,"Esther Derby, Diana Larsen"));
-        books.add(new Book("Agile Testing",R.drawable.agiletesting, "Lisa Crispin"));
+        books.add(new Book("Agile Retrospectives", R.drawable.agileretrospectives,"Esther Derby, Diana Larson and Ken Schwaber"));
+        books.add(new Book("Agile Testing",R.drawable.agiletesting, "Lisa Crispin and Janet Gregory"));
         books.add(new Book("Ant In Action",R.drawable.antinaction, "Erik Hatcher, Steve Loughran"));
         books.add(new Book("The Art of Readable Code", R.drawable.artofreadablecode, "Dustin Boswell, Trevor Foucher"));
         books.add(new Book("Bounce", R.drawable.bounce, "Matthew Syed"));

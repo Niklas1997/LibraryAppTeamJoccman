@@ -1,6 +1,7 @@
 package com.example.ezmilja.libraryapp;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.graphics.Typeface;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
@@ -13,9 +14,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+
+import static com.example.ezmilja.libraryapp.R.id.btn31list;
+import static com.example.ezmilja.libraryapp.R.id.close;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -50,8 +55,35 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                AlertDialog alertDialog = new AlertDialog.Builder(CheckoutActivity.this).setTitle("Please use the ISBN-13 on back of Book").setIcon(R.drawable.picatyre).setNeutralButton("Close", null).show();
-                button.setTextSize(20);
+
+
+
+
+                final Dialog dialog = new Dialog(CheckoutActivity.this);
+                dialog.setContentView(R.layout.icon);
+                dialog.setTitle("Please use the ISBN-13 on back of Book");
+                dialog.show();
+
+
+
+                Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
+
+                TextView textView = (TextView) dialog.findViewById(R.id.title);
+                textView.setTypeface(myTypeFace1);
+
+
+                Button close = (Button) dialog.findViewById(R.id.close);
+
+                close.setTypeface(myTypeFace1);
+
+
+                close.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
             }
         });
         button.setOnClickListener(
