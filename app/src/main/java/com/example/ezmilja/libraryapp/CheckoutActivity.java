@@ -1,6 +1,7 @@
 package com.example.ezmilja.libraryapp;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.graphics.Typeface;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
@@ -50,8 +51,18 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                AlertDialog alertDialog = new AlertDialog.Builder(CheckoutActivity.this).setTitle("Please use the ISBN-13 on back of Book").setIcon(R.drawable.picatyre).setNeutralButton("Close", null).show();
-                button.setTextSize(20);
+                final Dialog dialog = new Dialog(CheckoutActivity.this);
+                dialog.setContentView(R.layout.icon);
+                dialog.setTitle("Please use the ISBN-13 on back of Book");
+                dialog.show();
+
+                Button close = dialog.findViewById(R.id.close);
+                close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
             }
         });
         button.setOnClickListener(
