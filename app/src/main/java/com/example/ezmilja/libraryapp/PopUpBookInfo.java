@@ -35,6 +35,7 @@ public class PopUpBookInfo {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(context, CheckoutActivity.class);
                         intent.putExtra("isbn", book.getIsbn());
+                        intent.putExtra("book" , book.getBookName() + " : " + book.getAuthor());
                         context.startActivity(intent);
                     }
                 }).show();

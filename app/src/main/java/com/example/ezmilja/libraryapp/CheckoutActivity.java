@@ -21,6 +21,7 @@ import java.io.IOException;
 
 import static com.example.ezmilja.libraryapp.R.id.btn31list;
 import static com.example.ezmilja.libraryapp.R.id.close;
+import static com.example.ezmilja.libraryapp.R.id.name;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -106,6 +107,17 @@ public class CheckoutActivity extends AppCompatActivity {
             }
         });
 
+
+        try{
+            TextView textView = (TextView)findViewById(R.id.editText);
+            TextView textView1 = (TextView)findViewById(R.id.name);
+            Bundle bundle = getIntent().getExtras();
+            String message = bundle.getString("isbn");
+            String message1 = bundle.getString("book");
+            textView.setText(message);
+            textView1.setText(message1);
+        }
+        catch (Exception e){}
     }
 
 
