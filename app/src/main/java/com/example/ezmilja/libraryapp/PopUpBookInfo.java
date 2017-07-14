@@ -33,7 +33,9 @@ public class PopUpBookInfo {
                 }).setNegativeButton("Check OUT", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(context, book.getBookName() + '\n' + "By " + book.getAuthor() + " is now booked", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(context, CheckoutActivity.class);
+                        intent.putExtra("isbn", book.getIsbn());
+                        context.startActivity(intent);
                     }
                 }).show();
     }
