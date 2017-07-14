@@ -114,6 +114,13 @@ public class CheckoutActivity extends AppCompatActivity {
             Bundle bundle = getIntent().getExtras();
             String message = bundle.getString("isbn");
             String message1 = bundle.getString("book");
+            textView.setFocusable(false);
+            textView1.setFocusable(false);
+
+            if (message.contains("ISBN:")) {
+                message = message.substring(5);
+            }
+
             textView.setText(message);
             textView1.setText(message1);
         }
