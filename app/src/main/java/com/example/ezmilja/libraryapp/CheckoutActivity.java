@@ -141,7 +141,7 @@ public class CheckoutActivity extends AppCompatActivity {
                 message = message.substring(5);
             }
             Book temp = getBookFromISBN(message);
-            String message1 = bundle.getString("book");
+            String message1 = temp.getBookName() + "\n" + temp.getAuthor();
             acTextView.setFocusable(false);
             acTextView.setOnClickListener(null);
 
