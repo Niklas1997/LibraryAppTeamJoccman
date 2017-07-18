@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -29,6 +30,7 @@ import static com.example.ezmilja.libraryapp.R.id.name;
 
 public class CheckoutActivity extends AppCompatActivity {
 
+    private final BookCache books = BookCache.CACHE;
     private ImageButton btn_info;
     private static RadioButton radioButton;
     private static Button button;
@@ -54,15 +56,31 @@ public class CheckoutActivity extends AppCompatActivity {
     }
 
     private void dropDownList(){
-        String[] temp = getResources().getStringArray(R.array.ISBN);
+        String[] temp = readISBNNum();
         //Create Array Adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, temp);
         //Set the number of characters the user must type before the drop down list is shown
         acTextView.setThreshold(3);
         //Set the adapter
         acTextView.setAdapter(adapter);
+        acTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Book book = books.getBook(i);
+
+                textView1.setText(book.getBookName() + "\n" + book.getAuthor());
+            }
+        });
     }
 
+    private String[] readISBNNum(){
+        int numBooks = books.getNumberOfBooks();
+        String[] temp = new String[numBooks];
+        for (int i = 0; i < numBooks; i++){
+            temp[i] = books.getBook(i).getIsbn().substring(5);
+        }
+        return temp;
+    }
 
     private void createButton() {
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(), "yourfont.ttf");
