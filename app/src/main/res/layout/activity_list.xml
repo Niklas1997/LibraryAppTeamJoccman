@@ -11,6 +11,7 @@
     tools:context="com.example.ezmilja.libraryapp.ListActivity">
 
     <SearchView
+        android:id="@+id/searchbar"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 

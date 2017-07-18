@@ -7,12 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
+
     private final BookCache books = BookCache.CACHE;
+    private List<Book> originalList;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +33,15 @@ public class ListActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+        originalList = new ArrayList<Book>();
+        for (int i = 0; i < books.getNumberOfBooks(); i++){
+            originalList.add(books.getBook(i));
+        }
 
+        searchView = (SearchView) findViewById(R.id.searchbar);
         ListView listView = (ListView)findViewById(R.id.listView);
 
-        CustomAdapter customAdapter = new CustomAdapter();
+        final CustomAdapter customAdapter = new CustomAdapter(originalList);
         listView.setAdapter(customAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -37,18 +52,38 @@ public class ListActivity extends AppCompatActivity {
             }
         });
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                customAdapter.getFilter().filter(s);
+                return false;
+            }
+        });
+
     }
 
-    class CustomAdapter extends BaseAdapter{
+    class CustomAdapter extends BaseAdapter implements Filterable{
+
+        List<Book> shownList;
+        BookFilter bookFilter;
+
+        public CustomAdapter(List<Book> listOfBooks){
+            shownList = listOfBooks;
+        }
 
         @Override
         public int getCount() {
-            return books.getNumberOfBooks();
+            return shownList.size();
         }
 
         @Override
         public Object getItem(int i) {
-            return books.getBook(i);
+            return shownList.get(i);
         }
 
         @Override
@@ -64,7 +99,7 @@ public class ListActivity extends AppCompatActivity {
             TextView textView_bookName = view.findViewById(R.id.tbx_bookName);
             TextView textView_author = view.findViewById(R.id.textView_author);
 
-            final Book book = books.getBook(i);
+            final Book book = shownList.get(i);
             imageView.setImageResource(book.getImageId());
             textView_bookName.setText(book.getBookName());
             textView_author.setText(book.getAuthor());
@@ -72,7 +107,78 @@ public class ListActivity extends AppCompatActivity {
             return view;
         }
 
+        public void filterList(String filterWord){
+            if (filterWord.equals("")){
+                shownList = originalList;
+                return;
+            }
+            shownList = new ArrayList<Book>();
+            for (Book b: originalList){
+                if (b.getBookName().toLowerCase().contains(filterWord.toLowerCase())) {
+                    shownList.add(b);
+                }
+                else if (b.getAuthor().toLowerCase().contains(filterWord.toLowerCase())){
+                    shownList.add(b);
+                }
+            }
         }
+
+        @Override
+        public Filter getFilter() {
+            if (bookFilter == null)
+                bookFilter = new BookFilter();
+            return bookFilter;
+        }
+
+        class BookFilter extends Filter{
+
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults results = new FilterResults();
+                // We implement here the filter logic
+                if (constraint == null || constraint.length() < 1) {
+                    // No filter implemented we return all the list
+                    shownList = originalList;
+                    results.values = shownList;
+                    results.count = shownList.size();
+                }
+                else {
+                    // We perform filtering operation
+                    List<Book> nBookList = new ArrayList<Book>();
+
+                    for (Book b : originalList) {
+                        if (b.getBookName().toUpperCase()
+                                .startsWith(constraint.toString().toUpperCase())) {
+                            nBookList.add(b);
+                        }
+                        else if (b.getAuthor().toUpperCase()
+                                .startsWith(constraint.toString().toUpperCase())) {
+                            nBookList.add(b);
+                        }
+                    }
+
+                    results.values = nBookList;
+                    results.count = nBookList.size();
+                }
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults results) {
+                // Now we have to inform the adapter about the new list filtered
+                if(results.count ==0) {
+                    notifyDataSetInvalidated();
+                }
+                else
+                {
+                    shownList = (List<Book>) results.values;
+                    notifyDataSetChanged();
+                }
+
+            }
+        }
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
