@@ -61,7 +61,6 @@ public class CheckoutActivity extends AppCompatActivity {
         acTextView.setThreshold(3);
         //Set the adapter
         acTextView.setAdapter(adapter);
-
     }
 
 
