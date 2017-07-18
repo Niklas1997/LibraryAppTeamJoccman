@@ -18,14 +18,8 @@
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/btn_rqst"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="21dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.497" />
+        tools:layout_editor_absoluteY="133dp"
+        tools:layout_editor_absoluteX="90dp" />
 
     <Button
         android:id="@+id/btn_check"
@@ -37,14 +31,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         tools:text="Check in / out book"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintRight_toRightOf="@+id/btn_rqst"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="119dp"
-        app:layout_constraintLeft_toLeftOf="@+id/btn_rqst"
-        app:layout_constraintHorizontal_bias="1.0" />
+        tools:layout_editor_absoluteY="337dp"
+        tools:layout_editor_absoluteX="90dp" />
 
     <Button
         android:id="@+id/btn_rqst"
@@ -56,13 +44,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         tools:text="Request Book"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/btn_check"
-        app:layout_constraintRight_toRightOf="@+id/btn31list"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="22dp"
-        app:layout_constraintLeft_toLeftOf="@+id/btn31list" />
+        tools:layout_editor_absoluteY="234dp"
+        tools:layout_editor_absoluteX="90dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -74,29 +57,17 @@
         android:textSize="40sp"
         android:textStyle="bold"
         tools:text="Contents"
-        tools:layout_constraintRight_creator="1"
         android:layout_marginStart="35dp"
         android:layout_marginEnd="35dp"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="35dp"
-        app:layout_constraintHorizontal_bias="0.0" />
+        tools:layout_editor_absoluteY="35dp"
+        tools:layout_editor_absoluteX="35dp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="51dp"
         android:layout_height="51dp"
         app:srcCompat="@drawable/titlesausages"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        tools:layout_editor_absoluteY="535dp"
+        tools:layout_editor_absoluteX="180dp" />
 
 </android.support.constraint.ConstraintLayout>
