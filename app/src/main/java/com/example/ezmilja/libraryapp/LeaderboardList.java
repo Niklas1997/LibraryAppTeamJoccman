@@ -60,6 +60,7 @@ public class LeaderboardList extends AppCompatActivity {
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 makeRequestDialog();
             }
         });
@@ -109,7 +110,7 @@ public class LeaderboardList extends AppCompatActivity {
 
             TextView textView_bookName = view.findViewById(R.id.tbx_bookName);
             TextView textView_vote = view.findViewById(R.id.tbx_voteCount);
-            ImageButton btn_vote = view.findViewById(R.id.ibnt_vote);
+            final ImageButton btn_vote = view.findViewById(R.id.ibnt_vote);
 
             final BookRequest book = books.getBookRequest(i);
             textView_bookName.setText(book.getBookName());
@@ -119,6 +120,9 @@ public class LeaderboardList extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(LeaderboardList.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+
+                        btn_vote.setImageResource(R.drawable.steve);
+
                 }
             });
 
