@@ -43,7 +43,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.017"
-        app:srcCompat="@drawable/info" />
+        app:srcCompat="@drawable/dave" />
 
     <TextView
         android:id="@+id/tbx_voteCount"
