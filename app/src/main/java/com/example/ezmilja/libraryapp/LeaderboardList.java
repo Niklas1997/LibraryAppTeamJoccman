@@ -41,16 +41,10 @@ public class LeaderboardList extends AppCompatActivity {
         LeaderboardList.CustomAdapter customAdapter = new LeaderboardList.CustomAdapter();
         listView.setAdapter(customAdapter);
 
-
-
-
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
                 makeRequestDialog();
-
             }
         });
 
@@ -112,13 +106,20 @@ public class LeaderboardList extends AppCompatActivity {
         public View getView(int i, View view, ViewGroup viewGroup) {
             view = getLayoutInflater().inflate(R.layout.leaderboard_layout, null);
 
-
             TextView textView_bookName = view.findViewById(R.id.tbx_bookName);
             TextView textView_vote = view.findViewById(R.id.tbx_voteCount);
+            ImageButton btn_vote = view.findViewById(R.id.ibnt_vote);
 
             final BookRequest book = books.getBookRequest(i);
             textView_bookName.setText(book.getBookName());
             textView_vote.setText(book.getVote());
+
+            btn_vote.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(LeaderboardList.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+                }
+            });
 
             return view;
         }
