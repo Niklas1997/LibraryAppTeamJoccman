@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,8 +47,10 @@ public class CheckoutActivity extends AppCompatActivity {
 
         image_book = (ImageView) findViewById(R.id.imgv_bookimg);
 
+
         createButton();
         dropDownList();
+        autoFill();
     }
 
     private void dropDownList(){
@@ -62,6 +65,7 @@ public class CheckoutActivity extends AppCompatActivity {
         acTextView.setThreshold(1);
         //Set the adapter
         acTextView.setAdapter(adapter);
+
         acTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -126,7 +130,6 @@ public class CheckoutActivity extends AppCompatActivity {
             }
         });
 
-        autoFill();
     }
 
     private void autoFill(){
@@ -134,24 +137,25 @@ public class CheckoutActivity extends AppCompatActivity {
             textView1 = (TextView)findViewById(R.id.name);
             Bundle bundle = getIntent().getExtras();
             String message = bundle.getString("isbn");
-            String message1 = bundle.getString("book");
-            acTextView.setFocusable(false);
-            textView1.setFocusable(false);
-            acTextView.setOnClickListener(null);
-            textView1.setOnClickListener(null);
-
             if (message.contains("ISBN:")) {
                 message = message.substring(5);
             }
+            Book temp = getBookFromISBN(message);
+            String message1 = bundle.getString("book");
+            acTextView.setFocusable(false);
+            acTextView.setOnClickListener(null);
 
             acTextView.setBackgroundColor(Color.rgb(214,216,216));
-            textView1.setBackgroundColor(Color.rgb(214,216,216));
 
             radioButton = (RadioButton) findViewById(R.id.rbtn_out);
             radioButton.setChecked(true);
 
             acTextView.setText(message);
             textView1.setText(message1);
+            image_book.setImageResource(temp.getImageId());
+
+            image_book.setVisibility(View.VISIBLE);
+            textView1.setVisibility(View.VISIBLE);
         }
         catch (Exception e){}
     }
