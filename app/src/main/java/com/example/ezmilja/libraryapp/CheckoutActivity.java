@@ -56,7 +56,7 @@ public class CheckoutActivity extends AppCompatActivity {
     private void dropDownList(){
         String[] temp = getResources().getStringArray(R.array.ISBN);
         //Create Array Adapter
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, temp);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_selectable_list_item, temp);
         //Set the number of characters the user must type before the drop down list is shown
         acTextView.setThreshold(3);
         //Set the adapter
