@@ -18,8 +18,12 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+
+
         ListView listView = (ListView)findViewById(R.id.listView);
 
         CustomAdapter customAdapter = new CustomAdapter();
@@ -57,7 +61,7 @@ public class ListActivity extends AppCompatActivity {
             view = getLayoutInflater().inflate(R.layout.customlayout, null);
 
             ImageView imageView = view.findViewById(R.id.imageView2);
-            TextView textView_bookName = view.findViewById(R.id.textView_name);
+            TextView textView_bookName = view.findViewById(R.id.tbx_bookName);
             TextView textView_author = view.findViewById(R.id.textView_author);
 
             final Book book = books.getBook(i);

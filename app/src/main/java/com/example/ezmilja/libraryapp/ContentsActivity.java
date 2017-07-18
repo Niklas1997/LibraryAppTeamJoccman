@@ -56,7 +56,7 @@ public class ContentsActivity extends AppCompatActivity {
         btn_rqst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ContentsActivity.this, RequestActivity.class);
+                Intent intent = new Intent(ContentsActivity.this, LeaderboardList.class);
                 startActivity(intent);
             }
 
