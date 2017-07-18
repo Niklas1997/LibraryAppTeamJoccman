@@ -140,4 +140,21 @@
         <item>Geoffrey A.Moore</item>
     </string-array>
 
+    <string-array name="ISBN">
+        <item>1233123</item>
+        <item>123564763</item>
+        <item>568657865</item>
+        <item>12389983453123</item>
+        <item>12331345689723</item>
+        <item>12335345676123</item>
+        <item>123312121123</item>
+        <item>999957865</item>
+        <item>10980989983453123</item>
+        <item>985689723</item>
+        <item>1897897335345676123</item>
+        <item>1233128978921123</item>
+
+
+    </string-array>
+
 </resources>
