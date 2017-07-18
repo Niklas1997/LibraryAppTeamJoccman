@@ -17,9 +17,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LeaderboardList extends AppCompatActivity {
+
     private final RequestCache books = RequestCache.CACHE;
     private Button buttonRequest;
-
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class LeaderboardList extends AppCompatActivity {
 
     private void makeListView(){
 
-        ListView listView = (ListView)findViewById(R.id.leaderbd_list);
+        listView = (ListView) findViewById(R.id.leaderbd_list);
 
         LeaderboardList.CustomAdapter customAdapter = new LeaderboardList.CustomAdapter();
         listView.setAdapter(customAdapter);
@@ -44,7 +45,7 @@ public class LeaderboardList extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                makeRequestDialog();
+                Toast.makeText(LeaderboardList.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -121,11 +122,12 @@ public class LeaderboardList extends AppCompatActivity {
                 }
             });
 
+
+
             return view;
         }
 
     }
-
 
 
     @Override
