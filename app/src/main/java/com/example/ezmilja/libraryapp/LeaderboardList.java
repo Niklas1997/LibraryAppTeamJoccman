@@ -38,7 +38,7 @@ public class LeaderboardList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_leaderboard_list);
+        setContentView(R.layout.large_activity_leaderboard_list);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -88,7 +88,7 @@ public class LeaderboardList extends AppCompatActivity {
 
     private void makeRequestDialog(){
         final Dialog dialog = new Dialog(LeaderboardList.this);
-        dialog.setContentView(R.layout.activity_request);
+        dialog.setContentView(R.layout.large_activity_request);
         dialog.show();
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
@@ -159,7 +159,7 @@ public class LeaderboardList extends AppCompatActivity {
 
             if(view==null){
 
-                vi = inflater.inflate(R.layout.leaderboard_layout,null);
+                vi = inflater.inflate(R.layout.large_leaderboard_layout,null);
                 holder = new ViewHolder();
                 holder.bookName= (TextView) vi.findViewById(R.id.tbx_bookName);
                 holder.bookVote = (TextView) vi.findViewById(R.id.tbx_voteCount);

@@ -36,7 +36,7 @@ public class CheckoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout);
+        setContentView(R.layout.large_activity_book_info);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -181,7 +181,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
     private void makeInfoDialog(){
         final Dialog dialog = new Dialog(CheckoutActivity.this);
-        dialog.setContentView(R.layout.icon);
+        dialog.setContentView(R.layout.large_icon);
         dialog.setTitle("Please use the ISBN-13 on back of Book");
         dialog.show();
 
@@ -213,7 +213,7 @@ public class CheckoutActivity extends AppCompatActivity {
         }
 
         final Dialog dialog = new Dialog(CheckoutActivity.this);
-        dialog.setContentView(R.layout.rating_dialog);
+        dialog.setContentView(R.layout.large_rating_dialog);
         dialog.show();
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");

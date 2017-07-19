@@ -22,7 +22,7 @@ public class ContentsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contents);
+        setContentView(R.layout.large_activity_contents);
 
         createButton();
     }

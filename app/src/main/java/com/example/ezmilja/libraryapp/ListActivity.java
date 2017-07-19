@@ -27,7 +27,7 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.large_activity_list);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -100,7 +100,7 @@ public class ListActivity extends AppCompatActivity {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            view = getLayoutInflater().inflate(R.layout.customlayout, null);
+            view = getLayoutInflater().inflate(R.layout.large_customlayout, null);
 
             ImageView imageView = view.findViewById(R.id.imageView2);
             TextView textView_bookName = view.findViewById(R.id.tbx_bookName);
