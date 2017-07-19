@@ -1,0 +1,92 @@
+ [
+    {
+      "bookName": "2020 ForeSight",
+      "isbn": "978-1578512669",
+      "imageId": "R.drawable.foresight",
+      "author": "Hugh Courtney",
+      "description": "Reveals how executives can develop 20/20 foresight - a view of the future that separates what can be known from what can't. This book shows strategists how to tailor various aspects of the decision-making process - from formulation to implementation - to the level of uncertainty faced.",
+      "page": "224",
+      "publisher": "01/11/01  Harvard Business Review Press"
+    },
+    {
+      "bookName": "A Practical Approach",
+      "isbn": "978-0321821720",
+      "imageId": "R.drawable.apracticalapproach",
+      "author": "Gary Gruver, Mike Young, Pat Fulgham",
+      "description": "Today, even the largest development organizations are turning to agile methodologies, seeking major productivity and quality improvements. However, large-scale agile development is difficult, and publicly available case studies have been scarce. Now, three agile pioneers at Hewlett-Packard present a candid, start-to-finish insider's look at how they've succeeded with agile in one of the company's most mission-critical software environments: firmware for HP LaserJet printers.",
+      "page": "183",
+      "publisher": "25/11/12  Addison-Wesley Professional"
+    },    
+    {
+      "bookName": "ADO.NET",
+      "isbn": "978-0596004392",
+      "imageId": "R.drawable.ado",
+      "author": "Bill Hamilton",
+      "description": "The ADO.NET Cookbook focuses exclusively on providing developers with easy-to-find coding solutions to real problems.ADO.NET Cookbook is a comprehensive collection of over 150 solutions and best practices for everyday dilemmas. For each problem addressed in the book, there's a solution--a short, focused piece of code that programmers can insert directly into their applications.",
+      "page": "624",
+      "publisher": "September 2003 O’Reilly Media"
+    },    
+    {
+      "bookName": "Advanced COBRA programming with C++ ",
+      "isbn": "978-0201379273",
+      "imageId": "R.drawable.advancecobra",
+      "author": "Michi Henning and Steve Vinoski",
+      "description": "Written for C++ practitioners, this book is the first to explore advanced Common Object Request Broker Architecture (CORBA) topics and techniques. Michi Henning and Steve Vinoski share the benefits of their extensive experience with CORBA programming, and arm the programmer with the skills necessary to overcome the intricate programming issues that arise in a real-world environment. By learning proven, hands-on explanations for building CORBA applications, the reader will be well on the way to building more successful distributed objects for industrial-strength development projects.",
+      "page": "1120",
+      "publisher": "12/02/99 Addison-Wesley"
+    },
+    {
+      "bookName": "Agile Retrospectives",
+      "isbn": "978-0977616640",
+      "imageId": "R.drawable.agileretrospectives",
+      "author": "Esther Derby, Diana Larsen",
+      "description": "See how to mine the experience of your software development team continually throughout the life of the project. The tools and recipes in this book will help you uncover and solve hidden (and not-so-hidden) problems with your technology, your methodology, and those difficult “people issues” on your team.",
+      "page": "176",
+      "publisher": "01/07/06  Pragmatic bookshelf"
+    },
+    {
+      "bookName": "Agile Testing",
+      "isbn": "978-0321534460",
+      "imageId": "R.drawable.agiletesting",
+      "author": "Lisa Crispin",
+      "description": "In Agile Testing, Crispin and Gregory define agile testing and illustrate the tester’s role with examples from real agile teams. They teach you how to use the agile testing quadrants to identify what testing is needed, who should do it, and what tools might help. The book chronicles an agile software development iteration from the viewpoint of a tester and explains the seven key success factors of agile testing.",
+      "page": "533",
+      "publisher": "December 2008 Addison-Wesley"
+    },
+    {
+      "bookName": "Ant In Action",
+      "isbn": "978-1932394801",
+      "imageId": "R.drawable.antinaction",
+      "author": "Erik Hatcher, Steve Loughran",
+      "description": "Ant in Action introduces Ant and how to use it for test-driven Java application development. Ant itself is moving to v1.7, a major revision, at the end of 2006 so the timing for the book is right. A single application of increasing complexity, followed throughout the book, shows how an application evolves and how to handle the problems of building and testing. Reviewers have praised the book's coverage of large-projects, Ant's advanced features, and the details and depth of the discussion-all unavailable elsewhere.",
+      "page": "600",
+      "publisher": "June 2007 Manning Publications"
+    },
+    {
+      "bookName": "The Art of Readable Code",
+      "isbn": "978-0596802295",
+      "imageId": "R.drawable.artofreadablecode",
+      "author": "Dustin Boswell, Trevor Foucher",
+      "description": "This book focuses on basic principles and practical techniques you can apply every time you write code. Using easy-to-digest code examples from different languages, each chapter dives into a different aspect of coding, and demonstrates how you can make your code easy to understand.",
+      "page": "206",
+      "publisher": "23/11/11 O’Reilly Media"
+    },
+    {
+      "bookName": "Bounce",
+      "isbn": "978-0007350544",
+      "imageId": "R.drawable.bounce",
+      "author": "Erik Hatcher, Steve Loughran",
+      "description": "Matthew explains why some people thrive under pressure and others choke, He weighs the value of innate ability against that of practice, hard work and will. From sex to maths, from the motivation of children to the culture of big business, Bounce shows how competition provides a master key with which to unlock the mysteries of success. ",
+      "page": "272",
+      "publisher": "28/04/11 Fourth Estate"
+    },
+    {
+      "bookName": "Business Process Management is a Team sport",
+      "isbn": "978-0929652023",
+      "imageId": "R.drawable.businessprocess",
+      "author": "Andrew Spanyi",
+      "description": "This book is best suited to those business leaders who have a burning desire to win. It's a book with a compelling message about the resurgence of business process thinking for competitive advantage. In an easy-to-read format, the book outlines why and how thoughtful CEO’s and leadership teams can manage enterprise business processes as the means to transform their good companies into great ones.Spanyi's book is a must read for business leaders.",
+      "page": "176",
+      "publisher": "June 2003 Peachpit Press"
+    }
+  ]
