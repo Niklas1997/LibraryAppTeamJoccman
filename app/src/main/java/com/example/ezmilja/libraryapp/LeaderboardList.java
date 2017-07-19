@@ -89,9 +89,9 @@ public class LeaderboardList extends AppCompatActivity {
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
 
         Button btn_submitRequest = (Button) dialog.findViewById(R.id.btn_submitrequest);
-        Button btn_back = (Button)dialog.findViewById(R.id.btn_back);
+//        Button btn_back = (Button)dialog.findViewById(R.id.btn_back);
         btn_submitRequest.setTypeface(myTypeFace1);
-        btn_back.setTypeface(myTypeFace1);
+//        btn_back.setTypeface(myTypeFace1);
 
         btn_submitRequest.setOnClickListener(new View.OnClickListener() {
 
@@ -101,12 +101,12 @@ public class LeaderboardList extends AppCompatActivity {
             }
         });
 
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
+//        btn_back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                dialog.dismiss();
+//            }
+//        });
     }
 
     class CustomAdapter extends BaseAdapter {
