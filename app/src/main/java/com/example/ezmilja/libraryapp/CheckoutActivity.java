@@ -226,7 +226,7 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_LONG).show();
+                Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -236,7 +236,7 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                Toast.makeText(CheckoutActivity.this, "Submitted and Checked OUT", Toast.LENGTH_LONG).show();
+                Toast.makeText(CheckoutActivity.this, "Submitted and Checked IN", Toast.LENGTH_LONG).show();
             }
         });
     }
