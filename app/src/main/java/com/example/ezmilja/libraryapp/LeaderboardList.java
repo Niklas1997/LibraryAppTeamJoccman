@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.R.string.no;
+import static com.example.ezmilja.libraryapp.R.id.btn_back;
 import static com.example.ezmilja.libraryapp.R.id.image;
 
 public class LeaderboardList extends AppCompatActivity {
@@ -93,11 +94,19 @@ public class LeaderboardList extends AppCompatActivity {
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
 
         Button btn_submitRequest = (Button) dialog.findViewById(R.id.btn_submitrequest);
-
+        Button btn_back = (Button)dialog.findViewById(R.id.btn_back);
         btn_submitRequest.setTypeface(myTypeFace1);
+        btn_back.setTypeface(myTypeFace1);
 
         btn_submitRequest.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
