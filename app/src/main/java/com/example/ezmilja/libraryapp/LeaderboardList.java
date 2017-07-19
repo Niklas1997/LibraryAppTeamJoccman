@@ -90,7 +90,19 @@ public class LeaderboardList extends AppCompatActivity {
         dialog.setContentView(R.layout.activity_request);
         dialog.show();
 
+        Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
 
+        Button btn_submitRequest = (Button) dialog.findViewById(R.id.btn_submitrequest);
+
+        btn_submitRequest.setTypeface(myTypeFace1);
+
+        btn_submitRequest.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 
     class CustomAdapter extends BaseAdapter {
