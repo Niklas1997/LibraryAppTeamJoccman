@@ -199,7 +199,6 @@ public class CheckoutActivity extends AppCompatActivity {
 
         Book selectedBook = getBookFromISBN(acTextView.getText().toString());
 
-
         if (selectedBook == null){
             Toast.makeText(CheckoutActivity.this, "No book found", Toast.LENGTH_SHORT).show();
             return;
