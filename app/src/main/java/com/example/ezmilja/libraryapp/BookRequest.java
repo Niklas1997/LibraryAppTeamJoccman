@@ -13,6 +13,7 @@ public class BookRequest {
 
     private final String vote;
 
+    private boolean isUpVoted;
 
     public BookRequest( final String bookName, final String author,
                 final String vote){
@@ -20,6 +21,7 @@ public class BookRequest {
         this.bookName =bookName;
         this.author = author;
         this.vote = vote;
+        this.isUpVoted = false;
     }
 
 
@@ -29,6 +31,9 @@ public class BookRequest {
 
     public String getVote(){return  vote;}
 
+    public boolean getisUpVoted(){return isUpVoted;}
+
+    public void setisUpVoted(){isUpVoted = true;}
 
 }
 
