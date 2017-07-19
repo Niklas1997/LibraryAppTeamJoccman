@@ -1,9 +1,14 @@
 package com.example.ezmilja.libraryapp;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +21,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.R.string.no;
+import static com.example.ezmilja.libraryapp.R.id.image;
+
 public class LeaderboardList extends AppCompatActivity {
 
     private final RequestCache books = RequestCache.CACHE;
     private Button buttonRequest;
     private ListView listView;
+    private List<BookRequest> originalList ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +42,15 @@ public class LeaderboardList extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+        originalList = new ArrayList<BookRequest>();
+        for (int i = 0; i < books.getNumberOfBookRequests(); i++){
+            originalList.add(books.getBookRequest(i));
+        }
+
         createButton();
         makeListView();
+
+
 
     }
 
@@ -39,12 +58,12 @@ public class LeaderboardList extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.leaderbd_list);
 
-        LeaderboardList.CustomAdapter customAdapter = new LeaderboardList.CustomAdapter();
+        LeaderboardList.CustomAdapter customAdapter = new LeaderboardList.CustomAdapter(LeaderboardList.this, originalList);
         listView.setAdapter(customAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int postion, long l) {
                 Toast.makeText(LeaderboardList.this, "Goodbye Dave! Hello Steve!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -89,48 +108,85 @@ public class LeaderboardList extends AppCompatActivity {
 
     class CustomAdapter extends BaseAdapter {
 
+
+        Context context;
+        List <BookRequest> showList;
+
+        public CustomAdapter(Context context,List <BookRequest> items){
+            this.context = context;
+            this.showList = items;
+        }
+
+        private class ViewHolder{
+            TextView bookName;
+            TextView bookVote;
+            ImageView image;
+            boolean upVote;
+        }
         @Override
         public int getCount() {
             return books.getNumberOfBookRequests();
         }
 
         @Override
-        public Object getItem(int i) {
-            return books.getBookRequest(i);
+        public Object getItem(int position) {
+            return books.getBookRequest(position);
         }
 
         @Override
-        public long getItemId(int i) {
-            return i;
+        public long getItemId(int position) {
+            return showList.get(position).hashCode();
         }
 
         @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-            view = getLayoutInflater().inflate(R.layout.leaderboard_layout, null);
+        public View getView(final int position, View view, ViewGroup parent) {
 
-            TextView textView_bookName = view.findViewById(R.id.tbx_bookName);
-            TextView textView_vote = view.findViewById(R.id.tbx_voteCount);
-            final ImageButton btn_vote = view.findViewById(R.id.ibnt_vote);
+            View vi = view;
+            final ViewHolder holder ;
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            final BookRequest book = books.getBookRequest(i);
-            textView_bookName.setText(book.getBookName());
-            textView_vote.setText(book.getVote());
+            SharedPreferences sp  = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-            btn_vote.setOnClickListener(new View.OnClickListener() {
+            final BookRequest myBook = showList.get(position);
+
+            if(view==null){
+
+                vi = inflater.inflate(R.layout.leaderboard_layout,null);
+                holder = new ViewHolder();
+                holder.bookName= (TextView) vi.findViewById(R.id.tbx_bookName);
+                holder.bookVote = (TextView) vi.findViewById(R.id.tbx_voteCount);
+                holder.image = (ImageView) vi.findViewById(R.id.ibnt_vote);
+                holder.image.setTag(position);
+
+                vi.setTag(holder);
+            }
+            else{
+                holder = (ViewHolder) vi.getTag();
+            }
+
+
+            holder.bookName.setText(myBook.getBookName());
+
+            if(myBook.getisUpVoted()){
+
+                holder.image.setImageResource(R.drawable.steve);
+            }
+            else{
+                holder.image.setImageResource(R.drawable.dave);
+
+            }
+
+
+            holder.image.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    Toast.makeText(LeaderboardList.this, "Goodbye Dave! Hello Steve!", Toast.LENGTH_SHORT).show();
-
-                        btn_vote.setImageResource(R.drawable.steve);
-
+                public void onClick(View v) {
+                    myBook.setisUpVoted();
+                    holder.image.setImageResource(R.drawable.steve);
                 }
             });
 
-
-
-            return view;
+            return vi;
         }
-
     }
 
 
