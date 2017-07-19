@@ -43,23 +43,21 @@
         app:layout_constraintLeft_toRightOf="@+id/tbx_voteCount"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018"
+        app:layout_constraintVertical_bias="0.015"
         app:srcCompat="@drawable/dave"
-        tools:layout_editor_absoluteX="310dp"
-        app:layout_constraintHorizontal_bias="0.352" />
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <TextView
         android:id="@+id/tbx_voteCount"
         android:layout_width="72dp"
         android:layout_height="53dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="0dp"
+        android:layout_marginLeft="14dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/tbx_bookName"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.017"
-        tools:layout_editor_absoluteX="245dp" />
+        app:layout_constraintVertical_bias="0.014" />
 
 </android.support.constraint.ConstraintLayout>
