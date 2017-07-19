@@ -235,7 +235,6 @@ public class CheckoutActivity extends AppCompatActivity {
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.dismiss();
                 Toast.makeText(CheckoutActivity.this, "Submitted and Checked IN", Toast.LENGTH_LONG).show();
             }
         });
