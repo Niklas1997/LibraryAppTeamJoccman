@@ -220,14 +220,23 @@ public class CheckoutActivity extends AppCompatActivity {
         author.setText(selectedBook.getAuthor());
 
         Button close = (Button) dialog.findViewById(R.id.close);
-
         close.setTypeface(myTypeFace1);
-
         close.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Button submit_button = dialog.findViewById(R.id.submit_button);
+        submit_button.setTypeface(myTypeFace1);
+        submit_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Toast.makeText(CheckoutActivity.this, "Submitted and Checked OUT", Toast.LENGTH_LONG).show();
             }
         });
     }
