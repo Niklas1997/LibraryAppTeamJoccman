@@ -122,7 +122,7 @@
         android:id="@+id/submit_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="66dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:background="@color/colorPrimaryDark"
