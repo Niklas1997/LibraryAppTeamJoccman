@@ -85,7 +85,7 @@ public class CheckoutActivity extends AppCompatActivity {
                 return books.getBook(i);
             }
         }
-        return books.getBook(0);
+        return null;
     }
 
 
@@ -197,9 +197,10 @@ public class CheckoutActivity extends AppCompatActivity {
 
     private void makeRatingDialog(){
 
-        String[] book = textView1.getText().toString().split("\n");
+        Book selectedBook = getBookFromISBN(acTextView.getText().toString());
 
-        if (book.length < 2){
+
+        if (selectedBook == null){
             Toast.makeText(CheckoutActivity.this, "No book found", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -210,20 +211,18 @@ public class CheckoutActivity extends AppCompatActivity {
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
 
-
         TextView title = (TextView) dialog.findViewById(R.id.tbx_title);
         title.setTypeface(myTypeFace1);
 
         TextView bookName = (TextView) dialog.findViewById(R.id.tbx_bookname);
-        bookName.setText(book[0]);
+        bookName.setText(selectedBook.getBookName());
 
         TextView author = (TextView) dialog.findViewById(R.id.tbx_author);
-        author.setText(book[1]);
+        author.setText(selectedBook.getAuthor());
 
         Button close = (Button) dialog.findViewById(R.id.close);
 
         close.setTypeface(myTypeFace1);
-
 
         close.setOnClickListener(new View.OnClickListener() {
 
