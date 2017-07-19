@@ -117,7 +117,14 @@ public class CheckoutActivity extends AppCompatActivity {
                                 makeRatingDialog();
                             }
                             else {
-                                Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+                                Book tempBook = getBookFromISBN(acTextView.getText().toString());
+                                if (tempBook == null){
+                                    Toast.makeText(CheckoutActivity.this, "Book not found", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }
                             }
                         }
                     }
