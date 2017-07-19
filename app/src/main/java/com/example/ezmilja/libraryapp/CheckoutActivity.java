@@ -203,6 +203,7 @@ public class CheckoutActivity extends AppCompatActivity {
             Toast.makeText(CheckoutActivity.this, "No book found", Toast.LENGTH_SHORT).show();
             return;
         }
+
         final Dialog dialog = new Dialog(CheckoutActivity.this);
         dialog.setContentView(R.layout.rating_dialog);
         dialog.show();
