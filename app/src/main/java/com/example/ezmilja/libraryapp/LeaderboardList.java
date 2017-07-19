@@ -167,20 +167,25 @@ public class LeaderboardList extends AppCompatActivity {
             holder.bookName.setText(myBook.getBookName());
 
             if(myBook.getisUpVoted()){
-
                 holder.image.setImageResource(R.drawable.steve);
             }
             else{
                 holder.image.setImageResource(R.drawable.dave);
-
             }
 
 
             holder.image.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    myBook.setisUpVoted();
-                    holder.image.setImageResource(R.drawable.steve);
+                    if (myBook.getisUpVoted()) {
+                        myBook.setisUpVoted(false);
+                        holder.image.setImageResource(R.drawable.dave);
+                    }
+                    else {
+                        myBook.setisUpVoted(true);
+                        holder.image.setImageResource(R.drawable.steve);
+                    }
+
                 }
             });
 

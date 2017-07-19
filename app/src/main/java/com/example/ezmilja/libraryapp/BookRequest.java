@@ -33,7 +33,7 @@ public class BookRequest {
 
     public boolean getisUpVoted(){return isUpVoted;}
 
-    public void setisUpVoted(){isUpVoted = true;}
+    public void setisUpVoted(boolean isUpVoted){this.isUpVoted = isUpVoted;}
 
 }
 
