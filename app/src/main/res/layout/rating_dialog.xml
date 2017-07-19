@@ -118,7 +118,7 @@
         android:layout_marginEnd="8dp" />
 
     <Button
-        android:id="@+id/submit-button"
+        android:id="@+id/submit_button"
         android:layout_width="384dp"
         android:layout_height="53dp"
         android:layout_marginBottom="55dp"
