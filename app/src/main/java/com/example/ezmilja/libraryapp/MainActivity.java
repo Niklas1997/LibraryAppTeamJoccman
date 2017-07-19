@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height = displayMetrics.heightPixels;
-        int width = displayMetrics.widthPixels;
+        int height = displayMetrics.heightPixels / (displayMetrics.densityDpi / 160);
+        int width = displayMetrics.widthPixels / (displayMetrics.densityDpi / 160);
 
         if (height < 470 || width < 320) {
             setContentView(R.layout.small_activity_main);
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private void createButton(){
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
         btn_booklist = (Button) findViewById(R.id.btn_booklist);
+        btn_booklist.setText(screenSize);
         btn_booklist.setTypeface(myTypeFace1);
         btn_booklist.setOnClickListener(new View.OnClickListener() {
             @Override
