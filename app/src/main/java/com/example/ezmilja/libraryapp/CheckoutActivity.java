@@ -116,7 +116,7 @@ public class CheckoutActivity extends AppCompatActivity {
                             if (radioButton.getText().equals("Check IN")) {
                                 makeRatingDialog();
                             }
-                            else {
+                            else if (radioButton.getText().equals("Check OUT")){
                                 Book tempBook = getBookFromISBN(acTextView.getText().toString());
                                 if (tempBook == null){
                                     Toast.makeText(CheckoutActivity.this, "Book not found", Toast.LENGTH_SHORT).show();

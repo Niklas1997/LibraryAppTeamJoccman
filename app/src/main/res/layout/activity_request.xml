@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="60dp"
+        android:layout_width="55dp"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="21dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,10 @@
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        android:layout_height="66dp"
+        app:layout_constraintVertical_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.501" />
 
     <EditText
         android:id="@+id/name"
