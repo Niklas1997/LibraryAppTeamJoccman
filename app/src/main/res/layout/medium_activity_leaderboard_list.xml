@@ -38,8 +38,8 @@
 
     <ListView
         android:id="@+id/leaderbd_list"
-        android:layout_width="419dp"
-        android:layout_height="419dp"
+        android:layout_width="270dp"
+        android:layout_height="300dp"
         android:layout_weight="0.86" />
 
     <ImageView
