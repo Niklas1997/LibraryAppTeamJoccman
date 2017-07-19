@@ -17,17 +17,17 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
-        android:textSize="20sp"
         android:id="@+id/tbx_bookName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/imageView2"
         android:layout_marginLeft="35dp"
         android:layout_marginStart="35dp"
         android:layout_toRightOf="@+id/imageView2"
         android:text="TextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView_author"
@@ -39,5 +39,5 @@
         android:layout_alignParentRight="true"
         android:layout_alignStart="@+id/tbx_bookName"
         android:text="TextView"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 </RelativeLayout>

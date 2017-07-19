@@ -27,10 +27,11 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.13"
+        android:layout_weight="0.09"
         android:background="@drawable/mybutton"
         android:text="close"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView3"
