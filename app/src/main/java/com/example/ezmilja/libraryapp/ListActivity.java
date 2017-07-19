@@ -46,8 +46,15 @@ public class ListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                PopUpBookInfo popUp = new PopUpBookInfo(i, books.getBook(i));
+                Book temp = (Book) adapterView.getItemAtPosition(i);
+                int id = 0;
+                for (int j = 0; j < books.getNumberOfBooks(); j++){
+                    if (books.getBook(j).equals(temp)) {
+                        id = j;
+                        break;
+                    }
+                }
+                PopUpBookInfo popUp = new PopUpBookInfo(id, temp);
                 popUp.createPopUp(ListActivity.this, BookInfoActivity.class, "");
             }
         });
@@ -107,21 +114,6 @@ public class ListActivity extends AppCompatActivity {
             return view;
         }
 
-        public void filterList(String filterWord){
-            if (filterWord.equals("")){
-                shownList = originalList;
-                return;
-            }
-            shownList = new ArrayList<Book>();
-            for (Book b: originalList){
-                if (b.getBookName().toLowerCase().contains(filterWord.toLowerCase())) {
-                    shownList.add(b);
-                }
-                else if (b.getAuthor().toLowerCase().contains(filterWord.toLowerCase())){
-                    shownList.add(b);
-                }
-            }
-        }
 
         @Override
         public Filter getFilter() {
