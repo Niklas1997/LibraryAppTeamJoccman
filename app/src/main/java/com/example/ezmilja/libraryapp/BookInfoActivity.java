@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class BookInfoActivity extends AppCompatActivity {
     private Button btn_back;
-    private TextView textView;
+    private TextView textView, txt_rating;
     private Button btn_check;
 
     @Override
@@ -49,6 +49,9 @@ public class BookInfoActivity extends AppCompatActivity {
 
         TextView authorTxt = (TextView) findViewById(R.id.authorTxt);
         authorTxt.setText(book.getAuthor());
+
+        TextView txt_rating = (TextView) findViewById(R.id.txt_Rating);
+                txt_rating.setText("User Rating : " + "book.getRating");
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
         btn_check = (Button) findViewById(R.id.btn_check);
