@@ -106,10 +106,16 @@ public class ListActivity extends AppCompatActivity {
             TextView textView_bookName = view.findViewById(R.id.tbx_bookName);
             TextView textView_author = view.findViewById(R.id.textView_author);
 
-            final Book book = shownList.get(i);
-            imageView.setImageResource(book.getImageId());
-            textView_bookName.setText(book.getBookName());
-            textView_author.setText(book.getAuthor());
+            if (shownList.size() > i) {
+                final Book book = shownList.get(i);
+                imageView.setImageResource(book.getImageId());
+                textView_bookName.setText(book.getBookName());
+                textView_author.setText(book.getAuthor());
+            }
+            else {
+                textView_bookName.setText("Error");
+                textView_author.setText("Error");
+            }
 
             return view;
         }
