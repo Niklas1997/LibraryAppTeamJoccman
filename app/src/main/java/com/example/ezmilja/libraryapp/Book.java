@@ -13,9 +13,10 @@ public class Book {
     private final String description;
     private final String page;
     private final String publisher;
+    private final int rating;
 
     public Book(final String isbn, final String bookName, final int imageId, final String author, final String description,
-                final String page, final String publisher){
+                final String page, final String publisher, final int rating){
         this.isbn = isbn;
         this.bookName =bookName;
         this.imageId = imageId;
@@ -23,6 +24,7 @@ public class Book {
         this.description = description;
         this.page = page;
        this.publisher = publisher;
+        this.rating = rating;
     }
 
     public String getIsbn() {return isbn;}
@@ -38,6 +40,8 @@ public class Book {
     public String getPage(){return  page;}
 
     public String getPublisher(){return  publisher;}
+
+    public  int getRating() {return rating;}
 
     @Override
     public boolean equals(final Object obj) {
