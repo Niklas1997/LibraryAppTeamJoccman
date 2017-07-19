@@ -28,7 +28,7 @@ public class CheckoutActivity extends AppCompatActivity {
     private static Button button;
     private static RadioGroup radioGroup;
     private boolean on;
-    TextView textView1;
+    TextView txt_name, txt_author;
     private AutoCompleteTextView acTextView;
     private ImageView image_book;
     private String[] isbn_array;
@@ -42,8 +42,10 @@ public class CheckoutActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         acTextView = (AutoCompleteTextView) findViewById(R.id.dropDownTextView);
-        textView1 = (TextView)findViewById(R.id.name);
-        textView1.setFocusable(false);
+        txt_name= (TextView)findViewById(R.id.txt_name);
+        txt_name.setFocusable(false);
+        txt_author =(TextView)findViewById(R.id.txt_author);
+        txt_author.setFocusable(false);
 
         image_book = (ImageView) findViewById(R.id.imgv_bookimg);
 
@@ -70,8 +72,10 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Book book = getBookFromISBN((String) adapterView.getItemAtPosition(i));
-                textView1.setVisibility(View.VISIBLE);
-                textView1.setText(book.getBookName() + "\n" + book.getAuthor());
+                txt_name.setVisibility(View.VISIBLE);
+                txt_name.setText(book.getBookName());
+                txt_author.setText(book.getAuthor());
+                txt_author.setVisibility(View.VISIBLE);
 
                 image_book.setImageResource(book.getImageId());
                 image_book.setVisibility(View.VISIBLE);
@@ -117,7 +121,14 @@ public class CheckoutActivity extends AppCompatActivity {
                                 makeRatingDialog();
                             }
                             else {
-                                Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+                                Book tempBook = getBookFromISBN(acTextView.getText().toString());
+                                if (tempBook == null){
+                                    Toast.makeText(CheckoutActivity.this, "Book not found", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }
                             }
                         }
                     }
@@ -134,14 +145,13 @@ public class CheckoutActivity extends AppCompatActivity {
 
     private void autoFill(){
         try{
-            textView1 = (TextView)findViewById(R.id.name);
+            txt_name = (TextView)findViewById(R.id.txt_name);
             Bundle bundle = getIntent().getExtras();
             String message = bundle.getString("isbn");
             if (message.contains("ISBN:")) {
                 message = message.substring(5);
             }
             Book temp = getBookFromISBN(message);
-            String message1 = temp.getBookName() + "\n" + temp.getAuthor();
             acTextView.setFocusable(false);
             acTextView.setOnClickListener(null);
 
@@ -151,11 +161,13 @@ public class CheckoutActivity extends AppCompatActivity {
             radioButton.setChecked(true);
 
             acTextView.setText(message);
-            textView1.setText(message1);
+            txt_name.setText(temp.getBookName());
+            txt_author.setText(temp.getAuthor());
             image_book.setImageResource(temp.getImageId());
 
             image_book.setVisibility(View.VISIBLE);
-            textView1.setVisibility(View.VISIBLE);
+            txt_name.setVisibility(View.VISIBLE);
+            txt_author.setVisibility(View.VISIBLE);
         }
         catch (Exception e){}
     }
@@ -218,6 +230,9 @@ public class CheckoutActivity extends AppCompatActivity {
 
         TextView author = (TextView) dialog.findViewById(R.id.tbx_author);
         author.setText(selectedBook.getAuthor());
+
+        ImageView dialogBookImg = (ImageView) dialog.findViewById(R.id.img_bookcover);
+        dialogBookImg.setImageResource(selectedBook.getImageId());
 
         Button close = (Button) dialog.findViewById(R.id.close);
         close.setTypeface(myTypeFace1);
