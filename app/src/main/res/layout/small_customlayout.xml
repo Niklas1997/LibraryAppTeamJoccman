@@ -18,24 +18,24 @@
         android:id="@+id/tbx_bookName"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/imageView2"
         android:layout_toRightOf="@+id/imageView2"
         android:text="TextView"
-        android:textSize="20sp"
+        android:textSize="12sp"
         tools:layout_editor_absoluteX="194dp"
-        tools:layout_editor_absoluteY="122dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        tools:layout_editor_absoluteY="122dp" />
 
     <TextView
         android:id="@+id/textView_author"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/tbx_bookName"
         android:layout_toRightOf="@+id/imageView2"
         android:text="TextView"
-        android:textSize="20sp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:textSize="12sp" />
 </RelativeLayout>
