@@ -83,7 +83,7 @@ public class LeaderboardList extends AppCompatActivity {
 
     private void makeRequestDialog(){
         final Dialog dialog = new Dialog(LeaderboardList.this);
-        dialog.setContentView(R.layout.activity_request);
+        dialog.setContentView(R.layout.request);
         dialog.show();
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
