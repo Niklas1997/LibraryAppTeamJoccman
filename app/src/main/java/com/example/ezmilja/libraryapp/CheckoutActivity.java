@@ -61,13 +61,9 @@ public class CheckoutActivity extends AppCompatActivity {
         for (int i = 0; i < numBooks; i++){
             isbn_array[i] = books.getBook(i).getIsbn().substring(5);
         }
-        //Create Array Adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, isbn_array);
-        //Set the number of characters the user must type before the drop down list is shown
         acTextView.setThreshold(1);
-        //Set the adapter
         acTextView.setAdapter(adapter);
-
         acTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

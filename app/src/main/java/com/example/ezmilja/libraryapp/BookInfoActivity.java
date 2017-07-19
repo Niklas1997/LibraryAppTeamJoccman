@@ -51,7 +51,7 @@ public class BookInfoActivity extends AppCompatActivity {
         authorTxt.setText(book.getAuthor());
 
         TextView txt_rating = (TextView) findViewById(R.id.txt_Rating);
-                txt_rating.setText("User Rating : " + book.getRating());
+                txt_rating.setText("User Rating : " + book.getRating() + "/5");
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
         btn_check = (Button) findViewById(R.id.btn_check);
