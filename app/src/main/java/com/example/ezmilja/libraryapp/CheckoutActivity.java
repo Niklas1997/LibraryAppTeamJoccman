@@ -6,7 +6,6 @@ import android.graphics.Typeface;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,29 +31,11 @@ public class CheckoutActivity extends AppCompatActivity {
     private AutoCompleteTextView acTextView;
     private ImageView image_book;
     private String[] isbn_array;
-    private String screenSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Bundle bundle = getIntent().getExtras();
-        screenSize = bundle.getString("screenSize");
-
-        switch(screenSize) {
-            case "xlarge":
-                setContentView(R.layout.xlarge_activity_checkout);
-                break;
-            case "medium":
-                setContentView(R.layout.medium_activity_checkout);
-                break;
-            case "large":
-                setContentView(R.layout.large_activity_checkout);
-                break;
-            default:
-                setContentView(R.layout.small_activity_checkout);
-        }
-
+        setContentView(R.layout.activity_checkout);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -199,21 +180,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
     private void makeInfoDialog(){
         final Dialog dialog = new Dialog(CheckoutActivity.this);
-
-        switch(screenSize) {
-            case "xlarge":
-                dialog.setContentView(R.layout.xlarge_icon);
-                break;
-            case "medium":
-                dialog.setContentView(R.layout.medium_icon);
-                break;
-            case "large":
-                dialog.setContentView(R.layout.large_icon);
-                break;
-            default:
-                dialog.setContentView(R.layout.small_icon);
-        }
-
+        dialog.setContentView(R.layout.icon);
         dialog.setTitle("Please use the ISBN-13 on back of Book");
         dialog.show();
 
@@ -245,22 +212,7 @@ public class CheckoutActivity extends AppCompatActivity {
         }
 
         final Dialog dialog = new Dialog(CheckoutActivity.this);
-
-        switch(screenSize) {
-            case "xlarge":
-                dialog.setContentView(R.layout.xlarge_rating_dialog);
-                break;
-            case "medium":
-                dialog.setContentView(R.layout.medium_rating_dialog);
-                break;
-            case "large":
-                dialog.setContentView(R.layout.large_rating_dialog);
-                break;
-            default:
-                dialog.setContentView(R.layout.small_rating_dialog);
-        }
-
-
+        dialog.setContentView(R.layout.rating_dialog);
         dialog.show();
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");

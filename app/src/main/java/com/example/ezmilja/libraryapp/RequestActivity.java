@@ -1,15 +1,11 @@
 package com.example.ezmilja.libraryapp;
 
-import android.content.Intent;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Timer;
@@ -23,7 +19,7 @@ public class RequestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.large_activity_request);
+        setContentView(R.layout.activity_request);
 
         createButton();
 
@@ -36,10 +32,8 @@ public class RequestActivity extends AppCompatActivity {
             public void onClick(View view) {
                 button.setEnabled(false);
 
-
                 Toast.makeText(RequestActivity.this, "Book requested!",
                         Toast.LENGTH_LONG).show();
-
                 Timer buttonTimer = new Timer();
                 buttonTimer.schedule(new TimerTask() {
 
@@ -50,10 +44,7 @@ public class RequestActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 button.setEnabled(true);
-
                                 finish();
-
-
                             }
                         });
                     }
@@ -83,7 +74,8 @@ public class RequestActivity extends AppCompatActivity {
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
         button = (Button) findViewById(R.id.button);
-        button.setTypeface(myTypeFace1);}
+        button.setTypeface(myTypeFace1);
+    }
 
 
 

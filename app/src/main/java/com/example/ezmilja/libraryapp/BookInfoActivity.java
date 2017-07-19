@@ -14,28 +14,12 @@ public class BookInfoActivity extends AppCompatActivity {
     private Button btn_back;
     private TextView textView, txt_rating;
     private Button btn_check;
-    private String screenSize;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Bundle bundle = getIntent().getExtras();
-        screenSize = bundle.getString("screenSize");
-
-        switch(screenSize) {
-            case "xlarge":
-                setContentView(R.layout.xlarge_activity_book_info);
-                break;
-            case "medium":
-                setContentView(R.layout.medium_activity_contents);
-                break;
-            case "large":
-                setContentView(R.layout.large_activity_contents);
-                break;
-            default:
-                setContentView(R.layout.small_activity_contents);
-        }
+        setContentView(R.layout.activity_book_info);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -86,7 +70,6 @@ public class BookInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(BookInfoActivity.this, CheckoutActivity.class);
                 intent.putExtra("isbn", book.getIsbn());
-                intent.putExtra("screenSize", screenSize);
                 startActivity(intent);
             }}
         );

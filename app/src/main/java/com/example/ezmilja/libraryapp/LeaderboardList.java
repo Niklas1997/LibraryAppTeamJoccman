@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,37 +22,17 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.string.no;
-import static com.example.ezmilja.libraryapp.R.id.btn_back;
-import static com.example.ezmilja.libraryapp.R.id.image;
-
 public class LeaderboardList extends AppCompatActivity {
 
     private final RequestCache books = RequestCache.CACHE;
     private Button buttonRequest;
     private ListView listView;
     private List<BookRequest> originalList ;
-    private String screenSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle bundle = getIntent().getExtras();
-        screenSize = bundle.getString("screenSize");
-
-        switch(screenSize) {
-            case "xlarge":
-                setContentView(R.layout.xlarge_activity_leaderboard_list);
-                break;
-            case "medium":
-                setContentView(R.layout.medium_activity_leaderboard_list);
-                break;
-            case "large":
-                setContentView(R.layout.large_activity_leaderboard_list);
-                break;
-            default:
-                setContentView(R.layout.small_activity_leaderboard_list);
-        }
+        setContentView(R.layout.activity_leaderboard_list);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -105,19 +83,7 @@ public class LeaderboardList extends AppCompatActivity {
 
     private void makeRequestDialog(){
         final Dialog dialog = new Dialog(LeaderboardList.this);
-        switch(screenSize) {
-            case "xlarge":
-                dialog.setContentView(R.layout.xlarge_activity_request);
-                break;
-            case "medium":
-                dialog.setContentView(R.layout.medium_activity_request);
-                break;
-            case "large":
-                dialog.setContentView(R.layout.large_activity_request);
-                break;
-            default:
-                dialog.setContentView(R.layout.small_activity_request);
-        }
+        dialog.setContentView(R.layout.activity_request);
         dialog.show();
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
@@ -145,28 +111,12 @@ public class LeaderboardList extends AppCompatActivity {
 
     class CustomAdapter extends BaseAdapter {
 
-
         Context context;
         List <BookRequest> showList;
-        final int list_layout;
 
         public CustomAdapter(Context context,List <BookRequest> items){
             this.context = context;
             this.showList = items;
-
-            switch(screenSize) {
-                case "xlarge":
-                    list_layout = R.layout.xlarge_leaderboard_layout;
-                    break;
-                case "medium":
-                    list_layout = R.layout.medium_leaderboard_layout;
-                    break;
-                case "large":
-                    list_layout = R.layout.large_leaderboard_layout;
-                    break;
-                default:
-                    list_layout = R.layout.small_leaderboard_layout;
-            }
         }
 
         private class ViewHolder{
@@ -203,7 +153,7 @@ public class LeaderboardList extends AppCompatActivity {
 
             if(view==null){
 
-                vi = inflater.inflate(list_layout,null);
+                vi = inflater.inflate(R.layout.leaderboard_layout,null);
                 holder = new ViewHolder();
                 holder.bookName= (TextView) vi.findViewById(R.id.tbx_bookName);
                 holder.bookVote = (TextView) vi.findViewById(R.id.tbx_voteCount);

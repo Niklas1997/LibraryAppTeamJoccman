@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,27 +22,11 @@ public class ListActivity extends AppCompatActivity {
     private final BookCache books = BookCache.CACHE;
     private List<Book> originalList;
     private SearchView searchView;
-    private String screenSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle bundle = getIntent().getExtras();
-        screenSize = bundle.getString("screenSize");
-
-        switch(screenSize) {
-            case "xlarge":
-                setContentView(R.layout.xlarge_activity_list);
-                break;
-            case "medium":
-                setContentView(R.layout.medium_activity_list);
-                break;
-            case "large":
-                setContentView(R.layout.large_activity_list);
-                break;
-            default:
-                setContentView(R.layout.small_activity_list);
-        }
+        setContentView(R.layout.activity_list);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -70,7 +53,7 @@ public class ListActivity extends AppCompatActivity {
                         break;
                     }
                 }
-                PopUpBookInfo popUp = new PopUpBookInfo(id, temp, screenSize);
+                PopUpBookInfo popUp = new PopUpBookInfo(id, temp);
                 popUp.createPopUp(ListActivity.this, BookInfoActivity.class, "");
             }
         });
@@ -116,7 +99,7 @@ public class ListActivity extends AppCompatActivity {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            view = getLayoutInflater().inflate(R.layout.large_customlayout, null);
+            view = getLayoutInflater().inflate(R.layout.customlayout, null);
 
             ImageView imageView = view.findViewById(R.id.imageView2);
             TextView textView_bookName = view.findViewById(R.id.tbx_bookName);
