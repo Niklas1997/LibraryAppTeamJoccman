@@ -45,7 +45,7 @@ public class LeaderboardList extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(LeaderboardList.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LeaderboardList.this, "Goodbye Dave! Hello Steve!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -119,7 +119,7 @@ public class LeaderboardList extends AppCompatActivity {
             btn_vote.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(LeaderboardList.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LeaderboardList.this, "Goodbye Dave! Hello Steve!", Toast.LENGTH_SHORT).show();
 
                         btn_vote.setImageResource(R.drawable.steve);
 
