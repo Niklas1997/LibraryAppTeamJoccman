@@ -23,11 +23,27 @@ public class ListActivity extends AppCompatActivity {
     private final BookCache books = BookCache.CACHE;
     private List<Book> originalList;
     private SearchView searchView;
+    private String screenSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.large_activity_list);
+        Bundle bundle = getIntent().getExtras();
+        screenSize = bundle.getString("screenSize");
+
+        switch(screenSize) {
+            case "xlarge":
+                setContentView(R.layout.xlarge_activity_list);
+                break;
+            case "medium":
+                setContentView(R.layout.medium_activity_list);
+                break;
+            case "large":
+                setContentView(R.layout.large_activity_list);
+                break;
+            default:
+                setContentView(R.layout.small_activity_list);
+        }
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -54,7 +70,7 @@ public class ListActivity extends AppCompatActivity {
                         break;
                     }
                 }
-                PopUpBookInfo popUp = new PopUpBookInfo(id, temp);
+                PopUpBookInfo popUp = new PopUpBookInfo(id, temp, screenSize);
                 popUp.createPopUp(ListActivity.this, BookInfoActivity.class, "");
             }
         });

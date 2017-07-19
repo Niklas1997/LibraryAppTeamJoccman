@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,14 +14,32 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_booklist;
-
-
-
+    private String screenSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.large_activity_main);
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        if (height < 470 || width < 320) {
+            setContentView(R.layout.small_activity_main);
+            screenSize = "small";
+        }
+        else if (height < 640 || width < 480){
+            setContentView(R.layout.medium_activity_main);
+            screenSize = "medium";
+        }
+        else if (height < 960 || width < 720){
+            setContentView(R.layout.large_activity_main);
+            screenSize = "large";
+        }
+        else {
+            setContentView(R.layout.xlarge_activity_main);
+            screenSize = "xlarge";
+        }
 
         createButton();
 
@@ -38,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
         btn_booklist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(MainActivity.this, ContentsActivity.class);
+                intent.putExtra("screenSize", screenSize);
                 finish();
                 startActivity(intent);
             }

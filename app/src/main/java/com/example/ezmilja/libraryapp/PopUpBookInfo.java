@@ -13,10 +13,12 @@ import android.widget.Toast;
 public class PopUpBookInfo {
     private final Book book;
     private final int id;
+    private final String screenSize;
 
-    public PopUpBookInfo(final int id, Book book){
+    public PopUpBookInfo(final int id, Book book, String screenSize){
         this.id= id;
         this.book = book;
+        this.screenSize = screenSize;
     }
 
     public void createPopUp(final Context context, final Class nextActivity , final String message){
@@ -27,6 +29,7 @@ public class PopUpBookInfo {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(context, nextActivity);
+                        intent.putExtra("screenSize", screenSize);
                         intent.putExtra("id", id+"");
                         context.startActivity(intent);
                     }
@@ -35,6 +38,7 @@ public class PopUpBookInfo {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(context, CheckoutActivity.class);
                         intent.putExtra("isbn", book.getIsbn());
+                        intent.putExtra("screenSize", screenSize);
                         context.startActivity(intent);
                     }
                 }).show();
