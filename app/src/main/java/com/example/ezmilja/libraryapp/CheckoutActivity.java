@@ -203,7 +203,6 @@ public class CheckoutActivity extends AppCompatActivity {
             Toast.makeText(CheckoutActivity.this, "No book found", Toast.LENGTH_SHORT).show();
             return;
         }
-
         final Dialog dialog = new Dialog(CheckoutActivity.this);
         dialog.setContentView(R.layout.rating_dialog);
         dialog.show();
@@ -218,6 +217,9 @@ public class CheckoutActivity extends AppCompatActivity {
 
         TextView author = (TextView) dialog.findViewById(R.id.tbx_author);
         author.setText(selectedBook.getAuthor());
+
+        ImageView dialogBookImg = (ImageView) dialog.findViewById(R.id.img_bookcover);
+        dialogBookImg.setImageResource(selectedBook.getImageId());
 
         Button close = (Button) dialog.findViewById(R.id.close);
         close.setTypeface(myTypeFace1);
