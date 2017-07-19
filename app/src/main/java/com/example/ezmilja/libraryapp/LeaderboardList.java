@@ -165,6 +165,7 @@ public class LeaderboardList extends AppCompatActivity {
 
 
             holder.bookName.setText(myBook.getBookName());
+            holder.bookVote.setText(myBook.getVote()+ "");
 
             if(myBook.getisUpVoted()){
                 holder.image.setImageResource(R.drawable.steve);
@@ -180,10 +181,14 @@ public class LeaderboardList extends AppCompatActivity {
                     if (myBook.getisUpVoted()) {
                         myBook.setisUpVoted(false);
                         holder.image.setImageResource(R.drawable.dave);
+                        myBook.addVote(-1);
+                        holder.bookVote.setText(myBook.getVote()+ "");
                     }
                     else {
                         myBook.setisUpVoted(true);
                         holder.image.setImageResource(R.drawable.steve);
+                        myBook.addVote(1);
+                        holder.bookVote.setText( myBook.getVote() + "");
                     }
 
                 }
