@@ -187,8 +187,9 @@ public class LeaderboardList extends AppCompatActivity {
             holder.btn_more.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    final AlertDialog alertDialog = new AlertDialog.Builder(LeaderboardList.this).setTitle(myBook.getBookName())
-                            .setMessage(myBook.getAuthor() + "\n" + myBook.getEmail()).setNeutralButton("Close", null).show();
+                    final AlertDialog alertDialog = new AlertDialog.Builder(LeaderboardList.this)
+                            .setTitle(myBook.getBookName())
+                            .setMessage("Author: " + "\n" + myBook.getAuthor() + "\n" + "\n" + "Originally requested by: " + myBook.getEmail()).setNeutralButton("Close", null).show();
                 }
             });
 
