@@ -49,7 +49,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbx_author"
-        app:layout_constraintVertical_bias="0.705"
+        app:layout_constraintVertical_bias="0.849"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -107,7 +107,7 @@
         android:id="@+id/tbx_author"
         android:layout_width="358dp"
         android:layout_height="94dp"
-        android:layout_marginBottom="169dp"
+        android:layout_marginBottom="195dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -120,7 +120,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintHorizontal_bias="0.49" />
 
     <Button
         android:id="@+id/submit_button"
