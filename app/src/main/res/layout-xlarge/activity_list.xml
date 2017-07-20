@@ -15,7 +15,7 @@
         android:id="@+id/searchbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_weight="0.05" />
+        android:layout_weight="0.11" />
 
     <ListView
         android:id="@+id/listView"

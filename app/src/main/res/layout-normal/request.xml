@@ -2,64 +2,54 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="400dp"
-    android:layout_height="600dp"
+    android:layout_width="wrap_content"
+    android:layout_height="370dp"
     tools:context="com.example.ezmilja.libraryapp.RequestActivity"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="55dp"
-        app:srcCompat="@drawable/titlesausages"
         android:layout_height="66dp"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
+        app:srcCompat="@drawable/titlesausages"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/btn_submitrequest"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="209dp"
-        app:layout_constraintLeft_toLeftOf="@+id/btn_submitrequest" />
+        android:layout_marginBottom="8dp" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
         android:ems="10"
         android:hint="Book Name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="34dp"
-        tools:layout_constraintLeft_creator="1"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="34dp" />
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/btn_submitrequest"
         android:layout_width="0dp"
-        android:layout_height="66dp"
+        android:layout_height="0dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="38dp"
+        android:layout_marginStart="38dp"
         android:background="@drawable/mybutton"
         android:onClick="toast"
         android:text="Request"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="38dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        android:layout_marginEnd="38dp"
-        app:layout_constraintRight_toRightOf="@+id/email"
-        android:layout_marginTop="79dp"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="86dp"
-        app:layout_constraintLeft_toLeftOf="@+id/email"
-        app:layout_constraintTop_toTopOf="@+id/email"
-        android:layout_marginLeft="38dp"
-        android:layout_marginRight="38dp" />
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="224dp" />
 
     <EditText
         android:id="@+id/reason"
@@ -68,13 +58,16 @@
         android:ems="10"
         android:hint="Author"
         android:inputType="textPersonName"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/name"
-        android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/name" />
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.27" />
 
     <EditText
         android:id="@+id/email"
@@ -83,12 +76,14 @@
         android:ems="10"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/reason"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/reason"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/reason" />
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.514"
+        android:layout_marginBottom="8dp" />
 
 </android.support.constraint.ConstraintLayout>

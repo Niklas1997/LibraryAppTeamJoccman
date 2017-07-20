@@ -27,7 +27,7 @@
         android:layout_marginStart="35dp"
         android:layout_toRightOf="@+id/imageView2"
         android:text="TextView"
-        android:textSize="24sp" />
+        android:textSize="28sp" />
 
     <TextView
         android:id="@+id/textView_author"
@@ -39,5 +39,5 @@
         android:layout_alignParentRight="true"
         android:layout_alignStart="@+id/tbx_bookName"
         android:text="TextView"
-        android:textSize="24sp" />
+        android:textSize="28sp" />
 </RelativeLayout>

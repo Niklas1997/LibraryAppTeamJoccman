@@ -18,8 +18,7 @@
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
-        android:layout_height="357dp"
-        android:layout_weight="0.48"
+        android:layout_height="258dp"
         app:srcCompat="@drawable/picatyre" />
 
     <Button
