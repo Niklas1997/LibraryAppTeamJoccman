@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -93,10 +94,16 @@ public class LeaderboardList extends AppCompatActivity {
         btn_submitRequest.setTypeface(myTypeFace1);
 //        btn_back.setTypeface(myTypeFace1);
 
+        final EditText edt_name = dialog.findViewById(R.id.name);
+
         btn_submitRequest.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+
+                originalList.add(new BookRequest(edt_name.getText().toString(), "", 0));
+                makeListView();
+
                 dialog.dismiss();
             }
         });
@@ -127,12 +134,12 @@ public class LeaderboardList extends AppCompatActivity {
         }
         @Override
         public int getCount() {
-            return books.getNumberOfBookRequests();
+            return showList.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return books.getBookRequest(position);
+            return showList.get(position);
         }
 
         @Override
@@ -146,8 +153,6 @@ public class LeaderboardList extends AppCompatActivity {
             View vi = view;
             final ViewHolder holder ;
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-            SharedPreferences sp  = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
             final BookRequest myBook = showList.get(position);
 
