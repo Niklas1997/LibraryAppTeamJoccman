@@ -164,7 +164,7 @@ public class LeaderboardList extends AppCompatActivity {
                 holder.bookVote = (TextView) vi.findViewById(R.id.tbx_voteCount);
                 holder.image = (ImageView) vi.findViewById(R.id.ibnt_vote);
                 holder.image.setTag(position);
-
+                holder.btn_more = (Button) vi.findViewById(R.id.btn_more);
                 vi.setTag(holder);
             }
             else{
@@ -187,7 +187,7 @@ public class LeaderboardList extends AppCompatActivity {
             holder.btn_more.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //makeInfoDialog(myBook);
+                    makeInfoDialog(myBook);
                 }
             });
 

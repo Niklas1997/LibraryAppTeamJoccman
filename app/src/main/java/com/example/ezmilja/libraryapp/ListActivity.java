@@ -129,7 +129,6 @@ public class ListActivity extends AppCompatActivity {
 
         class BookFilter extends Filter{
 
-
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
                 FilterResults results = new FilterResults();
