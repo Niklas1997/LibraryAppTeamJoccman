@@ -12,25 +12,6 @@
 
 
     <AutoCompleteTextView
-        android:id="@+id/descriptionTxt"
-        android:layout_width="match_parent"
-        android:layout_height="394dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Description"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.397"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.735" />
-
-    <AutoCompleteTextView
         android:id="@+id/txt_details"
         android:layout_width="339dp"
         android:layout_height="316dp"
@@ -47,7 +28,30 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintVertical_bias="0.03"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/descriptionTxt"
+        android:layout_width="0dp"
+        android:layout_height="394dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Description"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.735" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -56,7 +60,7 @@
         app:srcCompat="@drawable/foresight"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
@@ -85,7 +89,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.072" />
+        app:layout_constraintHorizontal_bias="0.072"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:id="@+id/isbnTxt"
@@ -105,7 +111,9 @@
         app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <Button
         android:id="@+id/btn_check"
@@ -125,7 +133,9 @@
         android:layout_marginBottom="78dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:id="@+id/txt_Rating"
@@ -146,7 +156,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
         app:layout_constraintHorizontal_bias="0.088"
-        app:layout_constraintVertical_bias="0.765" />
+        app:layout_constraintVertical_bias="0.765"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -154,11 +166,11 @@
         android:layout_height="54dp"
         app:srcCompat="@drawable/starratings"
         app:layout_constraintLeft_toRightOf="@+id/txt_Rating"
-        android:layout_marginLeft="0dp"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="61dp" />
+        android:layout_marginBottom="61dp"
+        android:layout_marginEnd="8dp" />
 
 </android.support.constraint.ConstraintLayout>
