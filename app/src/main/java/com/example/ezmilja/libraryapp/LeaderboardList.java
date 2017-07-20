@@ -3,6 +3,7 @@ package com.example.ezmilja.libraryapp;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.database.Cursor;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +25,8 @@ import java.util.List;
 
 public class LeaderboardList extends AppCompatActivity {
 
-    private final RequestCache books = RequestCache.CACHE;
+    private DatabaseHelper databaseHelper;
+    private Cursor cursor;
     private Button buttonRequest;
     private ListView listView;
     private List<RequestBook> originalList;
@@ -39,9 +41,17 @@ public class LeaderboardList extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+        databaseHelper = new DatabaseHelper(LeaderboardList.this);
+        cursor = databaseHelper.getAllData();
+
         originalList = new ArrayList<RequestBook>();
-        for (int i = 0; i < books.getNumberOfBookRequests(); i++){
-            originalList.add(books.getBookRequest(i));
+
+        while (cursor.moveToNext()) {
+            String t_name = cursor.getString(1);
+            String t_author = cursor.getString(2);
+            String t_email = cursor.getString(3);
+            String t_vote = cursor.getString(4);
+            originalList.add( new RequestBook(t_name, t_author, t_email, Integer.parseInt(t_vote)));
         }
 
         createButton();
@@ -99,12 +109,12 @@ public class LeaderboardList extends AppCompatActivity {
         final EditText edt_email = dialog.findViewById(R.id.email);
 
         btn_submitRequest.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-
-                originalList.add(new RequestBook(edt_name.getText().toString(),
-                        edt_author.getText().toString(), edt_email.getText().toString(), 0));
+                RequestBook temp = new RequestBook(edt_name.getText().toString(),
+                        edt_author.getText().toString(), edt_email.getText().toString(), 0);
+                originalList.add(temp);
+                databaseHelper.insertData(temp.getBookName(), temp.getAuthor(), temp.getEmail(), temp.getVote() + "");
                 makeListView();
 
                 dialog.dismiss();

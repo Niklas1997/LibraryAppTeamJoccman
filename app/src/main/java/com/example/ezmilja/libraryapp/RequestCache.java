@@ -3,9 +3,6 @@ package com.example.ezmilja.libraryapp;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by emirmun on 13/07/2017.
- */
 
 public class RequestCache {
 
