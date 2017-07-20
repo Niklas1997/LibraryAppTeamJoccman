@@ -146,15 +146,15 @@ public class ListActivity extends AppCompatActivity {
 
                     for (Book b : originalList) {
                         if (b.getBookName().toUpperCase()
-                                .startsWith(constraint.toString().toUpperCase())) {
+                                .contains(constraint.toString().toUpperCase())) {
                             nBookList.add(b);
                         }
                         else if (b.getAuthor().toUpperCase()
-                                .startsWith(constraint.toString().toUpperCase())) {
+                                .contains(constraint.toString().toUpperCase())) {
                             nBookList.add(b);
                         }
                     }
-
+                    shownList = nBookList;
                     results.values = nBookList;
                     results.count = nBookList.size();
                 }
