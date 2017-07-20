@@ -26,6 +26,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".WelcomePage"
+            android:screenOrientation="portrait" />
+        <activity
+
             android:name=".ListActivity"
             android:screenOrientation="portrait" />
         <activity
