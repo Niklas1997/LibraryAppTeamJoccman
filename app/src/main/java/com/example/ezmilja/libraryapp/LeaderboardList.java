@@ -44,8 +44,6 @@ public class LeaderboardList extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(LeaderboardList.this);
         cursor = databaseHelper.getAllData();
 
-
-
         originalList = new ArrayList<RequestBook>();
 
         while (cursor.moveToNext()) {
@@ -115,7 +113,7 @@ public class LeaderboardList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 RequestBook temp = new RequestBook(edt_name.getText().toString(),
-                        edt_author.getText().toString(), edt_email.getText().toString(), 0, databaseHelper.getAllData().getCount());
+                        edt_author.getText().toString(), edt_email.getText().toString(), 0, databaseHelper.getAllData().getCount() + 1);
                 originalList.add(temp);
                 databaseHelper.insertData(temp.getBookName(), temp.getAuthor(), temp.getEmail(), temp.getVote() + "");
                 makeListView();
