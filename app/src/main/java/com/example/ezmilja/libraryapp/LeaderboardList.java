@@ -171,7 +171,6 @@ public class LeaderboardList extends AppCompatActivity {
                 holder = (ViewHolder) vi.getTag();
             }
 
-
             holder.bookName.setText(myBook.getBookName());
             holder.bookVote.setText(myBook.getVote()+ "");
 
