@@ -235,8 +235,8 @@ public class LeaderboardList extends AppCompatActivity {
             final EditText edt_name = dialog.findViewById(R.id.name);
 
 
-
-    }}
+        }
+    }
 
 
     @Override
