@@ -152,6 +152,7 @@ public class ListActivity extends AppCompatActivity {
                         else if (b.getAuthor().toUpperCase()
                                 .contains(constraint.toString().toUpperCase())) {
                             nBookList.add(b);
+
                         }
                     }
                     shownList = nBookList;
