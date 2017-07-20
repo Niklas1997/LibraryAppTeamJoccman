@@ -1,5 +1,6 @@
 package com.example.ezmilja.libraryapp;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -186,7 +187,8 @@ public class LeaderboardList extends AppCompatActivity {
             holder.btn_more.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    makeInfoDialog(myBook);
+                    final AlertDialog alertDialog = new AlertDialog.Builder(LeaderboardList.this).setTitle(myBook.getBookName())
+                            .setMessage(myBook.getAuthor() + "\n" + myBook.getEmail()).setNeutralButton("Close", null).show();
                 }
             });
 
@@ -214,28 +216,7 @@ public class LeaderboardList extends AppCompatActivity {
             return vi;
         }
 
-        private void makeInfoDialog(RequestBook moreInfo){
-            final Dialog dialog = new Dialog(LeaderboardList.this);
-            dialog.setContentView(R.layout.more_info_request_layout);
-            dialog.show();
 
-            final TextView  author = dialog.findViewById(R.id.author);
-            final TextView  email = dialog.findViewById(R.id.email);
-
-            author.setText("Author: " + moreInfo.getAuthor());
-            email.setText("originally requested by: " + moreInfo.getEmail());
-
-            Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
-
-
-            Button btn_back = (Button)dialog.findViewById(R.id.btn_back);
-
-            btn_back.setTypeface(myTypeFace1);
-
-            final EditText edt_name = dialog.findViewById(R.id.name);
-
-
-        }
     }
 
 
