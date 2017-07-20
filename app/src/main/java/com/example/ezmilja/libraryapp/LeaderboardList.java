@@ -53,7 +53,8 @@ public class LeaderboardList extends AppCompatActivity {
             String t_author = cursor.getString(2);
             String t_email = cursor.getString(3);
             String t_vote = cursor.getString(4);
-            originalList.add( new RequestBook(t_name, t_author, t_email, Integer.parseInt(t_vote)));
+            String id = cursor.getString(0);
+            originalList.add( new RequestBook( t_name, t_author, t_email, Integer.parseInt(t_vote), Integer.parseInt(id)));
         }
 
         createButton();
@@ -114,7 +115,7 @@ public class LeaderboardList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 RequestBook temp = new RequestBook(edt_name.getText().toString(),
-                        edt_author.getText().toString(), edt_email.getText().toString(), 0);
+                        edt_author.getText().toString(), edt_email.getText().toString(), 0, databaseHelper.getAllData().getCount());
                 originalList.add(temp);
                 databaseHelper.insertData(temp.getBookName(), temp.getAuthor(), temp.getEmail(), temp.getVote() + "");
                 makeListView();
@@ -219,12 +220,14 @@ public class LeaderboardList extends AppCompatActivity {
                         holder.image.setImageResource(R.drawable.dave);
                         myBook.addVote(-1);
                         holder.bookVote.setText(myBook.getVote()+ "");
+                        databaseHelper.updateData(myBook.getId() + "", myBook.getBookName(), myBook.getAuthor(),myBook.getEmail(), myBook.getVote() + "");
                     }
                     else {
                         myBook.setisUpVoted(true);
                         holder.image.setImageResource(R.drawable.steve);
                         myBook.addVote(1);
                         holder.bookVote.setText( myBook.getVote() + "");
+                        databaseHelper.updateData(myBook.getId() + "", myBook.getBookName(), myBook.getAuthor(),myBook.getEmail(), myBook.getVote() + "");
                     }
 
                 }
