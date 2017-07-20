@@ -44,6 +44,8 @@ public class LeaderboardList extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(LeaderboardList.this);
         cursor = databaseHelper.getAllData();
 
+
+
         originalList = new ArrayList<RequestBook>();
 
         while (cursor.moveToNext()) {
