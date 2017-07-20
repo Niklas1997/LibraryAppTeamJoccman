@@ -30,28 +30,28 @@ public class BookInfoActivity extends AppCompatActivity {
         final Book book = BookCache.CACHE.getBook(Integer.parseInt(id.trim()));
 
 
-        TextView isbnTxt = (TextView) findViewById(R.id.isbnTxt);
-        isbnTxt.setText(book.getIsbn());
+       // TextView isbnTxt = (TextView) findViewById(R.id.isbnTxt);
+        //isbnTxt.setText(book.getIsbn());
 
-        TextView descriptionTxt = (TextView) findViewById(R.id.descriptionTxt);
-        descriptionTxt.setText(book.getDescription());
-
-
-        TextView publishedTxt = (TextView) findViewById(R.id.publishedTxt);
-        publishedTxt.setText(book.getPublisher());
+ //       TextView descriptionTxt = (TextView) findViewById(R.id.descriptionTxt);
+   //     descriptionTxt.setText(book.getDescription());
 
 
-        TextView pageTxt = (TextView) findViewById(R.id.pageTxt);
-        pageTxt.setText(book.getPage());
+     //   TextView publishedTxt = (TextView) findViewById(R.id.publishedTxt);
+       // publishedTxt.setText(book.getPublisher());
 
-        TextView textView = (TextView) findViewById(R.id.bookname);
-        textView.setText(book.getBookName());
+
+        //TextView pageTxt = (TextView) findViewById(R.id.pageTxt);
+        //pageTxt.setText(book.getPage());
+
+        //TextView textView = (TextView) findViewById(R.id.bookname);
+        //textView.setText(book.getBookName());
 
         ImageView imageView = (ImageView) findViewById(R.id.imageView10);
         imageView.setImageResource(book.getImageId());
 
-        TextView authorTxt = (TextView) findViewById(R.id.authorTxt);
-        authorTxt.setText(book.getAuthor());
+       // TextView authorTxt = (TextView) findViewById(R.id.authorTxt);
+        //authorTxt.setText(book.getAuthor());
 
         TextView txt_rating = (TextView) findViewById(R.id.txt_Rating);
                 txt_rating.setText("User Rating : " + book.getRating() + "/5");
