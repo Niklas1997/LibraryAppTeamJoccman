@@ -95,13 +95,16 @@ public class LeaderboardList extends AppCompatActivity {
         btn_back.setTypeface(myTypeFace1);
 
         final EditText edt_name = dialog.findViewById(R.id.name);
+        final EditText edt_author = dialog.findViewById(R.id.reason);
+        final EditText edt_email = dialog.findViewById(R.id.email);
 
         btn_submitRequest.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                originalList.add(new RequestBook(edt_name.getText().toString(), "", "", 0));
+                originalList.add(new RequestBook(edt_name.getText().toString(),
+                        edt_author.getText().toString(), edt_email.getText().toString(), 0));
                 makeListView();
 
                 dialog.dismiss();
@@ -189,7 +192,8 @@ public class LeaderboardList extends AppCompatActivity {
                 public void onClick(View view) {
                     final AlertDialog alertDialog = new AlertDialog.Builder(LeaderboardList.this)
                             .setTitle(myBook.getBookName())
-                            .setMessage("Author: " + "\n" + myBook.getAuthor() + "\n" + "\n" + "Originally requested by: " + myBook.getEmail()).setNeutralButton("Close", null).show();
+                            .setMessage("Author: " + "\n" + myBook.getAuthor() + "\n" + "\n" + "Originally requested by: "
+                                    + "\n" + myBook.getEmail()).setNeutralButton("Close", null).show();
                 }
             });
 
