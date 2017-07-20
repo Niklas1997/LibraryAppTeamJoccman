@@ -53,8 +53,7 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1"
-        app:layout_constraintHorizontal_bias="0.444"
-        tools:layout_editor_absoluteX="-3dp" />
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <TextView
         android:id="@+id/tbx_title"
