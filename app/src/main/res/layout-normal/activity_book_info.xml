@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="109dp"
-        android:layout_height="121dp"
+        android:layout_width="131dp"
+        android:layout_height="152dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -27,47 +27,46 @@
 
     <TextView
         android:id="@+id/bookname"
-        android:layout_width="159dp"
-        android:layout_height="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:autoSizeTextType="uniform"
-        android:text="Title: 20/20 Foresight"
+        android:text="Title:20/20 Foresight"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintHorizontal_bias="0.815"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
+        app:layout_constraintVertical_bias="0.018"
         tools:text="Title: 20/20 Foresight" />
 
     <TextView
         android:id="@+id/authorTxt"
-        android:layout_width="164dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:autoSizeTextType="uniform"
-        android:text="Author: Gary Gruver,
-                        Mike Young and Pat Fulgham"
+        android:text="Author: Hugh Courtney"
         android:textAlignment="gravity"
         android:textColor="@color/colorPrimary"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintHorizontal_bias="0.898"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094"
-        tools:text="Author: Gary Gruver, Mike Young and Pat Fulgham" />
+        app:layout_constraintVertical_bias="0.097"
+        tools:text="Author: Hugh Courntney " />
 
     <TextView
         android:id="@+id/pageTxt"
@@ -116,9 +115,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:autoSizeTextType="uniform"
-        android:text="Description: Reveals how executives can develop 20/20 foresight - a view of the future that separates what can be known from what can't.
-This book shows strategists how to tailor various aspects of the decision-making process - from formulation to implementation -
-to the level of uncertainty faced."
+        android:text="Description:
+        Reveals how executives can develop 20/20 foresight - a view of the future that separates what can be known from what can't This book shows strategists how to tailor various aspects of the decision-making process - from formulation to implementation - to the level of uncertainty faced."
         android:textAlignment="gravity"
         android:textColor="@android:color/background_dark"
         android:textSize="12sp"
@@ -128,7 +126,7 @@ to the level of uncertainty faced."
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596"
+        app:layout_constraintVertical_bias="0.67"
         tools:text="Description:
         Reveals how executives can develop 20/20 foresight - a view of the future that separates what can be known from what can't.
         This book shows strategists how to tailor various aspects of the decision-making process - from formulation to implementation -
@@ -148,11 +146,11 @@ to the level of uncertainty faced."
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.993"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207"
+        app:layout_constraintVertical_bias="0.215"
         tools:text="Published: 01/11/01                                              Harvard Business Review Press" />
 
     <Button
@@ -177,8 +175,8 @@ to the level of uncertainty faced."
     <TextView
         android:id="@+id/txt_Rating"
         style="@android:style/Widget.DeviceDefault.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
+        android:layout_width="139dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="32dp"
@@ -189,7 +187,7 @@ to the level of uncertainty faced."
         android:textSize="18sp"
         android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -204,11 +202,11 @@ to the level of uncertainty faced."
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintLeft_toRightOf="@+id/txt_Rating"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.99"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/starratings" />
 
 </android.support.constraint.ConstraintLayout>

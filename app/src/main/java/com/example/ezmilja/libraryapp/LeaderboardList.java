@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -157,7 +158,7 @@ public class LeaderboardList extends AppCompatActivity {
                 holder = new ViewHolder();
                 holder.bookName= (TextView) vi.findViewById(R.id.tbx_bookName);
                 holder.bookVote = (TextView) vi.findViewById(R.id.tbx_voteCount);
-                holder.image = (ImageView) vi.findViewById(R.id.ibnt_vote);
+                holder.image = (ImageButton) vi.findViewById(R.id.ibnt_vote);
                 holder.image.setTag(position);
 
                 vi.setTag(holder);
