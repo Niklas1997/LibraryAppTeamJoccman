@@ -18,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void run() {
 
-                                Intent intent = new Intent(MainActivity.this, WelcomePage.class);
+                                Intent intent = new Intent(MainActivity.this, ContentsActivity.class);
                                 finish();
                                 startActivity(intent);
                             }
 
 
-                }, 3000);
+                }, 5000);
     }
 }
 
