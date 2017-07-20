@@ -16,12 +16,12 @@ public class BookInfoActivity extends AppCompatActivity {
     private TextView textView, txt_rating;
     private Button btn_check;
     private AutoCompleteTextView descriptionTxt, txt_details;
+    private Typeface myTypeFace1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_info);
-
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -30,17 +30,25 @@ public class BookInfoActivity extends AppCompatActivity {
         final String id = intent.getStringExtra("id");
         final Book book = BookCache.CACHE.getBook(Integer.parseInt(id.trim()));
 
-        AutoCompleteTextView descriptionTxt = (AutoCompleteTextView)findViewById(R.id.descriptionTxt);
+        myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
+
+        createTextViews(book);
+        createButtons(book);
+    }
+
+    private void createTextViews(Book book){
+        descriptionTxt = (AutoCompleteTextView)findViewById(R.id.descriptionTxt);
         descriptionTxt.setText(book.getDescription());
 
-        AutoCompleteTextView txt_details = (AutoCompleteTextView)findViewById(R.id.txt_details);
+        txt_details = (AutoCompleteTextView)findViewById(R.id.txt_details);
         txt_details.setText( "Title : " + book.getBookName() + "\n" + "\n" + "Author : " + book.getAuthor() + "\n"
                 + "\n"+ "Publisher : " + book.getPublisher() + "\n" + "\n" + "Number of Copies Available");
 
-        TextView txt_rating = (TextView) findViewById(R.id.txt_Rating);
+        txt_rating = (TextView) findViewById(R.id.txt_Rating);
         txt_rating.setText("User Rating : " + book.getRating() + "/5");
+    }
 
-        Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
+    private void createButtons(final Book book){
         btn_check = (Button) findViewById(R.id.btn_check);
         btn_check.setTypeface(myTypeFace1);
 
@@ -57,8 +65,8 @@ public class BookInfoActivity extends AppCompatActivity {
                 startActivity(intent);
             }}
         );
-
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
