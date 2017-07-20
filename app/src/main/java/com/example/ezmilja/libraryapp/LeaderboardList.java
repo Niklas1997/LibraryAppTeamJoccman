@@ -21,6 +21,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class LeaderboardList extends AppCompatActivity {
@@ -57,11 +60,19 @@ public class LeaderboardList extends AppCompatActivity {
 
         createButton();
         makeListView();
-
-
-
     }
 
+
+    private void sortlist(List list){
+        Collections.sort(list, new Comparator() {
+            @Override
+            public int compare(Object o, Object t1) {
+                RequestBook b1 = (RequestBook) o;
+                RequestBook b2 = (RequestBook) t1;
+                return b1.compareTo(b2);
+            }
+        });
+    }
     private void makeListView(){
 
         listView = (ListView) findViewById(R.id.leaderbd_list);
@@ -138,6 +149,7 @@ public class LeaderboardList extends AppCompatActivity {
         public CustomAdapter(Context context,List <RequestBook> items){
             this.context = context;
             this.showList = items;
+            sortlist(showList);
         }
 
         private class ViewHolder{
@@ -164,6 +176,7 @@ public class LeaderboardList extends AppCompatActivity {
 
         @Override
         public View getView(final int position, View view, ViewGroup parent) {
+
 
             View vi = view;
             final ViewHolder holder ;

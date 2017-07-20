@@ -1,10 +1,12 @@
 package com.example.ezmilja.libraryapp;
 
+import android.support.annotation.NonNull;
+
 /**
  * Created by ezmilja on 18/07/2017.
  */
 
-public class RequestBook {
+public class RequestBook implements Comparable{
 
 
     private final String bookName;
@@ -47,5 +49,16 @@ public class RequestBook {
 
     public void setisUpVoted(boolean isUpVoted){this.isUpVoted = isUpVoted;}
 
+    @Override
+    public int compareTo(@NonNull Object o) {
+        RequestBook b = (RequestBook) o;
+        if (b.getVote() > vote) {
+            return 1;
+        }
+        else if (b.getVote() < vote){
+            return -1;
+        }
+        return 0;
+    }
 }
 
