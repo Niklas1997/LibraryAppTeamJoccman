@@ -11,8 +11,8 @@
 
     <TextView
         android:id="@+id/tbx_bookName"
-        android:layout_width="218dp"
-        android:layout_height="56dp"
+        android:layout_width="152dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -22,7 +22,7 @@
         android:text="Name"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -59,5 +59,20 @@
         app:layout_constraintLeft_toRightOf="@+id/tbx_bookName"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.014" />
+
+    <Button
+        android:id="@+id/btn_more"
+        android:layout_width="65dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="73dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/background_light"
+        android:text="More"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.017"
+        tools:layout_editor_absoluteX="246dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -13,8 +13,8 @@
 
     <Button
         android:id="@+id/btn_booklist"
-        android:layout_width="146dp"
-        android:layout_height="60dp"
+        android:layout_width="154dp"
+        android:layout_height="76dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -31,30 +31,33 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintVertical_bias="0.933"
+        tools:layout_editor_absoluteY="692dp"
+        app:layout_constraintHorizontal_bias="0.501" />
 
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="383dp"
-        android:layout_height="57dp"
+        android:layout_width="408dp"
+        android:layout_height="94dp"
         app:srcCompat="@drawable/title"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.683"
+        app:layout_constraintVertical_bias="0.715"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.497" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="151dp"
-        android:layout_height="194dp"
+        android:layout_width="188dp"
+        android:layout_height="249dp"
         app:srcCompat="@drawable/titlesausages"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
@@ -64,14 +67,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.358"
+        app:layout_constraintVertical_bias="0.357"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        tools:layout_editor_absoluteY="173dp" />
 
     <TextView
         android:id="@+id/TextView1"
-        android:layout_width="280dp"
-        android:layout_height="100dp"
+        android:layout_width="281dp"
+        android:layout_height="112dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -89,9 +93,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041"
-        tools:text="WELCOME TO ERICSSON'S ATHLONE CAMPUS LIBRARY"
-        app:layout_constraintHorizontal_bias="0.495" />
+        app:layout_constraintVertical_bias="0.04"
+        tools:text="WELCOME TO ERICSSON'S ATHLONE CAMPUS LIBRARY" />
 
 
 </android.support.constraint.ConstraintLayout>

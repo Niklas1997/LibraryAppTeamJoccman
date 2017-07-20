@@ -38,7 +38,7 @@
 
     <ListView
         android:id="@+id/leaderbd_list"
-        android:layout_width="419dp"
+        android:layout_width="match_parent"
         android:layout_height="419dp"
         android:layout_weight="0.86" />
 

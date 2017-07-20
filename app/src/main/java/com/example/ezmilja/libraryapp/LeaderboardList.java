@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -90,24 +90,30 @@ public class LeaderboardList extends AppCompatActivity {
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
 
         Button btn_submitRequest = (Button) dialog.findViewById(R.id.btn_submitrequest);
-//        Button btn_back = (Button)dialog.findViewById(R.id.btn_back);
+        Button btn_back = (Button)dialog.findViewById(R.id.btn_back);
         btn_submitRequest.setTypeface(myTypeFace1);
-//        btn_back.setTypeface(myTypeFace1);
+        btn_back.setTypeface(myTypeFace1);
+
+        final EditText edt_name = dialog.findViewById(R.id.name);
 
         btn_submitRequest.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+
+                originalList.add(new BookRequest(edt_name.getText().toString(), "", 0));
+                makeListView();
+
                 dialog.dismiss();
             }
         });
 
-//        btn_back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dialog.dismiss();
-//            }
-//        });
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 
     class CustomAdapter extends BaseAdapter {
@@ -128,12 +134,12 @@ public class LeaderboardList extends AppCompatActivity {
         }
         @Override
         public int getCount() {
-            return books.getNumberOfBookRequests();
+            return showList.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return books.getBookRequest(position);
+            return showList.get(position);
         }
 
         @Override
@@ -148,8 +154,6 @@ public class LeaderboardList extends AppCompatActivity {
             final ViewHolder holder ;
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            SharedPreferences sp  = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-
             final BookRequest myBook = showList.get(position);
 
             if(view==null){
@@ -158,7 +162,7 @@ public class LeaderboardList extends AppCompatActivity {
                 holder = new ViewHolder();
                 holder.bookName= (TextView) vi.findViewById(R.id.tbx_bookName);
                 holder.bookVote = (TextView) vi.findViewById(R.id.tbx_voteCount);
-                holder.image = (ImageButton) vi.findViewById(R.id.ibnt_vote);
+                holder.image = (ImageView) vi.findViewById(R.id.ibnt_vote);
                 holder.image.setTag(position);
 
                 vi.setTag(holder);
