@@ -11,8 +11,8 @@
 
     <TextView
         android:id="@+id/tbx_bookName"
-        android:layout_width="374dp"
-        android:layout_height="78dp"
+        android:layout_width="463dp"
+        android:layout_height="82dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -20,9 +20,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Name"
-        android:textSize="24sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -45,20 +45,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01"
         app:srcCompat="@drawable/dave"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.39" />
 
     <TextView
         android:id="@+id/tbx_voteCount"
-        android:layout_width="90dp"
+        android:layout_width="130dp"
         android:layout_height="82dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="0dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
-        android:textSize="24sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/tbx_bookName"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintVertical_bias="0.01" />
 
 </android.support.constraint.ConstraintLayout>
