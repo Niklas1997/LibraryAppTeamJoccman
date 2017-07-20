@@ -34,7 +34,8 @@ public class BookInfoActivity extends AppCompatActivity {
         descriptionTxt.setText(book.getDescription());
 
         AutoCompleteTextView txt_details = (AutoCompleteTextView)findViewById(R.id.txt_details);
-        txt_details.setText( "Title : " + book.getBookName() + "\n" + "\n" + "Author : " + book.getAuthor() + "\n" + "\n"+ "Publisher : " + book.getPublisher() + "\n" + "\n" + "Number of Copies Available");
+        txt_details.setText( "Title : " + book.getBookName() + "\n" + "\n" + "Author : " + book.getAuthor() + "\n"
+                + "\n"+ "Publisher : " + book.getPublisher() + "\n" + "\n" + "Number of Copies Available");
 
         TextView txt_rating = (TextView) findViewById(R.id.txt_Rating);
         txt_rating.setText("User Rating : " + book.getRating() + "/5");
