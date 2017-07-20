@@ -13,7 +13,8 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/colorPrimaryDark"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_weight="0.06" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -30,7 +31,8 @@
         android:layout_weight="0.13"
         android:background="@drawable/mybutton"
         android:text="close"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView3"
