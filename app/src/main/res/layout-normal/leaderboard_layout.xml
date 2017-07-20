@@ -55,6 +55,7 @@
         android:layout_marginLeft="66dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
+        android:textAlignment="viewEnd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/tbx_bookName"
         app:layout_constraintTop_toTopOf="parent"

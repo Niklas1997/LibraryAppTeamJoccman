@@ -43,20 +43,21 @@
         app:layout_constraintLeft_toRightOf="@+id/tbx_voteCount"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.015"
+        app:layout_constraintVertical_bias="0.018"
         app:srcCompat="@drawable/dave"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.363" />
 
     <TextView
         android:id="@+id/tbx_voteCount"
         android:layout_width="72dp"
         android:layout_height="53dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="-32dp"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
+        android:textAlignment="viewEnd"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/tbx_bookName"
+        app:layout_constraintLeft_toRightOf="@+id/btn_more"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.018" />
 
@@ -65,13 +66,16 @@
         android:layout_width="87dp"
         android:layout_height="55dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="73dp"
+        android:layout_marginRight="148dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/background_light"
         android:text="More"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintVertical_bias="0.018"
+        app:layout_constraintLeft_toRightOf="@+id/tbx_bookName"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
