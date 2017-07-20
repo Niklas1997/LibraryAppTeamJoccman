@@ -11,14 +11,14 @@ public class RequestCache {
 
     public static final RequestCache CACHE = new RequestCache();
 
-    private final Map<Integer, BookRequest> bookRequest = new HashMap<>();
+    private final Map<Integer, RequestBook> bookRequest = new HashMap<>();
 
     private RequestCache(){
-        bookRequest.put(0, new BookRequest("The Hobbit","Tolkien",0));
+        bookRequest.put(0, new RequestBook("The Hobbit","Tolkien","james.milton@ericsson.com",0));
 
     }
 
-    public BookRequest getBookRequest(final int id){
+    public RequestBook getBookRequest(final int id){
         return bookRequest.get(id);
     }
 

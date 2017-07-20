@@ -2,9 +2,7 @@ package com.example.ezmilja.libraryapp;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,7 +26,8 @@ public class LeaderboardList extends AppCompatActivity {
     private final RequestCache books = RequestCache.CACHE;
     private Button buttonRequest;
     private ListView listView;
-    private List<BookRequest> originalList ;
+    private List<RequestBook> originalList;
+    private Button btn_more;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +38,7 @@ public class LeaderboardList extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        originalList = new ArrayList<BookRequest>();
+        originalList = new ArrayList<RequestBook>();
         for (int i = 0; i < books.getNumberOfBookRequests(); i++){
             originalList.add(books.getBookRequest(i));
         }
@@ -101,7 +100,7 @@ public class LeaderboardList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                originalList.add(new BookRequest(edt_name.getText().toString(), "", 0));
+                originalList.add(new RequestBook(edt_name.getText().toString(), "", "", 0));
                 makeListView();
 
                 dialog.dismiss();
@@ -119,9 +118,9 @@ public class LeaderboardList extends AppCompatActivity {
     class CustomAdapter extends BaseAdapter {
 
         Context context;
-        List <BookRequest> showList;
+        List <RequestBook> showList;
 
-        public CustomAdapter(Context context,List <BookRequest> items){
+        public CustomAdapter(Context context,List <RequestBook> items){
             this.context = context;
             this.showList = items;
         }
@@ -131,6 +130,7 @@ public class LeaderboardList extends AppCompatActivity {
             TextView bookVote;
             ImageView image;
             boolean upVote;
+            Button btn_more;
         }
         @Override
         public int getCount() {
@@ -154,7 +154,7 @@ public class LeaderboardList extends AppCompatActivity {
             final ViewHolder holder ;
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            final BookRequest myBook = showList.get(position);
+            final RequestBook myBook = showList.get(position);
 
             if(view==null){
 
@@ -183,6 +183,16 @@ public class LeaderboardList extends AppCompatActivity {
             }
 
 
+
+            holder.btn_more.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //makeInfoDialog(myBook);
+                }
+            });
+
+
+
             holder.image.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -204,7 +214,30 @@ public class LeaderboardList extends AppCompatActivity {
 
             return vi;
         }
-    }
+
+        private void makeInfoDialog(RequestBook moreInfo){
+            final Dialog dialog = new Dialog(LeaderboardList.this);
+            dialog.setContentView(R.layout.more_info_request_layout);
+            dialog.show();
+
+            final TextView  author = dialog.findViewById(R.id.author);
+            final TextView  email = dialog.findViewById(R.id.email);
+
+            author.setText("Author: " + moreInfo.getAuthor());
+            email.setText("originally requested by: " + moreInfo.getEmail());
+
+            Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
+
+
+            Button btn_back = (Button)dialog.findViewById(R.id.btn_back);
+
+            btn_back.setTypeface(myTypeFace1);
+
+            final EditText edt_name = dialog.findViewById(R.id.name);
+
+
+
+    }}
 
 
     @Override
