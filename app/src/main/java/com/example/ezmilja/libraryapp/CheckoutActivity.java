@@ -190,7 +190,6 @@ public class CheckoutActivity extends AppCompatActivity {
     private void makeInfoDialog(){
         final Dialog dialog = new Dialog(CheckoutActivity.this);
         dialog.setContentView(R.layout.icon);
-        dialog.setTitle("Please use the ISBN-13 on back of Book");
         dialog.show();
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");

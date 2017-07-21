@@ -32,7 +32,7 @@
         android:background="@drawable/mybutton"
         android:text="close"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView3"
