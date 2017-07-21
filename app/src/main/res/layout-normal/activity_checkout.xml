@@ -49,14 +49,14 @@
         app:srcCompat="@drawable/info"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="33dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginBottom="437dp"
         app:layout_constraintLeft_toRightOf="@+id/dropDownTextView"
         android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="0.333" />
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="1.0" />
 
 
     <AutoCompleteTextView

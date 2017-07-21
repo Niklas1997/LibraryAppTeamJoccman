@@ -37,15 +37,21 @@ public class BookInfoActivity extends AppCompatActivity {
     }
 
     private void createTextViews(Book book){
+
         descriptionTxt = (AutoCompleteTextView)findViewById(R.id.descriptionTxt);
         descriptionTxt.setText(book.getDescription());
+        descriptionTxt.setFocusable(false);
 
         txt_details = (AutoCompleteTextView)findViewById(R.id.txt_details);
         txt_details.setText( "Title : " + book.getBookName() + "\n" + "\n" + "Author : " + book.getAuthor() + "\n"
                 + "\n"+ "Publisher : " + book.getPublisher() + "\n" + "\n" + "Number of Copies Available");
+        txt_details.setFocusable(false);
 
         txt_rating = (TextView) findViewById(R.id.txt_Rating);
         txt_rating.setText("User Rating : " + book.getRating() + "/5");
+
+        ImageView imageView10 =(ImageView)findViewById(R.id.imageView10);
+        imageView10.setImageResource(book.getImageId());
     }
 
     private void createButtons(final Book book){
