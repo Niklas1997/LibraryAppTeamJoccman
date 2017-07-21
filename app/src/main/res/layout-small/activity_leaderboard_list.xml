@@ -12,6 +12,7 @@
     android:weightSum="1">
 
     <LinearLayout
+        android:id="@+id/buttonRequest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -23,7 +24,7 @@
             android:layout_weight="0.89" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/buttonRequest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"

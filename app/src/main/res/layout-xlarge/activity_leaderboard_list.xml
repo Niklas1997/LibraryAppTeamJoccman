@@ -22,7 +22,7 @@
             android:layout_height="35dp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/buttonRequest"
             android:layout_width="145dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
