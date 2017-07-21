@@ -81,6 +81,7 @@ public class BookInfoActivity extends AppCompatActivity {
                 Intent intent = new Intent(BookInfoActivity.this, CheckoutActivity.class);
                 intent.putExtra("isbn", book.getIsbn());
                 startActivity(intent);
+                finish();
             }}
         );
     }
