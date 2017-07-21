@@ -15,6 +15,8 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -35,6 +37,7 @@ public class LeaderboardList extends AppCompatActivity {
     private List<RequestBook> originalList;
     private Button btn_more;
     private SearchView searchView;
+    private LeaderboardList.CustomAdapter customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,21 @@ public class LeaderboardList extends AppCompatActivity {
 
         createButton();
         makeListView();
+
+        searchView = (SearchView) findViewById(R.id.jeffdasearchbar);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                customAdapter.getFilter().filter(s);
+                return false;
+            }
+        });
+
     }
 
 
@@ -78,7 +96,7 @@ public class LeaderboardList extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.leaderbd_list);
 
-        LeaderboardList.CustomAdapter customAdapter = new LeaderboardList.CustomAdapter(LeaderboardList.this, originalList);
+        customAdapter = new LeaderboardList.CustomAdapter(LeaderboardList.this, originalList);
         listView.setAdapter(customAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -87,7 +105,6 @@ public class LeaderboardList extends AppCompatActivity {
                 Toast.makeText(LeaderboardList.this, "Goodbye Dave! Hello Steve!", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     private void createButton(){
@@ -158,8 +175,9 @@ public class LeaderboardList extends AppCompatActivity {
         return false;
     }
 
-    class CustomAdapter extends BaseAdapter {
+    class CustomAdapter extends BaseAdapter implements Filterable {
 
+        BookFilter bookFilter;
         Context context;
         List <RequestBook> showList;
 
@@ -264,6 +282,62 @@ public class LeaderboardList extends AppCompatActivity {
             return vi;
         }
 
+
+        @Override
+        public Filter getFilter() {
+            if (bookFilter == null)
+                bookFilter = new BookFilter();
+            return bookFilter;
+        }
+
+        class BookFilter extends Filter{
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults results = new FilterResults();
+                // We implement here the filter logic
+                if (constraint == null || constraint.length() < 1) {
+                    // No filter implemented we return all the list
+                    showList = originalList;
+                    results.values = showList;
+                    results.count = showList.size();
+                }
+                else {
+                    // We perform filtering operation
+                    List<RequestBook> nBookList = new ArrayList<RequestBook>();
+
+                    for (RequestBook b : originalList) {
+                        if (b.getBookName().toUpperCase()
+                                .contains(constraint.toString().toUpperCase())) {
+                            nBookList.add(b);
+                        }
+                        else if (b.getAuthor().toUpperCase()
+                                .contains(constraint.toString().toUpperCase())) {
+                            nBookList.add(b);
+
+                        }
+                    }
+                    showList = nBookList;
+                    results.values = nBookList;
+                    results.count = nBookList.size();
+                }
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults results) {
+                // Now we have to inform the adapter about the new list filtered
+                if(results.count ==0) {
+                    notifyDataSetInvalidated();
+                }
+                else
+                {
+                    showList = (List<RequestBook>) results.values;
+                    notifyDataSetChanged();
+                }
+
+            }
+        }
 
     }
 
