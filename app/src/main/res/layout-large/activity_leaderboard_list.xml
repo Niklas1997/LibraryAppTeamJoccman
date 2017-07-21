@@ -12,7 +12,6 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/jeffdasearchbar"
         android:layout_width="match_parent"
         android:layout_height="86dp"
         android:orientation="horizontal"
