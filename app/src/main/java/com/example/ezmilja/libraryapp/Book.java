@@ -51,7 +51,7 @@ public class Book {
 
     public String getPublisher(){return  publisher;}
 
-    public  double getRating() {return rating / num_rating;}
+    public  double getRating() {return (rating / num_rating);}
 
     public int getID(){return ID;}
 
@@ -60,6 +60,7 @@ public class Book {
     public void addRating(double addRating){
         isRated = true;
         double temp = rating + addRating;
+        num_rating += 1;
         rating = temp;
     }
 
