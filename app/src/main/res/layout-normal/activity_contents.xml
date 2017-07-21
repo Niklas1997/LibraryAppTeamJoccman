@@ -46,7 +46,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702"
+        app:layout_constraintVertical_bias="0.778"
         tools:text="Check in / out book"
         app:layout_constraintHorizontal_bias="0.505" />
 
@@ -68,7 +68,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Request Book"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.516" />
 
     <TextView
         android:id="@+id/textView2"
