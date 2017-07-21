@@ -261,6 +261,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         Button submit_button = dialog.findViewById(R.id.submit_button);
         submit_button.setTypeface(myTypeFace1);
+
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
