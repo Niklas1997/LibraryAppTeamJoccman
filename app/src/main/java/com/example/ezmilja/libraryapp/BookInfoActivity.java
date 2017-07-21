@@ -39,7 +39,7 @@ public class BookInfoActivity extends AppCompatActivity {
     private void createTextViews(Book book){
 
         descriptionTxt = (AutoCompleteTextView)findViewById(R.id.descriptionTxt);
-        descriptionTxt.setText(book.getDescription());
+        descriptionTxt.setText("Details : " + book.getDescription());
         descriptionTxt.setFocusable(false);
 
         txt_details = (AutoCompleteTextView)findViewById(R.id.txt_details);

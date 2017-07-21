@@ -134,7 +134,7 @@ public class LeaderboardList extends AppCompatActivity {
                     dialog.dismiss();
                 }
                 else {
-                    Toast.makeText(LeaderboardList.this, "Error: plz input correctly", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LeaderboardList.this, "Error: Please input correctly", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -151,7 +151,7 @@ public class LeaderboardList extends AppCompatActivity {
         if (name.length() == 0 || author.length() == 0){
             return false;
         }
-        if (email.toLowerCase().endsWith("@ericcson.com")){
+        if (email.toLowerCase().endsWith("@ericsson.com")){
             return true;
         }
         return false;
