@@ -14,7 +14,7 @@
     <TextView
         android:id="@+id/txt_Rating"
         style="@android:style/Widget.DeviceDefault.TextView"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="49dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -84,7 +84,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894"
+        app:layout_constraintVertical_bias="0.876"
         app:srcCompat="@drawable/starratings"
         app:layout_constraintLeft_toRightOf="@+id/txt_Rating"
         android:layout_marginLeft="0dp" />
