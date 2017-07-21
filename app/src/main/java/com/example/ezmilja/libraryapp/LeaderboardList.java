@@ -123,13 +123,20 @@ public class LeaderboardList extends AppCompatActivity {
         btn_submitRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RequestBook temp = new RequestBook(edt_name.getText().toString(),
-                        edt_author.getText().toString(), edt_email.getText().toString(), 0, databaseHelper.getAllData().getCount() + 1);
-                originalList.add(temp);
-                databaseHelper.insertData(temp.getBookName(), temp.getAuthor(), temp.getEmail(), temp.getVote() + "");
-                makeListView();
+                String temp_name = edt_name.getText().toString();
+                String temp_author = edt_author.getText().toString();
+                String temp_email = edt_email.getText().toString();
+                if (requestCheck(temp_name, temp_author, temp_email)) {
+                    RequestBook temp = new RequestBook(temp_name, temp_author, temp_email, 0, databaseHelper.getAllData().getCount() + 1);
+                    originalList.add(temp);
+                    databaseHelper.insertData(temp.getBookName(), temp.getAuthor(), temp.getEmail(), temp.getVote() + "");
+                    makeListView();
 
-                dialog.dismiss();
+                    dialog.dismiss();
+                }
+                else {
+                    Toast.makeText(LeaderboardList.this, "Error: plz input correctly", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -139,6 +146,16 @@ public class LeaderboardList extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
+    }
+
+    private boolean requestCheck(String name, String author, String email){
+        if (name.length() == 0 || author.length() == 0){
+            return false;
+        }
+        if (email.toLowerCase().endsWith("@ericcson.com")){
+            return true;
+        }
+        return false;
     }
 
     class CustomAdapter extends BaseAdapter {
