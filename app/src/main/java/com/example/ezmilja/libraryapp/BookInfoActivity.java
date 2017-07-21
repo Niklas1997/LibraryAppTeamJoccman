@@ -10,6 +10,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BookInfoActivity extends AppCompatActivity {
     private Button btn_back;
@@ -17,6 +18,9 @@ public class BookInfoActivity extends AppCompatActivity {
     private Button btn_check;
     private AutoCompleteTextView descriptionTxt, txt_details;
     private Typeface myTypeFace1;
+    private BookDbHelper bookDbHelper;
+    private Book book;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +31,21 @@ public class BookInfoActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         Intent intent = getIntent();
 
-        final String id = intent.getStringExtra("id");
-        final Book book = BookCache.CACHE.getBook(Integer.parseInt(id.trim()));
+        id = intent.getStringExtra("id");
+        updateBookInfo();
+        if (book == null){
+            Toast.makeText(BookInfoActivity.this, "Errror: book info not found", Toast.LENGTH_SHORT).show();
+        }
 
         myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
 
         createTextViews(book);
         createButtons(book);
+    }
+
+    private void updateBookInfo(){
+        bookDbHelper = new BookDbHelper(BookInfoActivity.this);
+        book = bookDbHelper.getBook(Integer.parseInt(id));
     }
 
     private void createTextViews(Book book){

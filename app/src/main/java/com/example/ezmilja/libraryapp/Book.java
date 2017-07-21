@@ -6,6 +6,7 @@ package com.example.ezmilja.libraryapp;
 
 public class Book {
 
+    private final int ID;
     private final String isbn;
     private final String bookName;
     private final int imageId;
@@ -13,10 +14,12 @@ public class Book {
     private final String description;
     private final String page;
     private final String publisher;
-    private final int rating;
+    private double rating;
+    private boolean isRated;
 
-    public Book(final String isbn, final String bookName, final int imageId, final String author, final String description,
-                final String page, final String publisher, final int rating){
+    public Book(final int ID, final String isbn, final String bookName, final int imageId, final String author, final String description,
+                final String page, final String publisher, double rating){
+        this.ID = ID;
         this.isbn = isbn;
         this.bookName =bookName;
         this.imageId = imageId;
@@ -25,6 +28,7 @@ public class Book {
         this.page = page;
        this.publisher = publisher;
         this.rating = rating;
+        isRated = false;
     }
 
     public String getIsbn() {return isbn;}
@@ -41,7 +45,17 @@ public class Book {
 
     public String getPublisher(){return  publisher;}
 
-    public  int getRating() {return rating;}
+    public  double getRating() {return rating;}
+
+    public int getID(){return ID;}
+
+    public boolean getIsRated(){return isRated;}
+
+    public void addRating(double addRating){
+        isRated = true;
+        double temp = (rating + addRating) / 2;
+        rating = temp;
+    }
 
     @Override
     public boolean equals(final Object obj) {

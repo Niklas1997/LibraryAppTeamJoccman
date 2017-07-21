@@ -11,7 +11,7 @@ package com.example.ezmilja.libraryapp;
         import android.database.sqlite.SQLiteOpenHelper;
 
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class RequestDbHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Requests.db";
     public static final String TABLE_NAME = "REQUESTS";
     public static final String COL_1 = "ID";
@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_5 = "VOTE";
 
 
-    public DatabaseHelper(Context context) {
+    public RequestDbHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 

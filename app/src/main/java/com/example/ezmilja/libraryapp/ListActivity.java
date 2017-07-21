@@ -1,5 +1,6 @@
 package com.example.ezmilja.libraryapp;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -21,7 +22,8 @@ import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
 
-    private final BookCache books = BookCache.CACHE;
+    private BookDbHelper bookDbHelper;
+    private Cursor cursor;
     private List<Book> originalList;
     private SearchView searchView;
 
@@ -33,10 +35,8 @@ public class ListActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        originalList = new ArrayList<Book>();
-        for (int i = 0; i < books.getNumberOfBooks(); i++){
-            originalList.add(books.getBook(i));
-        }
+        bookDbHelper = new BookDbHelper(ListActivity.this);
+        originalList = bookDbHelper.getAllBooks();
         sortlist(originalList);
 
         searchView = (SearchView) findViewById(R.id.searchbar);
@@ -48,14 +48,7 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Book temp = (Book) adapterView.getItemAtPosition(i);
-                int id = 0;
-                for (int j = 0; j < books.getNumberOfBooks(); j++){
-                    if (books.getBook(j).equals(temp)) {
-                        id = j;
-                        break;
-                    }
-                }
-                PopUpBookInfo popUp = new PopUpBookInfo(id, temp);
+                PopUpBookInfo popUp = new PopUpBookInfo(temp.getID(), temp);
                 popUp.createPopUp(ListActivity.this, BookInfoActivity.class, "");
             }
         });

@@ -22,14 +22,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class LeaderboardList extends AppCompatActivity {
 
-    private DatabaseHelper databaseHelper;
+    private RequestDbHelper requestDbHelper;
     private Cursor cursor;
     private Button buttonRequest;
     private ListView listView;
@@ -46,8 +45,8 @@ public class LeaderboardList extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        databaseHelper = new DatabaseHelper(LeaderboardList.this);
-        cursor = databaseHelper.getAllData();
+        requestDbHelper = new RequestDbHelper(LeaderboardList.this);
+        cursor = requestDbHelper.getAllData();
 
         originalList = new ArrayList<RequestBook>();
 
@@ -128,9 +127,9 @@ public class LeaderboardList extends AppCompatActivity {
                 String temp_author = edt_author.getText().toString();
                 String temp_email = edt_email.getText().toString();
                 if (requestCheck(temp_name, temp_author, temp_email)) {
-                    RequestBook temp = new RequestBook(temp_name, temp_author, temp_email, 0, databaseHelper.getAllData().getCount() + 1);
+                    RequestBook temp = new RequestBook(temp_name, temp_author, temp_email, 0, requestDbHelper.getAllData().getCount() + 1);
                     originalList.add(temp);
-                    databaseHelper.insertData(temp.getBookName(), temp.getAuthor(), temp.getEmail(), temp.getVote() + "");
+                    requestDbHelper.insertData(temp.getBookName(), temp.getAuthor(), temp.getEmail(), temp.getVote() + "");
                     makeListView();
 
                     dialog.dismiss();
@@ -249,14 +248,14 @@ public class LeaderboardList extends AppCompatActivity {
                         holder.image.setImageResource(R.drawable.dave);
                         myBook.addVote(-1);
                         holder.bookVote.setText(myBook.getVote()+ "");
-                        databaseHelper.updateData(myBook.getId() + "", myBook.getBookName(), myBook.getAuthor(),myBook.getEmail(), myBook.getVote() + "");
+                        requestDbHelper.updateData(myBook.getId() + "", myBook.getBookName(), myBook.getAuthor(),myBook.getEmail(), myBook.getVote() + "");
                     }
                     else {
                         myBook.setisUpVoted(true);
                         holder.image.setImageResource(R.drawable.steve);
                         myBook.addVote(1);
                         holder.bookVote.setText( myBook.getVote() + "");
-                        databaseHelper.updateData(myBook.getId() + "", myBook.getBookName(), myBook.getAuthor(),myBook.getEmail(), myBook.getVote() + "");
+                        requestDbHelper.updateData(myBook.getId() + "", myBook.getBookName(), myBook.getAuthor(),myBook.getEmail(), myBook.getVote() + "");
                     }
 
                 }
