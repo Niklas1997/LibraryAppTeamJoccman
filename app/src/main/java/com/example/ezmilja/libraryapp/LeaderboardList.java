@@ -101,7 +101,6 @@ public class LeaderboardList extends AppCompatActivity {
                 makeRequestDialog();
             }
         });
-
     }
 
     private void makeRequestDialog(){
