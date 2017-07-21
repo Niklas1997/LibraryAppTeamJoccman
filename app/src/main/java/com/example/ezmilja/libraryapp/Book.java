@@ -16,9 +16,10 @@ public class Book {
     private final String publisher;
     private double rating;
     private boolean isRated;
+    private int numberOfCopys;
 
     public Book(final int ID, final String isbn, final String bookName, final int imageId, final String author, final String description,
-                final String page, final String publisher, double rating){
+                final String page, final String publisher, double rating, int numberOfCopys){
         this.ID = ID;
         this.isbn = isbn;
         this.bookName =bookName;
@@ -29,6 +30,7 @@ public class Book {
        this.publisher = publisher;
         this.rating = rating;
         isRated = false;
+        this.numberOfCopys = numberOfCopys;
     }
 
     public String getIsbn() {return isbn;}
@@ -55,6 +57,12 @@ public class Book {
         isRated = true;
         double temp = (rating + addRating) / 2;
         rating = temp;
+    }
+
+    public int getNumberOfCopys(){return numberOfCopys;}
+
+    public void addToNumberOfCopys(int added){
+        numberOfCopys = numberOfCopys + added;
     }
 
     @Override

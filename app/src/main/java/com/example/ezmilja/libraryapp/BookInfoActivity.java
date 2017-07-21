@@ -56,7 +56,7 @@ public class BookInfoActivity extends AppCompatActivity {
 
         txt_details = (AutoCompleteTextView)findViewById(R.id.txt_details);
         txt_details.setText( "Title : " + book.getBookName() + "\n" + "\n" + "Author : " + book.getAuthor() + "\n"
-                + "\n"+ "Publisher : " + book.getPublisher() + "\n" + "\n" + "Number of Copies Available");
+                + "\n"+ "Publisher : " + book.getPublisher() + "\n" + "\n" + "Number of Copies Available : " + book.getNumberOfCopys());
         txt_details.setFocusable(false);
 
         txt_rating = (TextView) findViewById(R.id.txt_Rating);

@@ -129,8 +129,13 @@ public class CheckoutActivity extends AppCompatActivity {
                                 if (tempBook == null){
                                     Toast.makeText(CheckoutActivity.this, "Book not found", Toast.LENGTH_SHORT).show();
                                 }
+                                else if (tempBook.getNumberOfCopys() < 1){
+                                    Toast.makeText(CheckoutActivity.this, "No copys left", Toast.LENGTH_SHORT).show();
+                                }
                                 else {
                                     Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+                                    tempBook.addToNumberOfCopys(-1);
+                                    bookDbHelper.updateData(tempBook);
                                     finish();
                                 }
                             }
@@ -243,6 +248,8 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                selectedBook.addToNumberOfCopys(1);
+                bookDbHelper.updateData(selectedBook);
                 Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_LONG).show();
             }
         });

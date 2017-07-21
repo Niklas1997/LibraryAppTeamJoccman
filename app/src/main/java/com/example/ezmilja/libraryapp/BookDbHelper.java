@@ -25,9 +25,11 @@ public class BookDbHelper extends SQLiteOpenHelper {
     public static final String COL_7 = "PAGE";
     public static final String COL_8 = "PUBLISHER";
     public static final String COL_9 = "RATING";
+    public static final String COL_10 = "NUMBEROFCOPYS";
 
     public BookDbHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
+
 
         BookCache bookCache = BookCache.CACHE;
         Cursor cursor = this.getAllData();
@@ -41,7 +43,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "NAME TEXT,AUTHOR TEXT,DESCRIPTION TEXT,IMAGEID INTEGER,ISBN INTEGER,PAGE TEXT,PUBLISHER TEXT,RATING DOUBLE)");
+                "NAME TEXT,AUTHOR TEXT,DESCRIPTION TEXT,IMAGEID INTEGER,ISBN INTEGER,PAGE TEXT,PUBLISHER TEXT,RATING DOUBLE,NUMBEROFCOPYS INTEGER)");
     }
 
     @Override
@@ -51,7 +53,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
     }
 
     public boolean insertData(String name, String author, String description, String image_id,
-                              String isbn, String page, String publisher, String rating) {
+                              String isbn, String page, String publisher, String rating, String numberOfCopys) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, name);
@@ -62,6 +64,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
         contentValues.put(COL_7, page);
         contentValues.put(COL_8, publisher);
         contentValues.put(COL_9, rating);
+        contentValues.put(COL_10, numberOfCopys);
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1)
             return false;
@@ -80,6 +83,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
         contentValues.put(COL_7, book.getPage());
         contentValues.put(COL_8, book.getPublisher());
         contentValues.put(COL_9, book.getRating());
+        contentValues.put(COL_10, book.getNumberOfCopys());
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1)
             return false;
@@ -88,7 +92,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
     }
 
     public boolean updateData(String id, String name, String author, String description, String image_id,
-                              String isbn, String page, String publisher, String rating) {
+                              String isbn, String page, String publisher, String rating, String numberOfCopys) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_1, id);
@@ -100,6 +104,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
         contentValues.put(COL_7, page);
         contentValues.put(COL_8, publisher);
         contentValues.put(COL_9, rating);
+        contentValues.put(COL_10, numberOfCopys);
         db.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
         return true;
     }
@@ -115,6 +120,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
         contentValues.put(COL_7, book.getPage());
         contentValues.put(COL_8, book.getPublisher());
         contentValues.put(COL_9, book.getRating());
+        contentValues.put(COL_10, book.getNumberOfCopys());
         db.update(TABLE_NAME, contentValues, "ID = ?", new String[]{book.getID() + ""});
         return true;
     }
@@ -138,7 +144,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
             String t_page = cursor.getString(6);
             String t_publisher = cursor.getString(7);
             double t_rating = Double.parseDouble(cursor.getString(8));
-            list.add( new Book(t_id, t_isbn, t_name, t_imageid, t_author, t_description, t_page, t_publisher, t_rating));
+            int t_numberOfCopys = Integer.parseInt(cursor.getString(9));
+            list.add( new Book(t_id, t_isbn, t_name, t_imageid, t_author, t_description, t_page, t_publisher, t_rating, t_numberOfCopys));
         }
         return list;
     }
