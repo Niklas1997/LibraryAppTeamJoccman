@@ -54,18 +54,19 @@
         android:layout_width="41dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
-        android:textAlignment="viewEnd"
+        android:textAlignment="center"
         android:textSize="12dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toRightOf="@+id/btn_more"
-        android:layout_marginLeft="8dp"
         app:layout_constraintRight_toLeftOf="@+id/ibnt_vote"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
 
     <Button
         android:id="@+id/btn_more"

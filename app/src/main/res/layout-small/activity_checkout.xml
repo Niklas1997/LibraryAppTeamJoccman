@@ -12,9 +12,9 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="139dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="45dp"
+        android:layout_width="115dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="57dp"
         android:background="@drawable/mybutton"
         android:text="Submit"
         android:textColor="@android:color/background_light"
@@ -40,8 +40,7 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/titlesausages"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_editor_absoluteY="311dp" />
+        tools:layout_constraintLeft_creator="1" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -59,7 +58,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintVertical_bias="0.0" />
 
 
@@ -75,7 +74,7 @@
         android:textAlignment="center"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -92,21 +91,21 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:visibility="invisible"
-        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@mipmap/ic_launcher_round"
         tools:layout_constraintTop_creator="1"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="57dp" />
 
-    <TextView
+    <AutoCompleteTextView
         android:id="@+id/txt_name"
         android:layout_width="199dp"
         android:layout_height="49dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="AutoCompleteTextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="12sp"
         android:visibility="invisible"
@@ -117,7 +116,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.177" />
 
-    <TextView
+    <AutoCompleteTextView
         android:id="@+id/txt_author"
         android:layout_width="198dp"
         android:layout_height="56dp"
@@ -136,29 +135,29 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="137dp"
-        android:layout_height="75dp"
+        android:layout_width="121dp"
+        android:layout_height="61dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_author"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.333"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1">
-
-        <RadioButton
-            android:id="@+id/rbtn_out"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Check OUT"
-            android:textColor="@color/colorPrimaryDark" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Check IN"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <RadioButton
+            android:id="@+id/rbtn_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check OUT"
             android:textColor="@color/colorPrimaryDark" />
     </RadioGroup>
 

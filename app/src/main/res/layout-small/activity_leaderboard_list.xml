@@ -21,7 +21,7 @@
         <SearchView
             android:layout_width="194dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.89" />
+            android:layout_weight="0.14" />
 
         <Button
             android:id="@+id/buttonRequest"
@@ -51,9 +51,8 @@
 
     <ListView
         android:id="@+id/leaderbd_list"
-        android:layout_width="match_parent"
-        android:layout_height="191dp"
-        android:layout_weight="0.86" />
+        android:layout_width="wrap_content"
+        android:layout_height="191dp" />
 
     <ImageView
         android:id="@+id/imageView13"
