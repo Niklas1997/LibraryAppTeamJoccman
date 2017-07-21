@@ -152,7 +152,7 @@
             android:layout_height="50dp"
             android:text="Check IN"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="10sp" />
+            android:textSize="14sp" />
 
         <RadioButton
             android:id="@+id/rbtn_out"
@@ -160,7 +160,7 @@
             android:layout_height="50dp"
             android:text="Check OUT"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="10sp" />
+            android:textSize="14sp" />
     </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>
