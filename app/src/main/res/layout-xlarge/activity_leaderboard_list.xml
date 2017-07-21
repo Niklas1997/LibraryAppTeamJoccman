@@ -19,6 +19,7 @@
         android:weightSum="1">
 
         <SearchView
+            android:id="@+id/jeffdasearchbar"
             android:layout_width="256dp"
             android:layout_height="92dp"
             android:layout_weight="0.98" />
