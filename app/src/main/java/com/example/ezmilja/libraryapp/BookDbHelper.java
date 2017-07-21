@@ -26,6 +26,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
     public static final String COL_8 = "PUBLISHER";
     public static final String COL_9 = "RATING";
     public static final String COL_10 = "NUMBEROFCOPYS";
+    public static final String COL_11 = "NUMRATING";
+    public static final String COL_12 = "MAXCOPYS";
 
     public BookDbHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -43,7 +45,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "NAME TEXT,AUTHOR TEXT,DESCRIPTION TEXT,IMAGEID INTEGER,ISBN INTEGER,PAGE TEXT,PUBLISHER TEXT,RATING DOUBLE,NUMBEROFCOPYS INTEGER)");
+                "NAME TEXT,AUTHOR TEXT,DESCRIPTION TEXT,IMAGEID INTEGER,ISBN INTEGER,PAGE TEXT,PUBLISHER TEXT," +
+                "RATING DOUBLE,NUMBEROFCOPYS INTEGER,NUMRATING INTEGER,MAXCOPYS INTEGER)");
     }
 
     @Override
@@ -53,7 +56,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
     }
 
     public boolean insertData(String name, String author, String description, String image_id,
-                              String isbn, String page, String publisher, String rating, String numberOfCopys) {
+                              String isbn, String page, String publisher, String rating, String numberOfCopys,
+                              String max_copys, String num_rating) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, name);
@@ -65,6 +69,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
         contentValues.put(COL_8, publisher);
         contentValues.put(COL_9, rating);
         contentValues.put(COL_10, numberOfCopys);
+        contentValues.put(COL_11, num_rating);
+        contentValues.put(COL_12, max_copys);
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1)
             return false;
@@ -84,6 +90,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
         contentValues.put(COL_8, book.getPublisher());
         contentValues.put(COL_9, book.getRating());
         contentValues.put(COL_10, book.getNumberOfCopys());
+        contentValues.put(COL_11, book.getNum_rating());
+        contentValues.put(COL_12, book.getMAX_COPYS());
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1)
             return false;
@@ -92,7 +100,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
     }
 
     public boolean updateData(String id, String name, String author, String description, String image_id,
-                              String isbn, String page, String publisher, String rating, String numberOfCopys) {
+                              String isbn, String page, String publisher, String rating, String numberOfCopys,
+                              String max_copys, String num_rating) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_1, id);
@@ -105,6 +114,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
         contentValues.put(COL_8, publisher);
         contentValues.put(COL_9, rating);
         contentValues.put(COL_10, numberOfCopys);
+        contentValues.put(COL_11, num_rating);
+        contentValues.put(COL_12, max_copys);
         db.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
         return true;
     }
@@ -121,6 +132,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
         contentValues.put(COL_8, book.getPublisher());
         contentValues.put(COL_9, book.getRating());
         contentValues.put(COL_10, book.getNumberOfCopys());
+        contentValues.put(COL_11, book.getNum_rating());
+        contentValues.put(COL_12, book.getMAX_COPYS());
         db.update(TABLE_NAME, contentValues, "ID = ?", new String[]{book.getID() + ""});
         return true;
     }
@@ -145,7 +158,9 @@ public class BookDbHelper extends SQLiteOpenHelper {
             String t_publisher = cursor.getString(7);
             double t_rating = Double.parseDouble(cursor.getString(8));
             int t_numberOfCopys = Integer.parseInt(cursor.getString(9));
-            list.add( new Book(t_id, t_isbn, t_name, t_imageid, t_author, t_description, t_page, t_publisher, t_rating, t_numberOfCopys));
+            int t_numRating = Integer.parseInt(cursor.getString(10));
+            int t_maxCopys = Integer.parseInt(cursor.getString(11));
+            list.add( new Book(t_id, t_isbn, t_name, t_imageid, t_author, t_description, t_page, t_publisher, t_rating, t_numberOfCopys, t_numRating, t_maxCopys));
         }
         return list;
     }

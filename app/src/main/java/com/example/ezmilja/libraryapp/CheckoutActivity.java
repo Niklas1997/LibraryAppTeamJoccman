@@ -248,9 +248,14 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                selectedBook.addToNumberOfCopys(1);
-                bookDbHelper.updateData(selectedBook);
-                Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_LONG).show();
+                if (selectedBook.getNumberOfCopys() < selectedBook.getMAX_COPYS()) {
+                    selectedBook.addToNumberOfCopys(1);
+                    bookDbHelper.updateData(selectedBook);
+                    Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(CheckoutActivity.this, "All copys are in library", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
