@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class LeaderboardList extends AppCompatActivity {
     private ListView listView;
     private List<RequestBook> originalList;
     private Button btn_more;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
