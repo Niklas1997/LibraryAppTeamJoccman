@@ -16,21 +16,21 @@
         android:layout_width="339dp"
         android:layout_height="316dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="AutoCompleteTextView"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="22sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <AutoCompleteTextView
         android:id="@+id/descriptionTxt"
@@ -44,7 +44,7 @@
         android:layout_marginTop="8dp"
         android:text="Description"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="22sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -71,8 +71,8 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="289dp"
-        android:layout_height="311dp"
+        android:layout_width="337dp"
+        android:layout_height="353dp"
         app:srcCompat="@drawable/foresight"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -82,7 +82,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.03"
+        app:layout_constraintVertical_bias="0.029"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.07" />

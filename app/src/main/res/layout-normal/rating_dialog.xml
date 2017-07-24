@@ -97,11 +97,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tbx_title"
-        app:layout_constraintVertical_bias="0.765"
+        app:layout_constraintVertical_bias="0.875"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintHorizontal_bias="0.497" />
 
     <TextView
         android:id="@+id/tbx_author"
@@ -142,16 +143,16 @@
 
     <ImageView
         android:id="@+id/img_bookcover"
-        android:layout_width="65dp"
-        android:layout_height="61dp"
+        android:layout_width="64dp"
+        android:layout_height="75dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher"
-        app:layout_constraintHorizontal_bias="0.501" />
+        app:layout_constraintHorizontal_bias="0.498" />
 </android.support.constraint.ConstraintLayout>
