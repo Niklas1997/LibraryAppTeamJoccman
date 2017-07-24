@@ -12,13 +12,13 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="234dp"
-        android:layout_height="86dp"
+        android:layout_width="240dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="110dp"
         android:background="@drawable/mybuttonxlarge"
         android:text="Submit"
         android:textColor="@android:color/background_light"
-        android:textSize="24sp"
+        android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
