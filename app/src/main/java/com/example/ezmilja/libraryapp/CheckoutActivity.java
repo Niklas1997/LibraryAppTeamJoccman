@@ -130,7 +130,7 @@ public class CheckoutActivity extends AppCompatActivity {
                                     Toast.makeText(CheckoutActivity.this, "Book not found", Toast.LENGTH_SHORT).show();
                                 }
                                 else if (tempBook.getNumberOfCopys() < 1){
-                                    Toast.makeText(CheckoutActivity.this, "No copys left", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CheckoutActivity.this, "No copies left", Toast.LENGTH_SHORT).show();
                                 }
                                 else {
                                     Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
