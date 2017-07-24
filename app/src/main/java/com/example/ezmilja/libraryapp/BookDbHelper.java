@@ -160,7 +160,8 @@ public class BookDbHelper extends SQLiteOpenHelper {
             int t_numberOfCopys = Integer.parseInt(cursor.getString(9));
             int t_numRating = Integer.parseInt(cursor.getString(10));
             int t_maxCopys = Integer.parseInt(cursor.getString(11));
-            list.add( new Book(t_id, t_isbn, t_name, t_imageid, t_author, t_description, t_page, t_publisher, t_rating, t_numberOfCopys, t_numRating, t_maxCopys));
+            list.add( new Book(t_id, t_isbn, t_name, t_imageid, t_author, t_description,
+                    t_page, t_publisher, t_rating, t_numberOfCopys, t_maxCopys, t_numRating));
         }
         return list;
     }
