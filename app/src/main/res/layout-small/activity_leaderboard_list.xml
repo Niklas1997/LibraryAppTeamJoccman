@@ -21,7 +21,7 @@
             android:id="@+id/jeffdasearchbar"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.14" />
+            android:layout_weight="1.04" />
 
         <Button
             android:id="@+id/buttonRequest"
@@ -39,7 +39,7 @@
             android:text="Request"
             android:textColor="@android:color/background_light"
             android:textColorLink="@android:color/background_light"
-            android:textSize="12sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.971"
             app:layout_constraintLeft_toLeftOf="parent"
