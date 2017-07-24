@@ -84,7 +84,7 @@
     <TextView
         android:id="@+id/pageTxt"
         android:layout_width="124dp"
-        android:layout_height="19dp"
+        android:layout_height="16dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="12dp"
@@ -101,7 +101,7 @@
     <TextView
         android:id="@+id/isbnTxt"
         android:layout_width="156dp"
-        android:layout_height="19dp"
+        android:layout_height="16dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="13dp"
         android:layout_marginRight="13dp"
@@ -119,18 +119,18 @@
 
     <Button
         android:id="@+id/btn_check"
-        android:layout_width="88dp"
-        android:layout_height="39dp"
-        android:background="@drawable/mybutton"
+        android:layout_width="94dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="3dp"
+        android:background="@drawable/mybuttonsmall"
         android:text="Check Out"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/isbnTxt"
         app:layout_constraintRight_toRightOf="@+id/isbnTxt"
-        android:layout_marginBottom="15dp"
-        android:layout_marginRight="3dp" />
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1" />
 
     <TextView
         android:id="@+id/txt_Rating"
