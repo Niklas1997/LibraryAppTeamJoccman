@@ -34,7 +34,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/mybuttonnormal"
+            android:background="@drawable/mybuttonsmall"
             android:backgroundTint="@color/colorPrimary"
             android:text="Request"
             android:textColor="@android:color/background_light"
