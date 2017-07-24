@@ -121,7 +121,7 @@
         android:id="@+id/btn_check"
         android:layout_width="88dp"
         android:layout_height="39dp"
-        android:background="@drawable/mybutton"
+        android:background="@drawable/mybuttonsmall"
         android:text="Check Out"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"

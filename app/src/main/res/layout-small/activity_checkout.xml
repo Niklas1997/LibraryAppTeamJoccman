@@ -15,7 +15,7 @@
         android:layout_width="115dp"
         android:layout_height="20dp"
         android:layout_marginBottom="57dp"
-        android:background="@drawable/mybutton"
+        android:background="@drawable/mybuttonnormal"
         android:text="Submit"
         android:textColor="@android:color/background_light"
         android:textSize="14sp"

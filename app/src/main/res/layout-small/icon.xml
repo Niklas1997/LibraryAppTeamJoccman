@@ -27,7 +27,7 @@
         android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/mybutton"
+        android:background="@drawable/mybuttonnormal"
         android:text="close"
         android:textColor="@android:color/background_light" />
 
