@@ -1,6 +1,7 @@
 package com.example.ezmilja.libraryapp;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -21,6 +22,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
 import java.util.List;
 
 public class CheckoutActivity extends AppCompatActivity {
@@ -37,6 +41,8 @@ public class CheckoutActivity extends AppCompatActivity {
     private AutoCompleteTextView acTextView;
     private ImageView image_book;
     private String[] isbn_array;
+
+    private Button scanBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +67,59 @@ public class CheckoutActivity extends AppCompatActivity {
         createButton();
         dropDownList();
         autoFill();
+        createScan();
+    }
+
+    private void createScan(){
+        scanBtn = (Button)findViewById(R.id.scan_button);
+
+        scanBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view.getId()==R.id.scan_button){
+                    IntentIntegrator scanIntegrator = new IntentIntegrator(CheckoutActivity.this);
+                    scanIntegrator.initiateScan();
+                }
+            }
+        });
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if (scanningResult != null) {
+            String scanContent = scanningResult.getContents();
+            String scanFormat = scanningResult.getFormatName();
+
+            acTextView.setText(scanContent);
+            Book book = getBookFromISBN(scanContent);
+            if (book != null) {
+                acTextView.setText(scanContent);
+                txt_name.setVisibility(View.VISIBLE);
+                txt_name.setText(book.getBookName());
+                txt_author.setText(book.getAuthor());
+                txt_author.setVisibility(View.VISIBLE);
+
+                image_book.setImageResource(book.getImageId());
+                image_book.setVisibility(View.VISIBLE);
+            }
+            else {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Book is not in library", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        }
+        else{
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "No scan data received!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     private void dropDownList(){
         int numBooks = bookList.size();
         isbn_array = new String[numBooks];
         for (int i = 0; i < numBooks; i++){
-            isbn_array[i] = bookList.get(i).getIsbn().substring(5);
+            isbn_array[i] = bookList.get(i).getIsbn().substring(6);
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, isbn_array);
         acTextView.setThreshold(1);
