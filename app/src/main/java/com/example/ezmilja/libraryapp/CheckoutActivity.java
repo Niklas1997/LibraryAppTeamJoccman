@@ -254,7 +254,7 @@ public class CheckoutActivity extends AppCompatActivity {
                     Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(CheckoutActivity.this, "All copys are in library", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CheckoutActivity.this, "All copies are in library", Toast.LENGTH_SHORT).show();
                 }
             }
         });
