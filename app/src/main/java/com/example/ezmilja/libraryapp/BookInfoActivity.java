@@ -64,7 +64,7 @@ public class BookInfoActivity extends AppCompatActivity {
         txt_details.setFocusable(false);
 
         txt_rating = (TextView) findViewById(R.id.txt_Rating);
-        txt_rating.setText("User Rating : " + Math.round((book.getRating() * 10)) / 10 + "/5");
+        txt_rating.setText("User Rating : " + (Math.round((book.getRating() * 10)) / 10) / book.getNum_rating() + "/5");
 
         ImageView imageView10 =(ImageView)findViewById(R.id.imageView10);
         imageView10.setImageResource(book.getImageId());
