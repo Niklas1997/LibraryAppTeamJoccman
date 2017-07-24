@@ -20,14 +20,15 @@
         <SearchView
             android:id="@+id/jeffdasearchbar"
             android:layout_width="300dp"
-            android:layout_height="77dp"
+            android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp" />
+            tools:layout_editor_absoluteY="8dp"
+            android:layout_weight="0.75" />
 
         <Button
             android:id="@+id/buttonRequest"
-            android:layout_width="match_parent"
-            android:layout_height="74dp"
+            android:layout_width="203dp"
+            android:layout_height="match_parent"
             android:layout_gravity="right"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
