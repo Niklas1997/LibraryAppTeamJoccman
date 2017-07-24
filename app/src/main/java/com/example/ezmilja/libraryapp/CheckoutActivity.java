@@ -67,7 +67,7 @@ public class CheckoutActivity extends AppCompatActivity {
         int numBooks = bookList.size();
         isbn_array = new String[numBooks];
         for (int i = 0; i < numBooks; i++){
-            isbn_array[i] = bookList.get(i).getIsbn().substring(5);
+            isbn_array[i] = bookList.get(i).getIsbn().substring(6);
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, isbn_array);
         acTextView.setThreshold(1);
