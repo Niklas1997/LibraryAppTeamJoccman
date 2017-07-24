@@ -22,12 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="406dp"
         android:layout_below="@+id/searchFilter"
-        android:layout_weight="0.87"></ListView>
+        android:layout_weight="0.76"></ListView>
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="match_parent"
-        android:layout_height="51dp"
+        android:layout_height="20dp"
         android:layout_weight="0.10"
         app:srcCompat="@mipmap/ic_launcher" />
 

@@ -1,6 +1,7 @@
 package com.example.ezmilja.libraryapp;
 
 import android.app.Dialog;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.annotation.IdRes;
@@ -16,12 +17,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class CheckoutActivity extends AppCompatActivity {
 
-    private final BookCache books = BookCache.CACHE;
+
+    private BookDbHelper bookDbHelper;
+    private List<Book> bookList;
     private ImageButton btn_info;
     private static RadioButton radioButton;
     private static Button button;
@@ -40,6 +46,9 @@ public class CheckoutActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+        bookDbHelper = new BookDbHelper(CheckoutActivity.this);
+        bookList = bookDbHelper.getAllBooks();
+
         acTextView = (AutoCompleteTextView) findViewById(R.id.dropDownTextView);
         txt_name= (TextView)findViewById(R.id.txt_name);
         txt_name.setFocusable(false);
@@ -55,10 +64,10 @@ public class CheckoutActivity extends AppCompatActivity {
     }
 
     private void dropDownList(){
-        int numBooks = books.getNumberOfBooks();
+        int numBooks = bookList.size();
         isbn_array = new String[numBooks];
         for (int i = 0; i < numBooks; i++){
-            isbn_array[i] = books.getBook(i).getIsbn().substring(5);
+            isbn_array[i] = bookList.get(i).getIsbn().substring(5);
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, isbn_array);
         acTextView.setThreshold(1);
@@ -81,7 +90,7 @@ public class CheckoutActivity extends AppCompatActivity {
     private Book getBookFromISBN(String isbn){
         for (int i = 0; i < isbn_array.length; i++){
             if (isbn_array[i].equals(isbn)) {
-                return books.getBook(i);
+                return bookList.get(i);
             }
         }
         return null;
@@ -120,8 +129,13 @@ public class CheckoutActivity extends AppCompatActivity {
                                 if (tempBook == null){
                                     Toast.makeText(CheckoutActivity.this, "Book not found", Toast.LENGTH_SHORT).show();
                                 }
+                                else if (tempBook.getNumberOfCopys() < 1){
+                                    Toast.makeText(CheckoutActivity.this, "No copies left", Toast.LENGTH_SHORT).show();
+                                }
                                 else {
                                     Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
+                                    tempBook.addToNumberOfCopys(-1);
+                                    bookDbHelper.updateData(tempBook);
                                     finish();
                                 }
                             }
@@ -181,7 +195,6 @@ public class CheckoutActivity extends AppCompatActivity {
     private void makeInfoDialog(){
         final Dialog dialog = new Dialog(CheckoutActivity.this);
         dialog.setContentView(R.layout.icon);
-        dialog.setTitle("Please use the ISBN-13 on back of Book");
         dialog.show();
 
         Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
@@ -204,7 +217,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
     private void makeRatingDialog(){
 
-        Book selectedBook = getBookFromISBN(acTextView.getText().toString());
+        final Book selectedBook = getBookFromISBN(acTextView.getText().toString());
 
         if (selectedBook == null){
             Toast.makeText(CheckoutActivity.this, "No book found", Toast.LENGTH_SHORT).show();
@@ -235,16 +248,32 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_LONG).show();
+                if (selectedBook.getNumberOfCopys() < selectedBook.getMAX_COPYS()) {
+                    selectedBook.addToNumberOfCopys(1);
+                    bookDbHelper.updateData(selectedBook);
+                    Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(CheckoutActivity.this, "All copies are in library", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         Button submit_button = dialog.findViewById(R.id.submit_button);
         submit_button.setTypeface(myTypeFace1);
+
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(CheckoutActivity.this, "Submitted and Checked IN", Toast.LENGTH_LONG).show();
+                if (!selectedBook.getIsRated()) {
+                    Toast.makeText(CheckoutActivity.this, "Rating submitted", Toast.LENGTH_SHORT).show();
+                    RatingBar ratingBar = dialog.findViewById(R.id.ratingBar);
+                    selectedBook.addRating(ratingBar.getRating());
+                    bookDbHelper.updateData(selectedBook);
+                }
+                else {
+                    Toast.makeText(CheckoutActivity.this, "You have already rated this book", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

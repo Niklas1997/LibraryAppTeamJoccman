@@ -6,6 +6,7 @@ package com.example.ezmilja.libraryapp;
 
 public class Book {
 
+    private final int ID;
     private final String isbn;
     private final String bookName;
     private final int imageId;
@@ -13,18 +14,27 @@ public class Book {
     private final String description;
     private final String page;
     private final String publisher;
-    private final int rating;
+    private double rating;
+    private int num_rating;
+    private boolean isRated;
+    private int numberOfCopys;
+    private final int MAX_COPYS;
 
-    public Book(final String isbn, final String bookName, final int imageId, final String author, final String description,
-                final String page, final String publisher, final int rating){
+    public Book(final int ID, final String isbn, final String bookName, final int imageId, final String author, final String description,
+                final String page, final String publisher, double rating, int numberOfCopys, final int MAX_COPYS, int num_rating){
+        this.ID = ID;
         this.isbn = isbn;
         this.bookName =bookName;
         this.imageId = imageId;
         this.author = author;
         this.description = description;
         this.page = page;
-       this.publisher = publisher;
+        this.publisher = publisher;
         this.rating = rating;
+        this.MAX_COPYS = MAX_COPYS;
+        this.num_rating = num_rating;
+        isRated = false;
+        this.numberOfCopys = numberOfCopys;
     }
 
     public String getIsbn() {return isbn;}
@@ -41,7 +51,27 @@ public class Book {
 
     public String getPublisher(){return  publisher;}
 
-    public  int getRating() {return rating;}
+    public  double getRating() {return rating;}
+
+    public int getID(){return ID;}
+
+    public boolean getIsRated(){return isRated;}
+
+    public void addRating(double addRating){
+        isRated = true;
+        num_rating += 1;
+        rating += addRating;
+    }
+
+    public int getNumberOfCopys(){return numberOfCopys;}
+
+    public int getMAX_COPYS(){return MAX_COPYS;}
+
+    public int getNum_rating(){return num_rating;}
+
+    public void addToNumberOfCopys(int added){
+        numberOfCopys = numberOfCopys + added;
+    }
 
     @Override
     public boolean equals(final Object obj) {

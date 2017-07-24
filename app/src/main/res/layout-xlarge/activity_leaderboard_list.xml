@@ -11,44 +11,57 @@
     tools:layout_editor_absoluteY="81dp"
     android:weightSum="1">
 
-    <Button
-        android:id="@+id/buttonRequest"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_weight="0.09"
-        android:background="@drawable/mybutton"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="Request"
-        android:textColor="@android:color/background_light"
-        android:textColorLink="@android:color/background_light"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.971"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.017"
-        tools:text="Request" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0.07"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <SearchView
+            android:id="@+id/jeffdasearchbar"
+            android:layout_width="256dp"
+            android:layout_height="92dp"
+            android:layout_weight="0.98" />
+
+        <Button
+            android:id="@+id/buttonRequest"
+            android:layout_width="199dp"
+            android:layout_height="90dp"
+            android:layout_gravity="right"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/mybuttonxlarge"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Request"
+            android:textColor="@android:color/background_light"
+            android:textColorLink="@android:color/background_light"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.971"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.017"
+            tools:text="Request" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/leaderbd_list"
         android:layout_width="wrap_content"
-        android:layout_height="419dp"
-        android:layout_weight="0.84" />
+        android:layout_height="1dp"
+        android:layout_weight="0.85" />
 
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_weight="0.09" />
+        android:layout_height="20dp"
+        android:layout_weight="0.07"
+        app:srcCompat="@mipmap/ic_launcher" />
 
 </LinearLayout>
 

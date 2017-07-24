@@ -11,7 +11,7 @@
 
     <Button
         android:id="@+id/close"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -19,7 +19,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/mybutton"
+        android:background="@drawable/mybuttonnormal"
         android:text="Close"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
@@ -132,7 +132,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/mybutton"
+        android:background="@drawable/mybuttonnormal"
         android:text="Submit"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"

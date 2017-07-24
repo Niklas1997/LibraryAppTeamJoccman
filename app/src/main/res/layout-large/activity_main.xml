@@ -10,32 +10,6 @@
     tools:layout_editor_absoluteX="0dp">
 
 
-
-    <Button
-        android:id="@+id/btn_booklist"
-        android:layout_width="154dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/mybutton"
-        android:elevation="0dp"
-        android:text="Proceed"
-        android:textColor="@android:color/background_light"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.933"
-        tools:layout_editor_absoluteY="692dp"
-        app:layout_constraintHorizontal_bias="0.501" />
-
-
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="408dp"
@@ -67,10 +41,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.357"
+        app:layout_constraintVertical_bias="0.329"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        tools:layout_editor_absoluteY="173dp" />
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:id="@+id/TextView1"
@@ -93,8 +66,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04"
-        tools:text="WELCOME TO ERICSSON'S ATHLONE CAMPUS LIBRARY" />
+        app:layout_constraintVertical_bias="0.03"
+        tools:text="WELCOME TO ERICSSON'S ATHLONE CAMPUS LIBRARY"
+        app:layout_constraintHorizontal_bias="0.501" />
 
 
 </android.support.constraint.ConstraintLayout>

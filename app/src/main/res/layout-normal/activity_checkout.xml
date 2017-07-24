@@ -14,7 +14,7 @@
         android:id="@+id/button"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:background="@drawable/mybutton"
+        android:background="@drawable/mybuttonnormal"
         android:text="Submit"
         android:textColor="@android:color/background_light"
         android:textSize="14sp"
@@ -23,7 +23,7 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="74dp" />
+        android:layout_marginBottom="76dp" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -41,38 +41,41 @@
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="38dp"
+        android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:layout_marginEnd="2dp"
-        android:layout_marginStart="8dp"
         android:background="@android:color/white"
         app:srcCompat="@drawable/info"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.969"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintLeft_toLeftOf="@+id/dropDownTextView"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.024" />
 
 
     <AutoCompleteTextView
         android:id="@+id/dropDownTextView"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_width="252dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="390dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:digits="0123456789-"
         android:hint="  ISBN (e.g (978-0544003415)"
         android:inputType="number"
         android:textAlignment="center"
-        android:textSize="12sp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="380dp"
-        app:layout_constraintHorizontal_bias="0.35" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.189" />
 
     <ImageView
         android:id="@+id/imgv_bookimg"
@@ -82,61 +85,64 @@
         android:layout_marginStart="8dp"
         android:visibility="invisible"
         app:srcCompat="@mipmap/ic_launcher_round"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="37dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.235"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.086" />
 
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="164dp"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="12sp"
+        android:textSize="18sp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.242" />
+        app:layout_constraintVertical_bias="0.196" />
 
     <TextView
         android:id="@+id/txt_author"
         android:layout_width="166dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="12sp"
+        android:textSize="18sp"
         android:visibility="invisible"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.41"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.73"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.673" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.378" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="159dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="147dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
@@ -146,7 +152,7 @@
             android:layout_height="50dp"
             android:text="Check IN"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="10sp" />
+            android:textSize="14sp" />
 
         <RadioButton
             android:id="@+id/rbtn_out"
@@ -154,7 +160,7 @@
             android:layout_height="50dp"
             android:text="Check OUT"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="10sp" />
+            android:textSize="14sp" />
     </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>

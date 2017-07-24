@@ -12,14 +12,15 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="139dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="61dp"
-        android:background="@drawable/mybutton"
+        android:layout_width="115dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="57dp"
+        android:background="@drawable/mybuttonsmall"
         android:text="Submit"
         android:textColor="@android:color/background_light"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -36,6 +37,22 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.535"
+=======
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="23dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,28 +65,37 @@
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="34dp"
+        android:layout_width="35dp"
         android:layout_height="32dp"
         android:background="@android:color/white"
         app:srcCompat="@drawable/info"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginEnd="3dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="3dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.802"
+=======
+        app:layout_constraintHorizontal_bias="0.952"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         app:layout_constraintVertical_bias="0.0" />
 
 
     <AutoCompleteTextView
         android:id="@+id/dropDownTextView"
+<<<<<<< HEAD
         android:layout_width="220dp"
         android:layout_height="31dp"
+=======
+        android:layout_width="227dp"
+        android:layout_height="37dp"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:digits="0123456789-"
@@ -78,7 +104,7 @@
         android:textAlignment="center"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -90,36 +116,49 @@
 
     <ImageView
         android:id="@+id/imgv_bookimg"
+<<<<<<< HEAD
         android:layout_width="84dp"
         android:layout_height="93dp"
+=======
+        android:layout_width="75dp"
+        android:layout_height="103dp"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:visibility="invisible"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.036"
+=======
+        app:layout_constraintHorizontal_bias="0.061"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_constraintBottom_creator="1"
         tools:layout_constraintTop_creator="1"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         android:layout_marginTop="27dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
         app:layout_constraintVertical_bias="0.059" />
+=======
+        android:layout_marginTop="57dp" />
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
 
-    <TextView
+    <AutoCompleteTextView
         android:id="@+id/txt_name"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
+        android:layout_width="199dp"
+        android:layout_height="49dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="AutoCompleteTextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="12sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.659"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -127,11 +166,18 @@
         app:layout_constraintVertical_bias="0.114"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp" />
+=======
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.177" />
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
 
-    <TextView
+    <AutoCompleteTextView
         android:id="@+id/txt_author"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
+        android:layout_width="198dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
@@ -139,6 +185,7 @@
         android:textSize="12sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.618"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -146,35 +193,54 @@
         app:layout_constraintVertical_bias="0.296"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp" />
+=======
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="121dp"
+<<<<<<< HEAD
         android:layout_height="96dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
+=======
+        android:layout_height="61dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.502"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_author"
+        app:layout_constraintVertical_bias="0.333"
         tools:layout_constraintLeft_creator="1"
+<<<<<<< HEAD
         tools:layout_constraintRight_creator="1"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintVertical_bias="0.567"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp">
+=======
+        tools:layout_constraintRight_creator="1">
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
 
         <RadioButton
             android:id="@+id/radioButton2"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Check IN"
             android:textColor="@color/colorPrimaryDark" />
 
         <RadioButton
             android:id="@+id/rbtn_out"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Check OUT"
             android:textColor="@color/colorPrimaryDark" />
     </RadioGroup>
