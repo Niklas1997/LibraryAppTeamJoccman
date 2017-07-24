@@ -8,6 +8,35 @@
     tools:layout_editor_absoluteY="80dp"
     tools:layout_editor_absoluteX="0dp">
 
+<<<<<<< HEAD
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="88dp"
+        android:layout_height="109dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/foresight" />
+
+    <TextView
+        android:id="@+id/bookname"
+        android:layout_width="161dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:autoSizeTextType="uniform"
+        android:text="Title: 20/20 Foresight"
+=======
     <AutoCompleteTextView
         android:id="@+id/txt_details"
         android:layout_width="169dp"
@@ -32,15 +61,31 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="6dp"
         android:text="Description"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         android:textColor="@color/colorPrimaryDark"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Title: 20/20 Foresight" />
+
+    <TextView
+        android:id="@+id/authorTxt"
+        android:layout_width="165dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="8dp"
+=======
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintTop_creator="1"
         app:layout_constraintVertical_bias="0.54"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -54,6 +99,17 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1"
         android:layout_marginTop="8dp"
+<<<<<<< HEAD
+        android:autoSizeTextType="uniform"
+        android:text="Author: Gary Gruver,
+                        Mike Young and Pat Fulgham"
+        android:textAlignment="gravity"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.942"
+=======
         app:layout_constraintTop_toTopOf="@+id/txt_Rating"
         app:layout_constraintBottom_toBottomOf="@+id/txt_Rating"
         android:layout_marginBottom="0dp"
@@ -71,15 +127,21 @@
         android:layout_marginStart="3dp"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginLeft="41dp"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintVertical_bias="0.09"
+        tools:text="Author: Gary Gruver, Mike Young and Pat Fulgham" />
+=======
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.0" />
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
 
     <TextView
         android:id="@+id/pageTxt"
@@ -110,6 +172,72 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.996"
+        tools:text=" ISBN: 978-1578512669" />
+
+    <TextView
+        android:id="@+id/descriptionTxt"
+        android:layout_width="316dp"
+        android:layout_height="163dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:autoSizeTextType="uniform"
+        android:text="Description: Reveals how executives can develop 20/20 foresight - a view of the future that separates what can be known from what can't.
+This book shows strategists how to tailor various aspects of the decision-making process - from formulation to implementation -
+to the level of uncertainty faced."
+        android:textAlignment="gravity"
+        android:textColor="@android:color/background_dark"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648"
+        tools:text="Description:
+        Reveals how executives can develop 20/20 foresight - a view of the future that separates what can be known from what can't.
+        This book shows strategists how to tailor various aspects of the decision-making process - from formulation to implementation -
+        to the level of uncertainty faced." />
+
+    <TextView
+        android:id="@+id/publishedTxt"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Published: 01/11/01                                              Harvard Business Review Press"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.816"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.229"
+        tools:text="Published: 01/11/01                                              Harvard Business Review Press" />
+
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_width="119dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/mybutton"
+=======
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -124,13 +252,33 @@
         android:layout_marginBottom="16dp"
         android:layout_marginRight="3dp"
         android:background="@drawable/mybuttonsmall"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         android:text="Check Out"
         android:textColor="@android:color/background_light"
+        android:textSize="12sp"
         android:textStyle="bold"
+<<<<<<< HEAD
+<<<<<<< HEAD
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.931" />
+=======
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/isbnTxt"
+        app:layout_constraintRight_toRightOf="@+id/isbnTxt"
+        android:layout_marginBottom="17dp"
+        android:layout_marginRight="3dp" />
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
+=======
         app:layout_constraintBottom_toTopOf="@+id/isbnTxt"
         app:layout_constraintRight_toRightOf="@+id/isbnTxt"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintRight_creator="1" />
+>>>>>>> ea02e7c167b90750dfde97444907a4178a7bca46
 
     <TextView
         android:id="@+id/txt_Rating"
@@ -142,7 +290,11 @@
         android:autoSizeTextType="uniform"
         android:text="User Rating : "
         android:textColor="@color/colorPrimary"
+<<<<<<< HEAD
+        android:textSize="14sp"
+=======
         android:textSize="12sp"
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
         android:typeface="sans"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/pageTxt"
@@ -152,9 +304,29 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintVertical_bias="0.922" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="32dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="284dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/txt_Rating"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/starratings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
+=======
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
         app:layout_constraintVertical_bias="0.843" />
+>>>>>>> 25f6cc5aa5d97cc523156d0d8e890fcbfb6d793e
 
 </android.support.constraint.ConstraintLayout>
