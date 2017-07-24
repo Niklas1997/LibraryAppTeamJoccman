@@ -51,7 +51,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        app:layout_constraintVertical_bias="0.698" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -67,7 +67,7 @@
         app:srcCompat="@drawable/starratings"
         app:layout_constraintTop_toTopOf="@+id/txt_Rating"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.727" />
+        app:layout_constraintVertical_bias="0.444" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -100,12 +100,12 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.963"
+        app:layout_constraintVertical_bias="0.99"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintHorizontal_bias="0.012"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
@@ -118,18 +118,18 @@
         android:textSize="18sp"
         android:textStyle="bold"
         tools:text=" ISBN: 978-1578512669"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="40dp"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintHorizontal_bias="0.985"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="1.0"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.99" />
 
     <Button
         android:id="@+id/btn_check"
@@ -144,14 +144,14 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="78dp"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="1.0"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.934" />
 
     <TextView
         android:id="@+id/txt_Rating"
@@ -170,10 +170,10 @@
         android:textSize="30sp"
         android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.684" />
 
 </android.support.constraint.ConstraintLayout>
