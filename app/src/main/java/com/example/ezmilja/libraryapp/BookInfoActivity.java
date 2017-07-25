@@ -66,10 +66,10 @@ public class BookInfoActivity extends AppCompatActivity {
         txt_rating.setText("User Rating : " + (Math.round(((book.getRating() / book.getNum_rating()) * 10)) / 10.0) + "/5");
 
         pageTxt = (TextView) findViewById(R.id.pageTxt);
-        pageTxt.setText(book.getPage());
+        pageTxt.setText("Page: "+book.getPage());
 
         isbnTxt = (TextView) findViewById(R.id.isbnTxt);
-        isbnTxt.setText(book.getIsbn());
+        isbnTxt.setText("ISBN: "+ book.getIsbn());
 
 
         ImageView imageView = (ImageView) findViewById(imageView10);
