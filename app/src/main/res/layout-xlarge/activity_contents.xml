@@ -71,25 +71,27 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="701dp"
-        android:layout_height="82dp"
+        android:layout_width="603dp"
+        android:layout_height="206dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="35dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="35dp"
         android:layout_marginTop="8dp"
-        android:text="Contents"
+        android:text="Welcome to                   Ericsson Athlone                             Internal Library"
         android:textAlignment="center"
+        android:textAllCaps="true"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="70sp"
-        android:textStyle="bold"
+        android:textSize="50sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.038"
-        tools:text="Contents" />
+        tools:text="Welcome to                   Ericsson Athlone                             Internal Library" />
 
     <ImageView
         android:id="@+id/imageView"
