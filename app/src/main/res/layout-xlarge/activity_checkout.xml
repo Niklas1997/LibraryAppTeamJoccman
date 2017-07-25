@@ -12,13 +12,13 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="234dp"
-        android:layout_height="86dp"
+        android:layout_width="240dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="110dp"
         android:background="@drawable/mybuttonxlarge"
         android:text="Submit"
         android:textColor="@android:color/background_light"
-        android:textSize="24sp"
+        android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -164,5 +164,15 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/scan_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="684dp"
+        android:text="Button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

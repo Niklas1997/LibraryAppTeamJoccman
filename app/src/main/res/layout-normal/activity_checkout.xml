@@ -10,6 +10,16 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
 
+    <Button android:id="@+id/scan_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/scan"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="290dp"
+        android:layout_marginRight="263dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="130dp"
