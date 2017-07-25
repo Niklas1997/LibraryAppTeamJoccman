@@ -7,7 +7,3 @@
 /build
 /captures
 .externalNativeBuild
-app/src/main/res/layouts/Large/color/hlep.xml
-app/src/main/res/layout-large/activity_leaderboard_list.xml
-app/src/main/res/layout-large/activity_leaderboard_list.xml
-app/src/main/res/layout-normal/activity_contents.xml

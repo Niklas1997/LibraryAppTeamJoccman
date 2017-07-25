@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
 
 public class BookInfoActivity extends AppCompatActivity {
     private Button btn_back;
-    private TextView textView, txt_rating;
+    private TextView textView, txt_rating, pageTxt, isbnTxt;
     private Button btn_check;
     private AutoCompleteTextView descriptionTxt, txt_details;
     private Typeface myTypeFace1;
@@ -64,6 +64,12 @@ public class BookInfoActivity extends AppCompatActivity {
 
         txt_rating = (TextView) findViewById(R.id.txt_Rating);
         txt_rating.setText("User Rating : " + (Math.round(((book.getRating()/ book.getNum_rating()) * 10)) / 10.0)  + "/5");
+
+        pageTxt = (TextView)findViewById(R.id.pageTxt);
+        pageTxt.setText(book.getPage());
+
+        isbnTxt = (TextView)findViewById(R.id.isbnTxt);
+        isbnTxt.setText(book.getIsbn());
 
         ImageView imageView10 =(ImageView)findViewById(R.id.imageView10);
         imageView10.setImageResource(book.getImageId());
