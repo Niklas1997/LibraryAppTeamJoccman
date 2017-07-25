@@ -34,7 +34,6 @@ public class BookInfoActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         Intent intent = getIntent();
 
-
         id = intent.getStringExtra("id");
         updateBookInfo();
         if (book == null){

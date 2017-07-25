@@ -55,28 +55,6 @@ public class BookDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name, String author, String description, String image_id,
-                              String isbn, String page, String publisher, String rating, String numberOfCopys,
-                              String max_copys, String num_rating) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2, name);
-        contentValues.put(COL_3, author);
-        contentValues.put(COL_4, description);
-        contentValues.put(COL_5, image_id);
-        contentValues.put(COL_6, isbn);
-        contentValues.put(COL_7, page);
-        contentValues.put(COL_8, publisher);
-        contentValues.put(COL_9, rating);
-        contentValues.put(COL_10, numberOfCopys);
-        contentValues.put(COL_11, num_rating);
-        contentValues.put(COL_12, max_copys);
-        long result = db.insert(TABLE_NAME, null, contentValues);
-        if (result == -1)
-            return false;
-        else
-            return true;
-    }
 
     public boolean insertData(Book book) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -97,27 +75,6 @@ public class BookDbHelper extends SQLiteOpenHelper {
             return false;
         else
             return true;
-    }
-
-    public boolean updateData(String id, String name, String author, String description, String image_id,
-                              String isbn, String page, String publisher, String rating, String numberOfCopys,
-                              String max_copys, String num_rating) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1, id);
-        contentValues.put(COL_2, name);
-        contentValues.put(COL_3, author);
-        contentValues.put(COL_4, description);
-        contentValues.put(COL_5, image_id);
-        contentValues.put(COL_6, isbn);
-        contentValues.put(COL_7, page);
-        contentValues.put(COL_8, publisher);
-        contentValues.put(COL_9, rating);
-        contentValues.put(COL_10, numberOfCopys);
-        contentValues.put(COL_11, num_rating);
-        contentValues.put(COL_12, max_copys);
-        db.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
-        return true;
     }
 
     public boolean updateData(Book book) {
