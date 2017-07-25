@@ -64,8 +64,8 @@
 
     <AutoCompleteTextView
         android:id="@+id/dropDownTextView"
-        android:layout_width="227dp"
-        android:layout_height="37dp"
+        android:layout_width="190dp"
+        android:layout_height="41dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:digits="0123456789-"
@@ -74,7 +74,7 @@
         android:textAlignment="center"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.604"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -162,13 +162,22 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="98dp"
-        android:layout_height="55dp"
-        android:text="Button"
+        android:id="@+id/scan_button"
+        android:layout_width="71dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/mybuttonsmall"
+        android:text="Scan"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="264dp"
-        android:layout_marginRight="205dp"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="16dp" />
 
 </android.support.constraint.ConstraintLayout>
