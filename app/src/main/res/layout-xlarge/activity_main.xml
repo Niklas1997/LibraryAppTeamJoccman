@@ -12,26 +12,26 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="418dp"
-        android:layout_height="85dp"
+        android:layout_width="533dp"
+        android:layout_height="211dp"
         app:srcCompat="@drawable/title"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.696"
+        app:layout_constraintVertical_bias="0.643"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintHorizontal_bias="0.497" />
+        app:layout_constraintHorizontal_bias="0.537" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="281dp"
-        android:layout_height="285dp"
+        android:layout_width="351dp"
+        android:layout_height="367dp"
         app:srcCompat="@drawable/titlesausages"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
@@ -41,35 +41,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.36"
+        app:layout_constraintVertical_bias="0.197"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        tools:layout_editor_absoluteY="194dp" />
-
-    <TextView
-        android:id="@+id/TextView1"
-        android:layout_width="379dp"
-        android:layout_height="207dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="WELCOME TO ERICSSON'S ATHLONE CAMPUS LIBRARY"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/colorAccent"
-        android:textColorLink="@color/colorAccent"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        tools:text="WELCOME TO ERICSSON'S ATHLONE CAMPUS LIBRARY"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.061"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.512" />
+        app:layout_constraintHorizontal_bias="0.481"
+        tools:layout_editor_absoluteY="92dp" />
 
 
 </android.support.constraint.ConstraintLayout>

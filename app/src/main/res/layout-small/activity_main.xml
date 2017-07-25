@@ -12,14 +12,14 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="176dp"
-        android:layout_height="37dp"
+        android:layout_width="219dp"
+        android:layout_height="67dp"
         app:srcCompat="@drawable/title"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.642"
+        app:layout_constraintVertical_bias="0.639"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
@@ -29,8 +29,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="58dp"
-        android:layout_height="89dp"
+        android:layout_width="91dp"
+        android:layout_height="128dp"
         app:srcCompat="@drawable/titlesausages"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
@@ -40,35 +40,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.413"
+        app:layout_constraintVertical_bias="0.137"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintHorizontal_bias="0.502" />
-
-    <TextView
-        android:id="@+id/TextView1"
-        android:layout_width="236dp"
-        android:layout_height="87dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="WELCOME TO ERICSSON'S ATHLONE CAMPUS LIBRARY"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/colorAccent"
-        android:textColorLink="@color/colorAccent"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="WELCOME TO ERICSSON'S ATHLONE CAMPUS LIBRARY"
-        app:layout_constraintHorizontal_bias="0.507" />
 
 
 </android.support.constraint.ConstraintLayout>
