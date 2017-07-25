@@ -158,7 +158,7 @@ public class CheckoutActivity extends AppCompatActivity {
             Bundle bundle = getIntent().getExtras();
             String message = bundle.getString("isbn");
             if (message.contains("ISBN:")) {
-                message = message.substring(5);
+                message = message.substring(6);
             }
             Book temp = getBookFromISBN(message);
             acTextView.setFocusable(false);
