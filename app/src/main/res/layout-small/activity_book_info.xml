@@ -13,13 +13,13 @@
 
     <AutoCompleteTextView
         android:id="@+id/txt_details"
-        android:layout_height="146dp"
+        android:layout_height="140dp"
         android:layout_marginEnd="8dp"
         android:text="AutoCompleteT"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_width="205dp"
+        android:layout_width="200dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
@@ -29,14 +29,14 @@
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/imageView10"
         android:layout_marginLeft="20dp"
-        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintHorizontal_bias="0.783"
         android:layout_marginStart="20dp"
-        tools:layout_editor_absoluteX="141dp" />
+        tools:layout_editor_absoluteY="15dp" />
 
     <AutoCompleteTextView
         android:id="@+id/descriptionTxt"
-        android:layout_width="351dp"
-        android:layout_height="239dp"
+        android:layout_width="304dp"
+        android:layout_height="101dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -48,10 +48,13 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656"
+        tools:layout_editor_absoluteY="161dp"
+        tools:layout_editor_absoluteX="40dp" />
 
     <ImageView
         android:id="@+id/imageView7"

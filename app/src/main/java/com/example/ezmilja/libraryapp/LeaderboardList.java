@@ -244,7 +244,7 @@ public class LeaderboardList extends AppCompatActivity {
                 holder.image.setImageResource(R.drawable.dave);
             }
 
-
+            //send help pls
 
             holder.btn_more.setOnClickListener(new View.OnClickListener() {
                 @Override
