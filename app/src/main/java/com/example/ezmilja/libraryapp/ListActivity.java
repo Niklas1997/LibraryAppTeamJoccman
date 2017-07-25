@@ -1,6 +1,7 @@
 package com.example.ezmilja.libraryapp;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -142,6 +143,10 @@ public class ListActivity extends AppCompatActivity {
                         imageLoaderRest.execute(new String[]{book.getImageId()});
                         bitmap = imageLoaderRest.get();
                         MemoryCache.IMAGE_MEMORY_CACHE.put(imageUrl, bitmap);
+                        if (book.getNumberOfCopys()==0){
+                            view.setBackgroundColor(Color.LTGRAY);
+                        }else {view.setBackgroundColor(Color.WHITE);
+                        }
                     }
                     imageView.setImageBitmap(bitmap);
                 } catch (final Exception e) {
