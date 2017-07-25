@@ -1,6 +1,7 @@
 package com.example.ezmilja.libraryapp;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,17 +11,17 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
+import static com.example.ezmilja.libraryapp.R.id.imageView10;
+
 public class BookInfoActivity extends AppCompatActivity {
-    private Button btn_back;
+
     private TextView textView, txt_rating, pageTxt, isbnTxt;
     private Button btn_check;
     private AutoCompleteTextView descriptionTxt, txt_details;
     private Typeface myTypeFace1;
-    private BookDbHelper bookDbHelper;
     private Book book;
     private String id;
     private DecimalFormat df;
@@ -30,15 +31,18 @@ public class BookInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_info);
 
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         Intent intent = getIntent();
 
-        id = intent.getStringExtra("id");
-        updateBookInfo();
-        if (book == null){
-            Toast.makeText(BookInfoActivity.this, "Errror: book info not found", Toast.LENGTH_SHORT).show();
-        }
+
+
+        final String id = intent.getStringExtra("id");
+        final Book book = BookCache.getBook(Integer.parseInt(id.trim()));
+        TextView isbnTxt = (TextView) findViewById(R.id.isbnTxt);
+        isbnTxt.setText(book.getIsbn());
+
 
         myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
 
@@ -46,36 +50,48 @@ public class BookInfoActivity extends AppCompatActivity {
         createButtons(book);
     }
 
-    private void updateBookInfo(){
-        bookDbHelper = new BookDbHelper(BookInfoActivity.this);
-        book = bookDbHelper.getBook(Integer.parseInt(id));
-    }
 
-    private void createTextViews(Book book){
+    private void createTextViews(Book book) {
 
-        descriptionTxt = (AutoCompleteTextView)findViewById(R.id.descriptionTxt);
+        descriptionTxt = (AutoCompleteTextView) findViewById(R.id.descriptionTxt);
         descriptionTxt.setText("Description : " + book.getDescription());
         descriptionTxt.setFocusable(false);
 
-        txt_details = (AutoCompleteTextView)findViewById(R.id.txt_details);
-        txt_details.setText( "Title : " + book.getBookName() + "\n" + "\n" + "Author : " + book.getAuthor() + "\n"
-                + "\n"+ "Publisher : " + book.getPublisher() + "\n" + "\n" + "Number of Copies Available : " + book.getNumberOfCopys());
+        txt_details = (AutoCompleteTextView) findViewById(R.id.txt_details);
+        txt_details.setText("Title : " + book.getBookName() + "\n" + "\n" + "Author : " + book.getAuthor() + "\n"
+                + "\n" + "Publisher : " + book.getPublisher() + "\n" + "\n" + "Number of Copies Available : " + book.getNumberOfCopys());
         txt_details.setFocusable(false);
 
         txt_rating = (TextView) findViewById(R.id.txt_Rating);
-        txt_rating.setText("User Rating : " + (Math.round(((book.getRating()/ book.getNum_rating()) * 10)) / 10.0)  + "/5");
+        txt_rating.setText("User Rating : " + (Math.round(((book.getRating() / book.getNum_rating()) * 10)) / 10.0) + "/5");
 
-        pageTxt = (TextView)findViewById(R.id.pageTxt);
+        pageTxt = (TextView) findViewById(R.id.pageTxt);
         pageTxt.setText(book.getPage());
 
-        isbnTxt = (TextView)findViewById(R.id.isbnTxt);
+        isbnTxt = (TextView) findViewById(R.id.isbnTxt);
         isbnTxt.setText(book.getIsbn());
 
-        ImageView imageView10 =(ImageView)findViewById(R.id.imageView10);
-        imageView10.setImageResource(book.getImageId());
+
+        ImageView imageView = (ImageView) findViewById(imageView10);
+        try {
+            final String imageUrl = book.getImageId();
+            Bitmap bitmap = MemoryCache.IMAGE_MEMORY_CACHE.get(imageUrl);
+            if (bitmap == null) {
+                ImageLoaderRest imageLoaderRest = new ImageLoaderRest();
+                imageLoaderRest.execute(new String[]{book.getImageId()});
+                bitmap = imageLoaderRest.get();
+                MemoryCache.IMAGE_MEMORY_CACHE.put(imageUrl, bitmap);
+            }
+            imageView.setImageBitmap(bitmap);
+        } catch (final Exception e) {
+            e.printStackTrace();
+            imageView.setImageResource(R.mipmap.ic_launcher);
+        }
     }
 
     private void createButtons(final Book book){
+
+        Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
         btn_check = (Button) findViewById(R.id.btn_check);
         btn_check.setTypeface(myTypeFace1);
 
@@ -93,8 +109,8 @@ public class BookInfoActivity extends AppCompatActivity {
                 finish();
             }}
         );
-    }
 
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

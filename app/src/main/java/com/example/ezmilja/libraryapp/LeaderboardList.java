@@ -3,10 +3,9 @@ package com.example.ezmilja.libraryapp;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.database.Cursor;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,8 +29,6 @@ import java.util.List;
 
 public class LeaderboardList extends AppCompatActivity {
 
-    private RequestDbHelper requestDbHelper;
-    private Cursor cursor;
     private Button buttonRequest;
     private ListView listView;
     private List<RequestBook> originalList;
@@ -48,19 +45,7 @@ public class LeaderboardList extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        requestDbHelper = new RequestDbHelper(LeaderboardList.this);
-        cursor = requestDbHelper.getAllData();
-
         originalList = new ArrayList<RequestBook>();
-
-        while (cursor.moveToNext()) {
-            String t_name = cursor.getString(1);
-            String t_author = cursor.getString(2);
-            String t_email = cursor.getString(3);
-            String t_vote = cursor.getString(4);
-            String id = cursor.getString(0);
-            originalList.add( new RequestBook( t_name, t_author, t_email, Integer.parseInt(t_vote), Integer.parseInt(id)));
-        }
 
         createButton();
         makeListView();
@@ -144,11 +129,9 @@ public class LeaderboardList extends AppCompatActivity {
                 String temp_author = edt_author.getText().toString();
                 String temp_email = edt_email.getText().toString();
                 if (requestCheck(temp_name, temp_author, temp_email)) {
-                    RequestBook temp = new RequestBook(temp_name, temp_author, temp_email, 0, requestDbHelper.getAllData().getCount() + 1);
+                    RequestBook temp = new RequestBook(temp_name, temp_author, temp_email, 0, originalList.size() + 1);
                     originalList.add(temp);
-                    requestDbHelper.insertData(temp.getBookName(), temp.getAuthor(), temp.getEmail(), temp.getVote() + "");
                     makeListView();
-
                     dialog.dismiss();
                 }
                 else {
@@ -266,14 +249,14 @@ public class LeaderboardList extends AppCompatActivity {
                         holder.image.setImageResource(R.drawable.dave);
                         myBook.addVote(-1);
                         holder.bookVote.setText(myBook.getVote()+ "");
-                        requestDbHelper.updateData(myBook.getId() + "", myBook.getBookName(), myBook.getAuthor(),myBook.getEmail(), myBook.getVote() + "");
+
                     }
                     else {
                         myBook.setisUpVoted(true);
                         holder.image.setImageResource(R.drawable.steve);
                         myBook.addVote(1);
                         holder.bookVote.setText( myBook.getVote() + "");
-                        requestDbHelper.updateData(myBook.getId() + "", myBook.getBookName(), myBook.getAuthor(),myBook.getEmail(), myBook.getVote() + "");
+
                     }
 
                 }

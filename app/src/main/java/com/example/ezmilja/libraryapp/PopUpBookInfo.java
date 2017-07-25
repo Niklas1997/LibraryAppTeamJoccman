@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.widget.Toast;
 
 /**
  * Created by elundni on 13/07/2017.
@@ -21,8 +20,10 @@ public class PopUpBookInfo {
 
     public void createPopUp(final Context context, final Class nextActivity , final String message){
         System.out.println(book);
+        String mDrawableName = book.getImageId();
+        int resID = context.getResources().getIdentifier(mDrawableName , "drawable", context.getPackageName());
         final AlertDialog alertDialog = new AlertDialog.Builder(context).setTitle(book.getBookName())
-                .setMessage(book.getAuthor()).setIcon(book.getImageId()).setNeutralButton("Close", null)
+                .setMessage(book.getAuthor()).setIcon(resID).setNeutralButton("Close", null)
                 .setPositiveButton("Read More", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

@@ -2,12 +2,12 @@ package com.example.ezmilja.libraryapp;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,12 +25,18 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.List;
+
+import static com.example.ezmilja.libraryapp.R.id.imageView10;
 
 public class CheckoutActivity extends AppCompatActivity {
 
+    private  BookCache books;
 
-    private BookDbHelper bookDbHelper;
+
     private List<Book> bookList;
     private ImageButton btn_info;
     private static RadioButton radioButton;
@@ -39,7 +45,7 @@ public class CheckoutActivity extends AppCompatActivity {
     private boolean on;
     TextView txt_name, txt_author;
     private AutoCompleteTextView acTextView;
-    private ImageView image_book;
+    //private ImageView image_book;
     private String[] isbn_array;
 
     private Button scanBtn;
@@ -52,8 +58,7 @@ public class CheckoutActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        bookDbHelper = new BookDbHelper(CheckoutActivity.this);
-        bookList = bookDbHelper.getAllBooks();
+
 
         acTextView = (AutoCompleteTextView) findViewById(R.id.dropDownTextView);
         txt_name= (TextView)findViewById(R.id.txt_name);
@@ -61,9 +66,15 @@ public class CheckoutActivity extends AppCompatActivity {
         txt_author =(TextView)findViewById(R.id.txt_author);
         txt_author.setFocusable(false);
 
-        image_book = (ImageView) findViewById(R.id.imgv_bookimg);
+        //image_book = (ImageView) findViewById(R.id.imgv_bookimg);
 
-
+        try {
+            books = new BookCache(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         createButton();
         dropDownList();
         autoFill();
@@ -98,16 +109,27 @@ public class CheckoutActivity extends AppCompatActivity {
                 txt_name.setText(book.getBookName());
                 txt_author.setText(book.getAuthor());
                 txt_author.setVisibility(View.VISIBLE);
+                ImageView imageView = (ImageView) findViewById(imageView10);
+                try {
+                    final String imageUrl = book.getImageId();
+                    Bitmap bitmap = MemoryCache.IMAGE_MEMORY_CACHE.get(imageUrl);
+                    if (bitmap == null) {
+                        ImageLoaderRest imageLoaderRest = new ImageLoaderRest();
+                        imageLoaderRest.execute(new String[]{book.getImageId()});
+                        bitmap = imageLoaderRest.get();
+                        MemoryCache.IMAGE_MEMORY_CACHE.put(imageUrl, bitmap);
+                    }
+                    imageView.setImageBitmap(bitmap);
+                } catch (final Exception e) {
+                    e.printStackTrace();
+                    imageView.setImageResource(R.mipmap.ic_launcher);
+                }
+            }
+                //image_book.setImageBitmap();
+                //image_book.setVisibility(View.VISIBLE);
+            }
 
-                image_book.setImageResource(book.getImageId());
-                image_book.setVisibility(View.VISIBLE);
-            }
-            else {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Book is not in library", Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        }
+
         else{
             Toast toast = Toast.makeText(getApplicationContext(),
                     "No scan data received!", Toast.LENGTH_SHORT);
@@ -132,9 +154,10 @@ public class CheckoutActivity extends AppCompatActivity {
                 txt_name.setText(book.getBookName());
                 txt_author.setText(book.getAuthor());
                 txt_author.setVisibility(View.VISIBLE);
-
-                image_book.setImageResource(book.getImageId());
-                image_book.setVisibility(View.VISIBLE);
+                String mDrawableName = book.getImageId();
+                int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
+                //image_book.setImageResource(resID);
+                //image_book.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -162,7 +185,7 @@ public class CheckoutActivity extends AppCompatActivity {
         btn_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               makeInfoDialog();
+                makeInfoDialog();
             }
         });
         button.setOnClickListener(
@@ -187,7 +210,7 @@ public class CheckoutActivity extends AppCompatActivity {
                                 else {
                                     Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
                                     tempBook.addToNumberOfCopys(-1);
-                                    bookDbHelper.updateData(tempBook);
+
                                     finish();
                                 }
                             }
@@ -221,9 +244,12 @@ public class CheckoutActivity extends AppCompatActivity {
             acTextView.setText(message);
             txt_name.setText(temp.getBookName());
             txt_author.setText(temp.getAuthor());
-            image_book.setImageResource(temp.getImageId());
 
-            image_book.setVisibility(View.VISIBLE);
+            String mDrawableName = temp.getImageId();
+            int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
+            //image_book.setImageResource(resID);
+
+            //image_book.setVisibility(View.VISIBLE);
             txt_name.setVisibility(View.VISIBLE);
             txt_author.setVisibility(View.VISIBLE);
         }
@@ -289,7 +315,9 @@ public class CheckoutActivity extends AppCompatActivity {
         author.setText(selectedBook.getAuthor());
 
         ImageView dialogBookImg = (ImageView) dialog.findViewById(R.id.img_bookcover);
-        dialogBookImg.setImageResource(selectedBook.getImageId());
+        String mDrawableName = selectedBook.getImageId();
+        int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
+        dialogBookImg.setImageResource(resID);
 
         Button close = (Button) dialog.findViewById(R.id.close);
         close.setTypeface(myTypeFace1);
@@ -299,7 +327,7 @@ public class CheckoutActivity extends AppCompatActivity {
                 dialog.dismiss();
                 if (selectedBook.getNumberOfCopys() < selectedBook.getMAX_COPYS()) {
                     selectedBook.addToNumberOfCopys(1);
-                    bookDbHelper.updateData(selectedBook);
+
                     Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -310,7 +338,6 @@ public class CheckoutActivity extends AppCompatActivity {
 
         Button submit_button = dialog.findViewById(R.id.submit_button);
         submit_button.setTypeface(myTypeFace1);
-
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -318,7 +345,7 @@ public class CheckoutActivity extends AppCompatActivity {
                     Toast.makeText(CheckoutActivity.this, "Rating submitted", Toast.LENGTH_SHORT).show();
                     RatingBar ratingBar = dialog.findViewById(R.id.ratingBar);
                     selectedBook.addRating(ratingBar.getRating());
-                    bookDbHelper.updateData(selectedBook);
+
                 }
                 else {
                     Toast.makeText(CheckoutActivity.this, "You have already rated this book", Toast.LENGTH_SHORT).show();
