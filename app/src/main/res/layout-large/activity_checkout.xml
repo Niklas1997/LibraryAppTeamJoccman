@@ -14,7 +14,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/scan" />
+        android:text="@string/scan"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="551dp"
+        android:layout_marginLeft="72dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/button"
