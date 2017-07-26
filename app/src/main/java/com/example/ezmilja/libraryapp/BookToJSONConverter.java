@@ -19,6 +19,7 @@ public class BookToJSONConverter {
 
     public final JSONObject convertBookToJSON(Book book) throws JSONException {
         JSONObject jsonObject = new JSONObject();
+        //jsonObject.put("id", book.getId());
         JSONObject imageId = jsonObject.put("imageId", book.getImageId());
         jsonObject.put("isbn", book.getIsbn());
         jsonObject.put("bookName", book.getBookName());

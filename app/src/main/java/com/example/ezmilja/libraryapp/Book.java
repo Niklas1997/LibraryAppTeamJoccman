@@ -4,7 +4,7 @@ package com.example.ezmilja.libraryapp;
  * Created by emirmun on 13/07/2017.
  */
 
-public class Book {
+public class Book  {
 
 
    private final String imageId;
@@ -21,8 +21,8 @@ public class Book {
     private final int MAX_COPYS;
 
     public Book(String imageId, final String isbn, final String bookName, final String author, final String description,
-                final String page, final String publisher, float rating,
-                int numberOfCopys, final int MAX_COPYS , int num_rating){
+                final String page, final String publisher, float rating, int num_rating, boolean isRated,
+                int numberOfCopys, final int MAX_COPYS ){
 
        this.imageId = imageId;
         this.isbn = isbn;
@@ -32,10 +32,11 @@ public class Book {
         this.page = page;
         this.publisher = publisher;
         this.rating = rating;
-        this.MAX_COPYS = MAX_COPYS;
         this.num_rating = num_rating;
         isRated = false;
         this.numberOfCopys = numberOfCopys;
+        this.MAX_COPYS = MAX_COPYS;
+
     }
 
 
@@ -59,12 +60,12 @@ public class Book {
     public String getPage(){return  page;}
     public String getPublisher(){return  publisher;}
     public float getRating() {return rating;}
+    public int getNum_rating() {return num_rating;}
     public boolean getIsRated(){return isRated;}
 
-
-    public void addRating(double addRating){
+    public void addRating(float addRating){
         isRated = true;
-        num_rating += 1;
+        num_rating += 1.0;
         rating += addRating;
     }
 
@@ -72,16 +73,10 @@ public class Book {
 
     public int getMAX_COPYS(){return MAX_COPYS;}
 
-    public int getNum_rating(){return num_rating;}
+
 
     public void addToNumberOfCopys(int added){
         numberOfCopys = numberOfCopys + added;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-        final Book other = (Book) obj;
-        return other.bookName.equals(this.bookName);
     }
 
 

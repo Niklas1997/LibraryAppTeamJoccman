@@ -1,7 +1,6 @@
 package com.example.ezmilja.libraryapp;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +15,6 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
 
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
@@ -29,10 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-        Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(),"yourfont.ttf");
+        //Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(), "yourfont.ttf");
         TextView TextView1 = (TextView) findViewById(R.id.TextView1);
-        TextView1.setTypeface(myTypeFace1);
+        //TextView1.setTypeface(myTypeFace1);
 
         try {
             BookCache cache = new BookCache(this);
@@ -50,11 +47,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ContentsActivity.class);
                 finish();
                 startActivity(intent);
-                }
-                }, 2000);
+            }
+        }, 2000);
     }
-
-
 }
 
 

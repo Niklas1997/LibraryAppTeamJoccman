@@ -1,8 +1,6 @@
 package com.example.ezmilja.libraryapp;
 
 import android.app.Dialog;
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -22,15 +20,10 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
-
 import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.List;
-
-import static com.example.ezmilja.libraryapp.R.id.imageView10;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -78,10 +71,10 @@ public class CheckoutActivity extends AppCompatActivity {
         createButton();
         dropDownList();
         autoFill();
-        createScan();
+        //createScan();
     }
 
-    private void createScan(){
+    /*private void createScan(){
         scanBtn = (Button)findViewById(R.id.scan_button);
 
         scanBtn.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +128,7 @@ public class CheckoutActivity extends AppCompatActivity {
                     "No scan data received!", Toast.LENGTH_SHORT);
             toast.show();
         }
-    }
+    }*/
 
     private void dropDownList(){
         int numBooks = bookList.size();

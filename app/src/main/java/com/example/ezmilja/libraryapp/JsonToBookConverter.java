@@ -17,9 +17,9 @@ public class JsonToBookConverter {
 
 
         // Go through all the books in the JSONArray
-        for (int i=0; i < jsonBooks.size(); i++) {
+        for (int i = 0; i < jsonBooks.size(); i++) {
             // Get the Individual JSON book
-            JSONObject jsonBook =  (JSONObject) jsonBooks.get(i);
+            JSONObject jsonBook = (JSONObject) jsonBooks.get(i);
             System.out.println("&&&&&&&&&&&&&&&&&&&&&convertJSON" + jsonBook);
             Book book;
             try {
@@ -30,21 +30,25 @@ public class JsonToBookConverter {
                 String description = jsonBook.get("description").toString(); // Get the description
                 String page = jsonBook.get("page").toString(); // Get the Total Pages of the book
                 String publisher = jsonBook.get("publisher").toString(); // Get the Publisher Name and the Published Date
+                double rating = (Double) jsonBook.get("rating");
+                long num_rating = (Long) jsonBook.get("num_rating");
+                boolean isRated = (Boolean) jsonBook.get("isRated");
+                long numberOfCopys = (Long) jsonBook.get("numberOfCopys");
+                long max_copys = (Long) jsonBook.get("MAX_COPYS");
 
 
-
-
-                book = new Book(imageId, isbn, bookName,author, description, page, publisher,0,0,0,0); // Create a new Book
+                book = new Book(imageId, isbn, bookName, author, description, page, publisher, (float) rating, (int) num_rating, isRated,
+                        (int) numberOfCopys, (int) max_copys); // Create a new Book
                 books.add(book);
 
                 System.out.println(book.toString());
-            }catch (Exception e){
-                Log.e("JSON Processing", "Error for book: " + jsonBook.toString());
+            } catch (Exception e) {
+                Log.e("JSON Processing", "Error for book: " + jsonBook.toString(), e);
             }
         }
         return books;
     }
 
 
-    }
+}
 
