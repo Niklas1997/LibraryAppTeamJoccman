@@ -21,7 +21,7 @@ public class BookCache {
     public BookCache(Context context) throws IOException, JSONException {
 
         RestInterface restInterface = new RestInterface();
-        restInterface.execute("http://159.107.166.213:8000/Book/");
+        restInterface.execute("http://159.107.166.7:8000/Book/");
         try {
             JSONArray jsonArray = restInterface.get();
             List<Book> booksJson = JsonToBookConverter.convertJSON(jsonArray);
