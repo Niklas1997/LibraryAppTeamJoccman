@@ -14,14 +14,14 @@ public class Book {
     private final String description;
     private final String page;
     private final String publisher;
-    private double rating;
+    private float rating;
     private int num_rating;
     private boolean isRated;
     private int numberOfCopys;
     private final int MAX_COPYS;
 
     public Book(String imageId, final String isbn, final String bookName, final String author, final String description,
-                final String page, final String publisher, double rating,
+                final String page, final String publisher, float rating,
                 int numberOfCopys, final int MAX_COPYS , int num_rating){
 
        this.imageId = imageId;
@@ -58,7 +58,7 @@ public class Book {
     public String getDescription(){return  description;}
     public String getPage(){return  page;}
     public String getPublisher(){return  publisher;}
-    public  double getRating() {return rating;}
+    public float getRating() {return rating;}
     public boolean getIsRated(){return isRated;}
 
 
