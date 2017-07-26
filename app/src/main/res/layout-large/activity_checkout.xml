@@ -81,7 +81,7 @@
         android:layout_height="70dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="37dp"
-        android:digits="0123456789-"
+        android:digits="0123456789"
         android:hint="  ISBN (e.g (978-0544003415)"
         android:inputType="number"
         android:textAlignment="center"
