@@ -245,6 +245,7 @@ public class CheckoutActivity extends AppCompatActivity {
             //image_book.setVisibility(View.VISIBLE);
             txt_name.setVisibility(View.VISIBLE);
             txt_author.setVisibility(View.VISIBLE);
+            scanBtn.setVisibility(View.INVISIBLE);
         }
         catch (Exception e){}
     }
