@@ -1,8 +1,6 @@
 package com.example.ezmilja.libraryapp;
 
 
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,18 +15,24 @@ public class BookToJSONConverter {
 
     private static final String TAG = BookToJSONConverter.class.getName();
 
-    public final JSONObject convertBookToJSON(Book book) throws JSONException {
+    public static final JSONObject convertBookToJSON(Book book) throws JSONException {
         JSONObject jsonObject = new JSONObject();
-        //jsonObject.put("id", book.getId());
-        JSONObject imageId = jsonObject.put("imageId", book.getImageId());
+        jsonObject.put("id", book.getId());
+
         jsonObject.put("isbn", book.getIsbn());
         jsonObject.put("bookName", book.getBookName());
         jsonObject.put("author", book.getAuthor());
         jsonObject.put("description", book.getDescription());
         jsonObject.put("page", book.getPage());
         jsonObject.put("publisher", book.getPublisher());
+        jsonObject.put("rating", book.getRating());
+        jsonObject.put("num_rating", book.getNum_rating());
+        jsonObject.put("isRated", book.getIsRated());
+        jsonObject.put("numberOfCopys", book.getNumberOfCopys());
+        jsonObject.put("MAX_COPYS", book.getMAX_COPYS());
 
-        Log.d(TAG, "Converted book: " + book.getBookName() + " to JSON: " + jsonObject.toString());
+
+        System.out.println("Converted book: " + book.getBookName() + " to JSON: " + jsonObject.toString());
 
         return jsonObject;
     }

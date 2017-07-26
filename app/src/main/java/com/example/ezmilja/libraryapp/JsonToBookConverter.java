@@ -23,6 +23,7 @@ public class JsonToBookConverter {
             System.out.println("&&&&&&&&&&&&&&&&&&&&&convertJSON" + jsonBook);
             Book book;
             try {
+                long id = (Long) jsonBook.get("id");
                 String imageId = jsonBook.get("imageId").toString(); // Get the image Id
                 String isbn = jsonBook.get("isbn").toString(); // Get the isbn
                 String bookName = jsonBook.get("bookName").toString(); // Get the Book Name
@@ -37,7 +38,7 @@ public class JsonToBookConverter {
                 long max_copys = (Long) jsonBook.get("MAX_COPYS");
 
 
-                book = new Book(imageId, isbn, bookName, author, description, page, publisher, (float) rating, (int) num_rating, isRated,
+                book = new Book((int)id, imageId, isbn, bookName, author, description, page, publisher, (float) rating, (int) num_rating, isRated,
                         (int) numberOfCopys, (int) max_copys); // Create a new Book
                 books.add(book);
 

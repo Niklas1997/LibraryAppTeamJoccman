@@ -23,14 +23,12 @@ import android.widget.Toast;
 import org.json.JSONException;
 
 import java.io.IOException;
-import java.util.List;
 
 public class CheckoutActivity extends AppCompatActivity {
 
     private  BookCache books;
 
 
-    private List<Book> bookList;
     private ImageButton btn_info;
     private static RadioButton radioButton;
     private static Button button;
@@ -131,10 +129,10 @@ public class CheckoutActivity extends AppCompatActivity {
     }*/
 
     private void dropDownList(){
-        int numBooks = bookList.size();
+        int numBooks = books.getBooksJson().size();
         isbn_array = new String[numBooks];
         for (int i = 0; i < numBooks; i++){
-            isbn_array[i] = bookList.get(i).getIsbn();
+            isbn_array[i] = books.getBooksJson().get(i).getIsbn();
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, isbn_array);
         acTextView.setThreshold(1);
@@ -158,7 +156,7 @@ public class CheckoutActivity extends AppCompatActivity {
     private Book getBookFromISBN(String isbn){
         for (int i = 0; i < isbn_array.length; i++){
             if (isbn_array[i].equals(isbn)) {
-                return bookList.get(i);
+                return books.getBooksJson().get(i);
             }
         }
         return null;
@@ -203,6 +201,8 @@ public class CheckoutActivity extends AppCompatActivity {
                                 else {
                                     Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
                                     tempBook.addToNumberOfCopys(-1);
+                                    BookStatusTask task = new BookStatusTask(v.getContext());
+                                            System.out.println(task.execute(tempBook));
 
                                     finish();
                                 }

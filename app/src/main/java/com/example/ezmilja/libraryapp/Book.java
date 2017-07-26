@@ -1,13 +1,17 @@
 package com.example.ezmilja.libraryapp;
 
+import android.support.annotation.NonNull;
+
+import java.io.Serializable;
+
 /**
  * Created by emirmun on 13/07/2017.
  */
 
-public class Book  {
+public class Book implements Comparable<Book>, Serializable {
 
-
-   private final String imageId;
+    private int id;
+    private final String imageId;
     private final String isbn;
     private final String bookName;
     private final String author;
@@ -20,11 +24,12 @@ public class Book  {
     private int numberOfCopys;
     private final int MAX_COPYS;
 
-    public Book(String imageId, final String isbn, final String bookName, final String author, final String description,
+    public Book(int id, String imageId, final String isbn, final String bookName, final String author, final String description,
                 final String page, final String publisher, float rating, int num_rating, boolean isRated,
                 int numberOfCopys, final int MAX_COPYS ){
 
-       this.imageId = imageId;
+        this.id = id;
+        this.imageId = imageId;
         this.isbn = isbn;
         this.bookName =bookName;
         this.author = author;
@@ -51,7 +56,9 @@ public class Book  {
           ", publisher='" + publisher + '\'' +
           '}';
  }
-
+    public int getId() {
+        return id;
+    }
     public  String getImageId(){return  imageId;}
     public String getIsbn() {return isbn;}
     public String getBookName(){ return bookName;}
@@ -79,5 +86,9 @@ public class Book  {
         numberOfCopys = numberOfCopys + added;
     }
 
-
+//Need to have a look
+    @Override
+    public int compareTo(@NonNull Book book) {
+        return 0;
+    }
 }
