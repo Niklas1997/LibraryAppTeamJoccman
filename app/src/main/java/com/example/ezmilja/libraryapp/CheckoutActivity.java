@@ -1,6 +1,8 @@
 package com.example.ezmilja.libraryapp;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -23,6 +25,12 @@ import android.widget.Toast;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+
+import JeffScanner.IntentIntegrator;
+import JeffScanner.IntentResult;
+
+import static com.example.ezmilja.libraryapp.R.id.imageView10;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -36,7 +44,7 @@ public class CheckoutActivity extends AppCompatActivity {
     private boolean on;
     TextView txt_name, txt_author;
     private AutoCompleteTextView acTextView;
-    //private ImageView image_book;
+    private ImageView image_book;
     private String[] isbn_array;
 
     private Button scanBtn;
@@ -57,7 +65,7 @@ public class CheckoutActivity extends AppCompatActivity {
         txt_author =(TextView)findViewById(R.id.txt_author);
         txt_author.setFocusable(false);
 
-        //image_book = (ImageView) findViewById(R.id.imgv_bookimg);
+        image_book = (ImageView) findViewById(R.id.imgv_bookimg);
 
         try {
             books = new BookCache(this);
@@ -69,10 +77,10 @@ public class CheckoutActivity extends AppCompatActivity {
         createButton();
         dropDownList();
         autoFill();
-        //createScan();
+        createScan();
     }
 
-    /*private void createScan(){
+    private void createScan(){
         scanBtn = (Button)findViewById(R.id.scan_button);
 
         scanBtn.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +98,7 @@ public class CheckoutActivity extends AppCompatActivity {
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
         if (scanningResult != null) {
             String scanContent = scanningResult.getContents();
-            String scanFormat = scanningResult.getFormatName();
+
 
             acTextView.setText(scanContent);
             Book book = getBookFromISBN(scanContent);
@@ -110,15 +118,15 @@ public class CheckoutActivity extends AppCompatActivity {
                         bitmap = imageLoaderRest.get();
                         MemoryCache.IMAGE_MEMORY_CACHE.put(imageUrl, bitmap);
                     }
-                    imageView.setImageBitmap(bitmap);
+                    image_book.setImageBitmap(bitmap);
+                    image_book.setVisibility(View.VISIBLE);
                 } catch (final Exception e) {
                     e.printStackTrace();
                     imageView.setImageResource(R.mipmap.ic_launcher);
                 }
             }
-                //image_book.setImageBitmap();
-                //image_book.setVisibility(View.VISIBLE);
-            }
+
+        }
 
 
         else{
@@ -126,7 +134,7 @@ public class CheckoutActivity extends AppCompatActivity {
                     "No scan data received!", Toast.LENGTH_SHORT);
             toast.show();
         }
-    }*/
+    }
 
     private void dropDownList(){
         int numBooks = books.getBooksJson().size();
@@ -146,9 +154,23 @@ public class CheckoutActivity extends AppCompatActivity {
                 txt_author.setText(book.getAuthor());
                 txt_author.setVisibility(View.VISIBLE);
                 String mDrawableName = book.getImageId();
-                int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
-                //image_book.setImageResource(resID);
-                //image_book.setVisibility(View.VISIBLE);
+
+                final String imageUrl = book.getImageId();
+                Bitmap bitmap = MemoryCache.IMAGE_MEMORY_CACHE.get(imageUrl);
+                if (bitmap == null) {
+                    ImageLoaderRest imageLoaderRest = new ImageLoaderRest();
+                    imageLoaderRest.execute(new String[]{book.getImageId()});
+                    try {
+                        bitmap = imageLoaderRest.get();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    }
+                    MemoryCache.IMAGE_MEMORY_CACHE.put(imageUrl, bitmap);
+                }
+                image_book.setImageBitmap(bitmap);
+                image_book.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -187,11 +209,23 @@ public class CheckoutActivity extends AppCompatActivity {
                             int selected_id = radioGroup.getCheckedRadioButtonId();
                             radioButton = (RadioButton) findViewById(selected_id);
 
+                            Book tempBook = getBookFromISBN(acTextView.getText().toString());
+
                             if (radioButton.getText().equals("Check IN")) {
-                                makeRatingDialog();
+                                if (tempBook.getNumberOfCopys() < tempBook.getMAX_COPYS()) {
+                                    Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_SHORT).show();
+                                    tempBook.addToNumberOfCopys(1);
+                                    BookStatusTask task = new BookStatusTask(v.getContext());
+                                    System.out.println(task.execute(tempBook));
+
+                                    makeRatingDialog();
+                                }
+                                else {
+                                    Toast.makeText(CheckoutActivity.this, "All copies are in library", Toast.LENGTH_SHORT).show();
+                                }
                             }
                             else if (radioButton.getText().equals("Check OUT")){
-                                Book tempBook = getBookFromISBN(acTextView.getText().toString());
+
                                 if (tempBook == null){
                                     Toast.makeText(CheckoutActivity.this, "Book not found", Toast.LENGTH_SHORT).show();
                                 }
@@ -239,10 +273,22 @@ public class CheckoutActivity extends AppCompatActivity {
             txt_author.setText(temp.getAuthor());
 
             String mDrawableName = temp.getImageId();
-            int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
-            //image_book.setImageResource(resID);
-
-            //image_book.setVisibility(View.VISIBLE);
+            final String imageUrl = temp.getImageId();
+            Bitmap bitmap = MemoryCache.IMAGE_MEMORY_CACHE.get(imageUrl);
+            if (bitmap == null) {
+                ImageLoaderRest imageLoaderRest = new ImageLoaderRest();
+                imageLoaderRest.execute(new String[]{temp.getImageId()});
+                try {
+                    bitmap = imageLoaderRest.get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+                MemoryCache.IMAGE_MEMORY_CACHE.put(imageUrl, bitmap);
+            }
+            image_book.setImageBitmap(bitmap);
+            image_book.setVisibility(View.VISIBLE);
             txt_name.setVisibility(View.VISIBLE);
             txt_author.setVisibility(View.VISIBLE);
             scanBtn.setVisibility(View.INVISIBLE);
@@ -310,23 +356,29 @@ public class CheckoutActivity extends AppCompatActivity {
 
         ImageView dialogBookImg = (ImageView) dialog.findViewById(R.id.img_bookcover);
         String mDrawableName = selectedBook.getImageId();
-        int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
-        dialogBookImg.setImageResource(resID);
+        final String imageUrl = selectedBook.getImageId();
+        Bitmap bitmap = MemoryCache.IMAGE_MEMORY_CACHE.get(imageUrl);
+        if (bitmap == null) {
+            ImageLoaderRest imageLoaderRest = new ImageLoaderRest();
+            imageLoaderRest.execute(new String[]{selectedBook.getImageId()});
+            try {
+                bitmap = imageLoaderRest.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            MemoryCache.IMAGE_MEMORY_CACHE.put(imageUrl, bitmap);
+        }
+        dialogBookImg.setImageBitmap(bitmap);
 
         Button close = (Button) dialog.findViewById(R.id.close);
         close.setTypeface(myTypeFace1);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 dialog.dismiss();
-                if (selectedBook.getNumberOfCopys() < selectedBook.getMAX_COPYS()) {
-                    selectedBook.addToNumberOfCopys(1);
 
-                    Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(CheckoutActivity.this, "All copies are in library", Toast.LENGTH_SHORT).show();
-                }
             }
         });
 
@@ -339,6 +391,10 @@ public class CheckoutActivity extends AppCompatActivity {
                     Toast.makeText(CheckoutActivity.this, "Rating submitted", Toast.LENGTH_SHORT).show();
                     RatingBar ratingBar = dialog.findViewById(R.id.ratingBar);
                     selectedBook.addRating(ratingBar.getRating());
+                    BookStatusTask task = new BookStatusTask(view.getContext());
+                    System.out.println(task.execute(selectedBook));
+
+                    finish();
 
                 }
                 else {

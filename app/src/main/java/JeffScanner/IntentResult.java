@@ -1,4 +1,4 @@
-package google.zxing.integraton.android;
+package JeffScanner;
 
 
 /**
