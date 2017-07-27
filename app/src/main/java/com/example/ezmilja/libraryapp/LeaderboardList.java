@@ -52,6 +52,8 @@ public class LeaderboardList extends AppCompatActivity {
 
         originalList = requestCache.getRequestJson();
 
+        sortlist(originalList);
+
         createButton();
         makeListView();
 
