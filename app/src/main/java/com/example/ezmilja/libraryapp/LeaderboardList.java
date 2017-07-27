@@ -141,6 +141,10 @@ public class LeaderboardList extends AppCompatActivity {
                     originalList.add(temp);
                     makeListView();
                     dialog.dismiss();
+                    //send to database//
+                    NewRquestTask task = new NewRquestTask(view.getContext());
+                    System.out.println(task.execute(temp));
+
                 }
                 else {
                     Toast.makeText(LeaderboardList.this, "Error: Please input correctly", Toast.LENGTH_LONG).show();
