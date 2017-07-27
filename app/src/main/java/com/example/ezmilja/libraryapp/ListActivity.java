@@ -54,6 +54,8 @@ public class ListActivity extends AppCompatActivity {
             System.out.println("******************" + books.getBook(i));
         }
 
+        sortlist(originalList);
+
         searchView = (SearchView) findViewById(R.id.searchbar);
         ListView listView = (ListView)findViewById(R.id.listView);
 

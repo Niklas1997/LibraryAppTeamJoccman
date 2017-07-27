@@ -21,7 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="300dp"
         android:layout_below="@+id/searchFilter"
-        android:layout_weight="0.97"></ListView>
+        android:layout_weight="0.97"
+        android:visibility="visible"></ListView>
 
     <ImageView
         android:id="@+id/imageView8"
