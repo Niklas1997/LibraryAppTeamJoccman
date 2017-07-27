@@ -145,11 +145,13 @@ public class ListActivity extends AppCompatActivity {
                         imageLoaderRest.execute(new String[]{book.getImageId()});
                         bitmap = imageLoaderRest.get();
                         MemoryCache.IMAGE_MEMORY_CACHE.put(imageUrl, bitmap);
-                        if (book.getNumberOfCopys()==0){
-                            view.setBackgroundColor(Color.LTGRAY);
-                        }else {view.setBackgroundColor(Color.WHITE);
-                        }
                     }
+                    if (book.getNumberOfCopys() < 1){
+                        view.setBackgroundColor(Color.LTGRAY);
+                    }else {
+                        view.setBackgroundColor(Color.WHITE);
+                    }
+
                     imageView.setImageBitmap(bitmap);
                 } catch (final Exception e) {
                     e.printStackTrace();
