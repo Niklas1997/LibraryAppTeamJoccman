@@ -27,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //Typeface myTypeFace1 = Typeface.createFromAsset(getAssets(), "yourfont.ttf");
-        TextView TextView1 = (TextView) findViewById(R.id.TextView1);
-        //TextView1.setTypeface(myTypeFace1);
 
         try {
             BookCache cache = new BookCache(this);

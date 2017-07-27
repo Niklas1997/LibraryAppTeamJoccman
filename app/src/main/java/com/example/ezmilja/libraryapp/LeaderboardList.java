@@ -22,6 +22,9 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -45,7 +48,12 @@ public class LeaderboardList extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        originalList = new ArrayList<RequestBook>();
+
+
+
+        RequestCache requestCache= new RequestCache();
+
+        originalList = requestCache.getRequestJson();
 
         createButton();
         makeListView();
@@ -129,7 +137,7 @@ public class LeaderboardList extends AppCompatActivity {
                 String temp_author = edt_author.getText().toString();
                 String temp_email = edt_email.getText().toString();
                 if (requestCheck(temp_name, temp_author, temp_email)) {
-                    RequestBook temp = new RequestBook(temp_name, temp_author, temp_email, 0, originalList.size() + 1);
+                    RequestBook temp = new RequestBook(temp_name, temp_author, temp_email, 0);
                     originalList.add(temp);
                     makeListView();
                     dialog.dismiss();
