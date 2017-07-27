@@ -215,8 +215,8 @@ public class CheckoutActivity extends AppCompatActivity {
                                 if (tempBook.getNumberOfCopys() < tempBook.getMAX_COPYS()) {
                                     Toast.makeText(CheckoutActivity.this, "Book Checked IN", Toast.LENGTH_SHORT).show();
                                     tempBook.addToNumberOfCopys(1);
-                                   // BookStatusTask task = new BookStatusTask(v.getContext());
-                                   // System.out.println(task.execute(tempBook));
+                                   BookStatusTask task = new BookStatusTask(v.getContext());
+                                   System.out.println(task.execute(tempBook));
 
                                     makeRatingDialog();
                                 }
@@ -235,8 +235,8 @@ public class CheckoutActivity extends AppCompatActivity {
                                 else {
                                     Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
                                     tempBook.addToNumberOfCopys(-1);
-                                    //BookStatusTask task = new BookStatusTask(v.getContext());
-                                          //  System.out.println(task.execute(tempBook));
+                                    BookStatusTask task = new BookStatusTask(v.getContext());
+                                          System.out.println(task.execute(tempBook));
 
                                     finish();
                                 }
@@ -391,8 +391,8 @@ public class CheckoutActivity extends AppCompatActivity {
                     Toast.makeText(CheckoutActivity.this, "Rating submitted", Toast.LENGTH_SHORT).show();
                     RatingBar ratingBar = dialog.findViewById(R.id.ratingBar);
                     selectedBook.addRating(ratingBar.getRating());
-                    //BookStatusTask task = new BookStatusTask(view.getContext());
-                      //System.out.println(task.execute(selectedBook));
+                    BookStatusTask task = new BookStatusTask(view.getContext());
+                      System.out.println(task.execute(selectedBook));
 
                     finish();
 
