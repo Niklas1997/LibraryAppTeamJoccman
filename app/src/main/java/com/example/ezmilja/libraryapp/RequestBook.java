@@ -32,16 +32,11 @@ public class RequestBook implements Comparable{
 
 
     public String getBookName(){ return bookName;}
-
     public String getAuthor(){ return author;}
-
     public String getEmail(){return email;}
-
     public long getVote(){return vote;}
 
-
     public void addVote(int add){vote += add;}
-
     public boolean getisUpVoted(){return isUpVoted;}
 
     public void setisUpVoted(boolean isUpVoted){this.isUpVoted = isUpVoted;}

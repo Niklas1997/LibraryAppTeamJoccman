@@ -236,7 +236,7 @@ public class CheckoutActivity extends AppCompatActivity {
                                     Toast.makeText(CheckoutActivity.this, "Book Checked OUT", Toast.LENGTH_SHORT).show();
                                     tempBook.addToNumberOfCopys(-1);
                                     BookStatusTask task = new BookStatusTask(v.getContext());
-                                          System.out.println(task.execute(tempBook));
+                                    System.out.println(task.execute(tempBook));
 
                                     finish();
                                 }
