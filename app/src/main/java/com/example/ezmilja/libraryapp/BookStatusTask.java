@@ -47,7 +47,7 @@ public class BookStatusTask extends AsyncTask<Object, Object, String> {
         protected String doInBackground(Object... params) {
             try{
                 Book book = (Book) params[0];
-                String u = "http://159.107.166.7:8000/Book" + "/" + book.getId() + "/";
+                String u = "http://159.107.165.157/Book" + "/" + book.getId() + "/";
                 URL url = new URL(u); // here is your URL path
 
                 JSONObject jsonObject = BookToJSONConverter.convertBookToJSON(book);
