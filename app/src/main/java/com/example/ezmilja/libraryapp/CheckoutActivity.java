@@ -143,7 +143,6 @@ public class CheckoutActivity extends AppCompatActivity {
             isbn_array[i] = books.getBooksJson().get(i).getIsbn();
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, isbn_array);
-
         acTextView.setThreshold(1);
         acTextView.setAdapter(adapter);
         acTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
