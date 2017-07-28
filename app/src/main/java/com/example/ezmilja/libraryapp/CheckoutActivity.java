@@ -153,7 +153,7 @@ public class CheckoutActivity extends AppCompatActivity {
                 txt_name.setText(book.getBookName());
                 txt_author.setText(book.getAuthor());
                 txt_author.setVisibility(View.VISIBLE);
-                String mDrawableName = book.getImageId();
+                //String mDrawableName = book.getImageId();
 
                 final String imageUrl = book.getImageId();
                 Bitmap bitmap = MemoryCache.IMAGE_MEMORY_CACHE.get(imageUrl);

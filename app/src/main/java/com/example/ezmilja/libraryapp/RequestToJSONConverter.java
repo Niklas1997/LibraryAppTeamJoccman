@@ -14,9 +14,10 @@ class RequestToJSONConverter {
 
         jsonObject.put("bookName", request.getBookName());
         jsonObject.put("author", request.getAuthor());
-        jsonObject.put("email", request.getEmail());
         jsonObject.put("vote", request.getVote());
         jsonObject.put("isUpVoted", request.getisUpVoted());
+        jsonObject.put("email", request.getEmail());
+
 
 
         System.out.println("Converted book: " + request.getBookName() + " to JSON: " + jsonObject.toString());

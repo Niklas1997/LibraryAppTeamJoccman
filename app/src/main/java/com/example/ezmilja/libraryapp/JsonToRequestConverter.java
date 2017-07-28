@@ -9,12 +9,12 @@ import org.json.simple.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
- * Created by ezmilja on 27/07/2017.
+ * Created by emirmun on 28/07/2017.
  */
 
-class JsonToRequestConverter {
-
+public class JsonToRequestConverter {
     public static List<RequestBook> convertJSON(JSONArray jsonRequests) throws JSONException {
         // Create a new list of Book (to fill)
         System.out.print("Started converJSON");
