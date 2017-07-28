@@ -21,7 +21,7 @@ public class RequestCache {
 
     public RequestCache(){
         RestInterface restInterface = new RestInterface();
-        restInterface.execute("http://159.107.165.157:8000/RequestBook/");
+        restInterface.execute("http://159.107.165.84:8000/RequestBook/");
         try {
             JSONArray jsonArray = restInterface.get();
             requestJson = JsonToRequestConverter.convertJSON(jsonArray);

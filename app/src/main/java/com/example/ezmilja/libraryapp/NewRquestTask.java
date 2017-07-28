@@ -47,7 +47,7 @@ public class NewRquestTask extends AsyncTask<Object, Object, String> {
         protected String doInBackground(Object... params) {
             try{
                 RequestBook request = (RequestBook) params[0];
-                String u = "http://159.107.165.157:8000/RequestBook/";
+                String u = "http://159.107.165.84:8000/RequestBook/";
                 URL url = new URL(u); // here is your URL path
 
                 JSONObject jsonObject = RequestToJSONConverter.convertRequestToJSON(request);
